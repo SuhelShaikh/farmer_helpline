@@ -1,1 +1,55 @@
-To be filled in sooner
+--------------------------------------------------------------------------------
+ADD NEW COLLABORATOR
+--------------------------------------------------------------------------------
+1. Login with suhail's credentials
+2. Go to "Settings" tab
+3. Go to "Collaborators" from the menu available in left pane
+4. Add required username in textbox. If user is available, his name would appear in the list. Select appropriate user. Click "Add collaborator" button.
+5. His name would appear in "Collaborators" section above, with status as "Response awaited". Invitation email would be sent to his email address registered with Github.
+6. Once invitation is accepted, he can start contributing with his credentials.
+
+--------------------------------------------------------------------------------
+SETUP GIT LOCALLY
+--------------------------------------------------------------------------------
+1. Download git client (exe) from https://git-scm.com/download/win
+2. Double click on exe and follow the instructions. End result - git client is setup.
+3. Go to a directory where you want to download git repository, say C:/mylocation
+4. Open "Git GUI" from start menu. It will open a Git's command prompt.
+5. Go the folder you created above, C:/mylocation
+6. Enter - git init - in the command prompt to initialize git. This would create a hidden ".git" folder in C:/mylocation
+7. Setup your username and email for the repository as -
+	git config --global user.name "sushrutdeshpande"
+	git config --global user.email "sushrutd12@gmail.com"
+8. Check out (in git's terminology - clone) the repository as -
+	git clone https://github.com/SuhelShaikh/farmer_helpline.git
+9. Git is setup and repository is available for you to edit
+
+--------------------------------------------------------------------------------
+START WORKING ON GIT
+--------------------------------------------------------------------------------
+GIT is a distributed versioning system. Which means, there is central repository (github) and a local repository created automatically on your machine.
+Your changes need to be checked-in into local repository. And they are ready to be published, those can be sent to central repository.
+Details are given below...
+
+1. You can check the repository status (if file(s) is added/modified/deleted) as -
+	git status
+2. If you add new file, execute
+	git add <fully_qualified_file_name>
+	git commit <fully_qualified_file_name> -m "<some_logical_message_to_explain_the_changes>"
+3. If you modify existing file, execute
+	git commit <fully_qualified_file_name> -m "<some_logical_message_to_explain_the_changes>"
+4. Once all changes are done and need to be published -
+	git push origin master
+
+--------------------------------------------------------------------------------
+FURTHER READING
+--------------------------------------------------------------------------------
+Git supports branching and tagging etc.
+Refer below links for further reading -
+	http://rogerdudler.github.io/git-guide/
+	https://www.theserverside.com/tutorial/Five-basic-Git-commands-every-beginner-needs-to-know
+	https://www.tutorialspoint.com/git/index.htm
+
+--------------------------------------------------------------------------------
+HAPPY COLLABORATION! LET'S GIT-TOGETHER!! :)
+--------------------------------------------------------------------------------
