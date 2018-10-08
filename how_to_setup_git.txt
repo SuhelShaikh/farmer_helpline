@@ -42,6 +42,17 @@ Details are given below...
 	git push origin master
 
 --------------------------------------------------------------------------------
+COMMONLY USED COMMANDS
+--------------------------------------------------------------------------------
+1. Check status - git status
+2. Get the code from local repository for the first time - git clone https://github.com/SuhelShaikh/farmer_helpline.git
+3. Marked newly created file for checkin - git add <fully_qualified_file_name>
+4. Marked deleted file for checkin - git rm <fully_qualified_file_name>
+5. Checkin your changes to local repository - git commit <fully_qualified_file_name> -m "<some_logical_message>"
+6. Publish your changes to central repository (github) - git push origin master
+7. Get the updates - git pull
+
+--------------------------------------------------------------------------------
 FURTHER READING
 --------------------------------------------------------------------------------
 Git supports branching and tagging etc.
