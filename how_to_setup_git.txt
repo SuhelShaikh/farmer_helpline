@@ -46,6 +46,7 @@ COMMONLY USED COMMANDS
 --------------------------------------------------------------------------------
 1. Check status - git status
 2. Get the code from local repository for the first time - git clone https://github.com/SuhelShaikh/farmer_helpline.git
+   Optionally, to get it from branch - git clone https://github.com/SuhelShaikh/farmer_helpline.git -b <branch_name>
 3. Marked newly created file for checkin - git add <fully_qualified_file_name>
 4. Marked deleted file for checkin - git rm <fully_qualified_file_name>
 5. Checkin your changes to local repository - git commit <fully_qualified_file_name> -m "<some_logical_message>"
