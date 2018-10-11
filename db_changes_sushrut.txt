@@ -1,0 +1,10 @@
+/*
+* Added By : Sushrut Deshpande.
+* Added On : 11/10/2018.
+* Query to add field mobile number in user table.
+* Query to create role table.
+* Query to create user role table.
+*/
+ALTER TABLE `user` ADD `mobile_number` VARCHAR(10) NOT NULL AFTER `email`;
+CREATE TABLE `farmers_helpline`.`role` ( `role_id` SMALLINT NOT NULL AUTO_INCREMENT , `role_name` VARCHAR(50) NOT NULL COMMENT 'role name' , `status` ENUM('0','1') NOT NULL COMMENT 'status of the role' , `created_on` DATETIME NOT NULL , `updated_on` DATETIME NOT NULL , PRIMARY KEY (`role_id`)) ENGINE = InnoDB;
+CREATE TABLE `farmers_helpline`.`user_role` ( `user_role_id` INT NOT NULL AUTO_INCREMENT , `user_id` INT NOT NULL , `role_id` INT NOT NULL , PRIMARY KEY (`user_role_id`)) ENGINE = InnoDB;
