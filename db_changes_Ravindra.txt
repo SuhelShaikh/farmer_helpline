@@ -1,0 +1,49 @@
+/*
+* Added By : Ravindra Gawade
+* Added On : 11/10/2018.
+* Query to create cms_pages table.
+* Query to create farmers_queries table.
+* Query to create queries_response table.
+*/
+
+CREATE TABLE `cms_pages` (`cms_page_id` int(11) NOT NULL,
+  `title` varchar(500) NOT NULL,
+  `content` longtext NOT NULL,
+  `updated_by` varchar(50) NOT NULL,
+  `updated_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ALTER TABLE `cms_pages` ADD PRIMARY KEY (`cms_page_id`);
+ALTER TABLE `cms_pages` MODIFY `cms_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+
+CREATE TABLE `farmers_queries` (
+  `query_id` int(11) NOT NULL,
+  `farmer_id` int(11) NOT NULL,
+  `subject` varchar(200) NOT NULL,
+  `description` mediumtext NOT NULL,
+  `image_path` varchar(100) NOT NULL,
+  `audio_vedio_path` varchar(100) NOT NULL,
+  `created_by` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ALTER TABLE `farmers_queries` ADD PRIMARY KEY (`query_id`);
+ALTER TABLE `farmers_queries` MODIFY `query_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+
+
+
+CREATE TABLE `queries_response` (
+  `response_id` int(11) NOT NULL,
+  `query_id` int(11) NOT NULL,
+  `ea_id` int(11) NOT NULL,
+  `response` longtext NOT NULL,
+  `created_by` varchar(45) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ALTER TABLE `queries_response` ADD PRIMARY KEY (`response_id`);
+ALTER TABLE `queries_response` MODIFY `response_id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+
