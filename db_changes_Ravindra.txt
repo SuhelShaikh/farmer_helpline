@@ -2,11 +2,14 @@
 * Added By : Ravindra Gawade
 * Added On : 11/10/2018.
 * Query to create cms_pages table.
-* Query to create farmers_queries table.
-* Query to create queries_response table.
+* Query to create qa_questions table.
+* Query to create qa_answers table.
+* Query to create crops table.
+* Query to create schedules table.
 */
-
-CREATE TABLE `cms_pages` (`cms_page_id` int(11) NOT NULL,
+======================================================
+CREATE TABLE `cms_pages` (
+  `cms_page_id` int(11) NOT NULL,
   `title` varchar(500) NOT NULL,
   `content` longtext NOT NULL,
   `updated_by` varchar(50) NOT NULL,
@@ -15,35 +18,62 @@ CREATE TABLE `cms_pages` (`cms_page_id` int(11) NOT NULL,
 ALTER TABLE `cms_pages` ADD PRIMARY KEY (`cms_page_id`);
 ALTER TABLE `cms_pages` MODIFY `cms_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
-
-
-CREATE TABLE `farmers_queries` (
+======================================================
+CREATE TABLE `ea_questions` (
   `query_id` int(11) NOT NULL,
-  `farmer_id` int(11) NOT NULL,
-  `subject` varchar(200) NOT NULL,
-  `description` mediumtext NOT NULL,
-  `image_path` varchar(100) NOT NULL,
-  `audio_vedio_path` varchar(100) NOT NULL,
-  `created_by` varchar(50) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `user_id` int(11) NOT NULL,
+  `question` mediumtext NOT NULL,
+  `image_path` varchar(45) DEFAULT NULL,
+  `audio_video_path` varchar(45) DEFAULT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-ALTER TABLE `farmers_queries` ADD PRIMARY KEY (`query_id`);
-ALTER TABLE `farmers_queries` MODIFY `query_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `ea_questions`
+  ADD PRIMARY KEY (`query_id`),
+  ADD KEY `user_id` (`user_id`);
+ALTER TABLE `ea_questions`
+  MODIFY `query_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ea_questions`
+  ADD CONSTRAINT `ea_questions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-
-
-
-CREATE TABLE `queries_response` (
-  `response_id` int(11) NOT NULL,
-  `query_id` int(11) NOT NULL,
+====================================================
+CREATE TABLE `ea_answers` (
+  `ea_resp_id` int(11) NOT NULL,
+  `ea_question_id` int(11) NOT NULL,
   `ea_id` int(11) NOT NULL,
   `response` longtext NOT NULL,
-  `created_by` varchar(45) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-ALTER TABLE `queries_response` ADD PRIMARY KEY (`response_id`);
-ALTER TABLE `queries_response` MODIFY `response_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ea_answers` ADD PRIMARY KEY (`ea_resp_id`),
+  ADD KEY `ea_question_id` (`ea_question_id`),
+  ADD KEY `ea_id` (`ea_id`);
+  ALTER TABLE `ea_answers` MODIFY `ea_resp_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ea_answers` ADD CONSTRAINT `ea_answers_ibfk_1` FOREIGN KEY (`ea_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
+=====================================================
+CREATE TABLE `crops` (
+  `crop_id` int(11) NOT NULL,
+  `crop_name` varchar(200) NOT NULL,
+  `crop_desc` text NOT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  `status` enum('0','1') NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ALTER TABLE `crops` ADD PRIMARY KEY (`crop_id`);
+ALTER TABLE `crops` MODIFY `crop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
-
+======================================================
+CREATE TABLE `schedules` (
+  `sched_id` int(11) NOT NULL,
+  `crop_id` int(11) NOT NULL,
+  `schedule_inst` text NOT NULL,
+  `ceated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ALTER TABLE `schedules` ADD PRIMARY KEY (`sched_id`),
+  ADD KEY `crop_id` (`crop_id`);
+ALTER TABLE `schedules` MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `schedules` ADD CONSTRAINT `schedules_ibfk_1` FOREIGN KEY (`crop_id`) REFERENCES `crops` (`crop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
