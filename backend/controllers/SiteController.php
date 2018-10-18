@@ -36,14 +36,8 @@ class SiteController extends Controller
                     [
                         'actions' => ['logout', 'index','requestpasswordreset','signup'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['index'],
                     ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
                 ],
             ],
         ];
