@@ -1,0 +1,19 @@
+/* DB Changes */
+
+// Alert table Query
+
+
+CREATE TABLE IF NOT EXISTS `alert_master` (
+  `id` int(11) NOT NULL,
+  `alert_msg` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `alert_type` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `status` smallint(6) NOT NULL DEFAULT '10',
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+ALTER TABLE `alert_master`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `alert_master`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
