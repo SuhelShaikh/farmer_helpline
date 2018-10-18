@@ -34,6 +34,9 @@
 					
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
 					['label' => 'Create New User','icon' => 'file-code-o','url' => ['site/signup']],
+					['label' => 'Role','icon' => 'file-code-o','url' => ['role/index']],
+					['label' => 'Modules','icon' => 'file-code-o','url' => ['modules/index']],
+					['label' => 'Role Modules','icon' => 'file-code-o','url' => ['rolemodules/index']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
