@@ -5,6 +5,8 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Role;
 use backend\models\RoleSearch;
+use backend\models\Modules;
+use backend\models\RoleModules;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -64,12 +66,31 @@ class RoleController extends Controller
     public function actionCreate()
     {
         $model = new Role();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->role_id]);
+		$modulesData = Modules::getModulesList();
+        if ($model->load(Yii::$app->request->post())) {
+			$model->created_on = date('Y-m-d H:i:s');
+			$modulesList = Yii::$app->request->post('modules');
+			if($model->save()) {
+				foreach($modulesList as $modules) {
+					$roleModulesModel = new RoleModules();
+					$roleModulesModel->module_id = $modules;
+					$roleModulesModel->role_id = $model->role_id;
+					$roleModulesModel->status = 1;
+					$roleModulesModel->created_by = Yii::$app->user->id;
+					$roleModulesModel->created_on = date('Y-m-d H:i:s');
+					if($roleModulesModel->save(false)) {
+					} else {
+						//echo '<pre>';print_r($model->errors);
+					}
+				}
+			} else {
+				echo '<pre>';print_r($model->errors);
+			}		
+            //return $this->redirect(['view', 'id' => $model->role_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+				'modulesData'=>$modulesData,
             ]);
         }
     }
