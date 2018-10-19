@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\EaAnswers;
+use backend\models\EaQuestions;
 use backend\models\EaAnswersSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -91,6 +92,27 @@ class EaAnswersController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+            ]);
+        }
+    }
+	public function actionRespond($id)
+    {
+        $model = new EaAnswers();
+		$QuesModel = EaQuestions::findOne($id);
+        if ($model->load(Yii::$app->request->post())) {
+			$model['status'] = 'completed';
+			if($model->save()){
+            return $this->redirect(['view', 'id' => $model->ea_resp_id]);
+			}
+        } else {
+			
+			$model->ea_question_id = $QuesModel->query_id;
+			//logged ea user id
+			$model->ea_id = 1;
+			$model->ea_id = $QuesModel->query_id;
+            return $this->render('respond', [
+                'model' => $model,
+				'Quemodel'=>$QuesModel
             ]);
         }
     }

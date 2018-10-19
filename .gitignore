@@ -1,0 +1,10 @@
+common
+vendor
+console
+frontend
+vagrant
+environments
+nbproject
+backend/config
+backend/web
+backend/runtime

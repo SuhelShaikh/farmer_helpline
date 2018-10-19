@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'ea_resp_id',
-            'ea_question_id',
-            'ea_id',
-            'response:ntext',
+            'eaQuestion.question',
+            'ea.username',
+            'response:html',
             'created_on',
             'updated_on',
         ],

@@ -33,6 +33,8 @@
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
 					
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
+					['label' => 'CMS','icon' => 'file-code-o','url' => ['cms-pages/index']],
+
 					['label' => 'Create New User','icon' => 'file-code-o','url' => ['site/signup']],
 					['label' => 'Role','icon' => 'file-code-o','url' => ['role/index']],
 					['label' => 'Modules','icon' => 'file-code-o','url' => ['modules/index']],

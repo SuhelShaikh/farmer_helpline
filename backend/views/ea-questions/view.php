@@ -23,14 +23,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+		<?= Html::a('Respond', ['ea-answers/respond', 'id' => $model->query_id], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'query_id',
-            'user_id',
-            'question:ntext',
+            'user.username',
+            'question:html',
             'image_path',
             'audio_video_path',
             'created_on',
