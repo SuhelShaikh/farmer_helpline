@@ -1,4 +1,4 @@
-common
+common/config
 vendor
 console
 frontend
@@ -8,3 +8,7 @@ nbproject
 backend/config
 backend/web
 backend/runtime
+common/mail
+common/fixtures
+common/tests
+common/widgets
