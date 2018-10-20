@@ -1,5 +1,4 @@
 <?php
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\ckeditor\CKEditor;
@@ -14,10 +13,11 @@ use backend\models\User;
 
     <?php $form = ActiveForm::begin(); ?>
 
-	<h3>Question : <?= Html::encode($Quemodel->question) ?>?</h3>	
-	<?= $form->field($model, 'ea_question_id')->hiddenInput()->label(false) ?>
-	<?= $form->field($model, 'ea_id')->hiddenInput()->label(false) ?>
-	<?= $form->field($model, 'response')->widget(CKEditor::className(), [
+    <h3>Question : <?= Html::encode($Quemodel->question) ?>?</h3>   
+    <?= $form->field($model, 'ea_question_id')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'ea_id')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'token')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'response')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'basic'
     ]) ?>

@@ -14,10 +14,7 @@ use backend\models\User;
 
     <?php $form = ActiveForm::begin(); ?>
 
-	<?= $form->field($model, 'user_id')->dropDownList(
-		arrayHelper::map(User::find()->all(),'id','username'),
-		['prompt'=>"Select User"]
-		) ?>
+	<?= $form->field($model, 'user_id')->hiddenInput()->label(false) ?>
 
 	<?= $form->field($model, 'question')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],

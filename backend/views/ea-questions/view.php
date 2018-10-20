@@ -1,43 +1,55 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+use yii\widgets\ActiveForm;
+use dosamigos\ckeditor\CKEditor;
+use backend\models\User;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\EaQuestions */
+/* @var $searchModel backend\models\EaQuestionsSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = $model->query_id;
-$this->params['breadcrumbs'][] = ['label' => 'Ea Questions', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Questions';
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
 ?>
-<div class="ea-questions-view">
+<div class="ea-questions-create">
+ <?php //echo "<pre>"; print_r($questionModel); ?>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->query_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->query_id], [
-            'class' => 'btn btn-danger',
+    <?php
+    foreach($data AS $models){
+    ?>
+        <?= Html::tag('div', $models->question, ['class' => 'question','align'=>'left']) ?><br>
+         <?php foreach($models->answer AS $answer){ ?>
+        <?= Html::tag('div', $answer->response, ['class' => 'response','align'=>'right',]) ?>
+         <?php } ?>
+         <hr>
+    <?php } 
+    if(!empty($questionModel)){
+    foreach($questionModel AS $quesnModel){
+    ?>
+        <?= Html::tag('div', $quesnModel->question, ['class' => 'question','align'=>'left']) ?>
+        <?= Html::a('Update Question', ['update', 'id' => $quesnModel->query_id], ['class' => 'btn btn-primary','style'=>'float:right']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $quesnModel->query_id], [
+            'class' => 'btn btn-danger','style'=>'float:right',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
         ]) ?>
-		<?= Html::a('Respond', ['ea-answers/respond', 'id' => $model->query_id], ['class' => 'btn btn-primary']) ?>
-    </p>
+    <?php } 
+    }else{ $form = ActiveForm::begin(['action' => ['ea-questions/create'],'options' => ['method' => 'post']]); ?>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'query_id',
-            'user.username',
-            'question:html',
-            'image_path',
-            'audio_video_path',
-            'created_on',
-            'updated_on',
-            'status',
-        ],
-    ]) ?>
+    <?= $form->field($model, 'user_id')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'token')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'question')->widget(CKEditor::className(), ['options' => ['rows' => 6],'preset' => 'basic']) ?>
+    <div class="form-group">
+        <?= Html::submitButton('Post', ['class' => 'btn btn-success']) ?>
+    </div>
 
+    <?php ActiveForm::end(); }?>
+
+
+    
 </div>
