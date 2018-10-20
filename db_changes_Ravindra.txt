@@ -77,3 +77,11 @@ ALTER TABLE `schedules` ADD PRIMARY KEY (`sched_id`),
   ADD KEY `crop_id` (`crop_id`);
 ALTER TABLE `schedules` MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `schedules` ADD CONSTRAINT `schedules_ibfk_1` FOREIGN KEY (`crop_id`) REFERENCES `crops` (`crop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+======================================================
+alter queries
+
+ALTER TABLE `ea_answers` ADD `token` VARCHAR(20) NOT NULL AFTER `ea_resp_id`;
+ALTER TABLE `ea_questions` ADD `token` VARCHAR(20) NOT NULL AFTER `query_id`;
+ALTER TABLE `ea_questions` ADD `main_question` enum('0', '1')  NOT NULL AFTER `status`;status
