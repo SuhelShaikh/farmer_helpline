@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\EaAnswersSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
@@ -29,7 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'response:html',
             ['class' => 'yii\grid\ActionColumn',
-            'template' => '{view}'],
+            'template' => '{view}',
+            'buttons' => [
+            'view' => function ($url, $dataProvider) {
+                $url = Url::to(['ea-answers/view', 'id' => $dataProvider->ea_question_id]);
+                return Html::a('<span class="fa fa-eye"></span>', $url, ['title' => 'view']);
+                }],
+            ],
         ],
     ]);
     ?>

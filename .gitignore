@@ -6,7 +6,7 @@ vagrant
 environments
 nbproject
 backend/config
-
+backend/web
 backend/runtime
 common/mail
 common/fixtures

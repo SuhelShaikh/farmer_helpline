@@ -41,7 +41,9 @@ class EaAnswersSearch extends EaAnswers
      */
     public function search($params)
     {
-        $query = EaAnswers::find();
+        $query = EaAnswers::find()
+        ->joinWith('eaQuestion')
+        ->where(['main_question' => '1']);
 
         // add conditions that should always apply here
 
