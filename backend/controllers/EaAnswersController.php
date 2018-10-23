@@ -5,6 +5,8 @@ namespace backend\controllers;
 use Yii;
 use backend\models\EaAnswers;
 use backend\models\EaAnswersSearch;
+use backend\models\EaQuestions;
+use backend\models\EaQuestionsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -51,9 +53,32 @@ class EaAnswersController extends Controller
      */
     public function actionView($id)
     {
+        $model = EaQuestions::findOne($id);        
+        //Get all request & response
+        $data = EaQuestions::find()
+        ->joinWith(['answer'])
+        ->where('ea_answers.token=ea_questions.token AND ea_questions.token='.$model->token)
+        ->all();
+        //Get Not answerd Questions
+        $questionModel = EaQuestions::find()
+        ->where(["=","status","0"])
+        ->andWhere(["=","token", $model->token])
+        ->all();
+        //get Question having no response
+        
+        $queModel = new EaAnswers();
+        $queModel['ea_id'] = 2;
+        if(!empty($questionModel))
+            $queModel['ea_question_id'] =  $questionModel[0]->query_id;
+        $queModel['token'] = $model->token;
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $queModel,
+            'data' => $data,
+            'questionModel'=>$questionModel
         ]);
+       /* return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);*/
     }
 
     /**
@@ -64,11 +89,20 @@ class EaAnswersController extends Controller
     public function actionCreate()
     {
         $model = new EaAnswers();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ea_resp_id]);
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->save()) {
+                //update questin status
+                $respModel = EaQuestions::findOne($model->ea_question_id);
+                $respModel["status"] = '1';
+                $respModel->save();
+                return $this->redirect(['index']);
+            }else{
+                return $this->render('view', [
+                'model' => $model,
+            ]);
+            }
         } else {
-            return $this->render('create', [
+            return $this->render('view', [
                 'model' => $model,
             ]);
         }
@@ -93,6 +127,38 @@ class EaAnswersController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+	public function actionRespond($id)
+    {
+        $model = new EaAnswers();
+		$QuesModel = EaQuestions::findOne($id);
+        if ($model->load(Yii::$app->request->post())) {
+			$model['status'] = '1';
+			if($model->save()){
+            return $this->redirect(['view', 'id' => $model->ea_resp_id]); 
+			}
+        } else {
+			
+			$model->ea_question_id = $QuesModel->query_id;
+			//logged ea user id
+			$model->ea_id = 1;
+			$model->ea_id = $QuesModel->query_id;
+            $model->token = $QuesModel->token;
+            return $this->render('respond', [
+                'model' => $model,
+				'Quemodel'=>$QuesModel
+            ]);
+        }
+    }
+
+    public function actionPending()
+    {
+       $searchModel = new EaQuestionsSearch();
+       $dataProvider = $searchModel->searchPending(Yii::$app->request->queryParams);
+
+        return $this->render('pending', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**

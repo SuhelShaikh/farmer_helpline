@@ -35,7 +35,7 @@ class EaAnswers extends \yii\db\ActiveRecord
             [['ea_question_id', 'ea_id', 'response'], 'required'],
             [['ea_question_id', 'ea_id'], 'integer'],
             [['response'], 'string'],
-            [['created_on', 'updated_on'], 'safe'],
+            [['created_on', 'updated_on','token','status'], 'safe'],
         ];
     }
 

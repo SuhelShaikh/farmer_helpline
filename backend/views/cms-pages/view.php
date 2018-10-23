@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'cms_page_id',
             'title',
-            'content:ntext',
+            'content:html',
             'updated_by',
             'updated_on',
         ],

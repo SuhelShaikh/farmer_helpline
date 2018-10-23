@@ -10,13 +10,8 @@ use yii\grid\GridView;
 $this->title = 'Questions';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ea-questions-index">
+<div class="ea-questions-pending">
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Ask Questions', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [

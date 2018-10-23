@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\EaQuestions;
+use backend\models\EaAnswers;
 use backend\models\EaQuestionsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -51,9 +52,28 @@ class EaQuestionsController extends Controller
      */
     public function actionView($id)
     {
+
+        $model = EaQuestions::findOne($id);        
+        //Get all request & response
+        $data = EaQuestions::find()
+        ->joinWith(['answer'])
+        ->where('ea_answers.token=ea_questions.token AND ea_questions.token='.$model->token)
+        ->all();
+        //Get Not answerd Questions
+        $questionModel = EaQuestions::find()
+        ->where(["=","status","0"])
+        ->andWhere(["=","token", $model->token])
+        ->all();
+        //get Question having no response
+        $queModel = new EaQuestions();
+        $queModel['user_id'] = 2;
+        $queModel['token'] = $model->token;
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $queModel,
+            'data' => $data,
+            'questionModel'=>$questionModel
         ]);
+
     }
 
     /**
@@ -64,10 +84,21 @@ class EaQuestionsController extends Controller
     public function actionCreate()
     {
         $model = new EaQuestions();
-	print_r(Yii::$app->request->post());
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->query_id]);
+        if ($model->load(Yii::$app->request->post())) {
+            if(!isset($model['token'])){
+                $model['token'] = $this->getToken();
+                $model['main_question'] =1;
+            }
+            if($model->save()) {
+                return $this->redirect(['index', 'id' => $model->query_id]);
+            }else{
+                return $this->render('create', [
+                'model' => $model,
+            ]);
+            }
+            
         } else {
+            $model['user_id'] = 2;
             return $this->render('create', [
                 'model' => $model,
             ]);
@@ -106,6 +137,28 @@ class EaQuestionsController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+public function getToken(){
+    $num = rand(10,99);
+    return time().$num;
+
+}
+    public function actionQuestions($id)
+    {
+        $model = new EaQuestions();
+        $QuesModel = EaAnswers::findOne($id);
+        if ($model->load(Yii::$app->request->post())) {
+            $model['status'] = '1';
+            if($model->save()){
+            return $this->redirect(['questionView', 'id' => $model->ea_resp_id]);
+            }
+        } else {
+            
+            return $this->render('questions', [
+                'model' => $model
+            ]);
+        }
     }
 
     /**

@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+$statusArray = ['0'=>'Inactive','1'=>'Active'];
 /* @var $this yii\web\View */
 /* @var $model backend\models\Role */
 /* @var $form yii\widgets\ActiveForm */
@@ -14,12 +14,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'role_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->dropDownList([ '0', '1', ], ['prompt' => '']) ?>
-
-    <?= $form->field($model, 'created_on')->textInput() ?>
-
-    <?= $form->field($model, 'updated_on')->textInput() ?>
-
+    <?= $form->field($model, 'status')->dropDownList($statusArray , ['prompt' => 'Select Status']) ?>
+		<?php foreach($modulesData as $modules) { ?>
+					<input type="checkbox" name="modules[]" value="<?php echo $modules->modules_id; ?>"><?php echo $modules->module_name; ?>
+		<?php } ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

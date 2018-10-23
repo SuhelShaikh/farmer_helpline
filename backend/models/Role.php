@@ -30,7 +30,7 @@ class Role extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['role_name', 'status', 'created_on', 'updated_on'], 'required'],
+            [['role_name', 'status', 'created_on'], 'required'],
             [['status'], 'string'],
             [['created_on', 'updated_on'], 'safe'],
             [['role_name'], 'string', 'max' => 50],

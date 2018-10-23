@@ -37,9 +37,8 @@ class EaQuestions extends \yii\db\ActiveRecord
             [['user_id', 'question'], 'required'],
             [['user_id'], 'integer'],
             [['question'], 'string'],
-            [['created_on', 'updated_on', 'image_path', 'audio_video_path', 'status'], 'safe'],
+            [['created_on', 'updated_on', 'image_path', 'audio_video_path', 'status','ea_question_id','token'], 'safe'],
             [['image_path', 'audio_video_path', 'status'], 'string', 'max' => 45],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -66,5 +65,8 @@ class EaQuestions extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+    public function getAnswer(){
+        return $this->hasMany(EaAnswers::className(), ['ea_question_id' => 'query_id']);   
     }
 }

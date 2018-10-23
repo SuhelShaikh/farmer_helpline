@@ -1,40 +1,48 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+use yii\widgets\ActiveForm;
+use dosamigos\ckeditor\CKEditor;
+use backend\models\User;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\EaAnswers */
+/* @var $searchModel backend\models\EaQuestionsSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = $model->ea_resp_id;
-$this->params['breadcrumbs'][] = ['label' => 'Ea Answers', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Answers';
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
 ?>
-<div class="ea-answers-view">
+<div class="ea-answers-create">
+ <?php //echo "<pre>"; print_r($questionModel); ?>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->ea_resp_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->ea_resp_id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
+    <?php
+    foreach($data AS $models){
+    ?>
+        <?= Html::tag('div', $models->question, ['class' => 'question','align'=>'left']) ?>
+         <?php foreach($models->answer AS $answer){ ?>
+        <?= Html::tag('div', $answer->response, ['class' => 'response','align'=>'right','style'=>'background-color:#f9f9f9']) ?>
+         <?php } ?>
+         <hr>
+    <?php } 
+    if(!empty($questionModel)){
+    ?><?php foreach($questionModel AS $quesnModel){ ?>
+        <?= Html::tag('div', $quesnModel->question, ['class' => 'question','align'=>'left']) ?>
+       <?php
+   }
+         $form = ActiveForm::begin(['action' => ['ea-answers/create'],'options' => ['method' => 'post']]); ?>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'ea_resp_id',
-            'ea_question_id',
-            'ea_id',
-            'response:ntext',
-            'created_on',
-            'updated_on',
-        ],
-    ]) ?>
+    <?= $form->field($model, 'ea_id')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'ea_question_id')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'token')->hiddenInput()->label(false) ?>
+    <?= $form->field($model, 'response')->widget(CKEditor::className(), ['options' => ['rows' => 6],'preset' => 'basic']) ?>
+    <div class="form-group">
+        <?= Html::submitButton('Post', ['class' => 'btn btn-success']) ?>
+    </div>
 
+    <?php ActiveForm::end(); }?>
+
+
+    
 </div>

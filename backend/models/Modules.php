@@ -27,7 +27,7 @@ class Modules extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['module_name', 'created_on'], 'required'],
+            [['module_name'], 'required'],
             [['created_on'], 'safe'],
             [['module_name'], 'string', 'max' => 50],
         ];
@@ -44,4 +44,9 @@ class Modules extends \yii\db\ActiveRecord
             'created_on' => 'Created On',
         ];
     }
+	
+	public static function getModulesList()
+	{
+		return self::find()->all();
+	}
 }

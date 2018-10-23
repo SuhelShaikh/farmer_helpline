@@ -83,8 +83,9 @@ class CmsPagesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+			$model['updated_on'] = date('Y-m-d h:i:s');
+			$model->save();
             return $this->redirect(['index', 'id' => $model->cms_page_id]);
         } else {
             return $this->render('update', [
