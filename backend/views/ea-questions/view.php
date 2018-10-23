@@ -30,14 +30,14 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
     foreach($questionModel AS $quesnModel){
     ?>
         <?= Html::tag('div', $quesnModel->question, ['class' => 'question','align'=>'left']) ?>
-        <?= Html::a('Update Question', ['update', 'id' => $quesnModel->query_id], ['class' => 'btn btn-primary','style'=>'float:right']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $quesnModel->query_id], [
-            'class' => 'btn btn-danger','style'=>'float:right',
+        <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $quesnModel->query_id], [
+            'style'=>'float:right',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
-        ]) ?>
+        ]) ?>&nbsp;
+        <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['update', 'id' => $quesnModel->query_id], ['style'=>'float:right']) ?>
     <?php } 
     }else{ $form = ActiveForm::begin(['action' => ['ea-questions/create'],'options' => ['method' => 'post']]); ?>
 
