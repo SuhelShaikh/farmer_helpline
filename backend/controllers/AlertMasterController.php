@@ -32,6 +32,7 @@ class AlertMasterController extends Controller
                         'actions' => ['logout', 'index','requestpasswordreset','signup'],
                         'allow' => true,
                         'roles' => ['index'],
+
                     ],
                 ],
             ],
@@ -52,7 +53,7 @@ class AlertMasterController extends Controller
     {
         $searchModel = new AlertMasterSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        echo 'Synched';
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

@@ -8,6 +8,7 @@ use backend\models\AlertMasterSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * AlertMasterController implements the CRUD actions for AlertMaster model.
@@ -20,10 +21,25 @@ class AlertMasterController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error','requestpasswordreset'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout', 'index','requestpasswordreset','signup'],
+                        'allow' => true,
+                        'roles' => ['index'],
+
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'logout' => ['post'],
                 ],
             ],
         ];
@@ -37,7 +53,7 @@ class AlertMasterController extends Controller
     {
         $searchModel = new AlertMasterSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        echo 'Synched';
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
