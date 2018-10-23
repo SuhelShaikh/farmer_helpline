@@ -8,3 +8,45 @@
 ALTER TABLE `user` ADD `mobile_number` VARCHAR(10) NOT NULL AFTER `email`;
 CREATE TABLE `farmers_helpline`.`role` ( `role_id` SMALLINT NOT NULL AUTO_INCREMENT , `role_name` VARCHAR(50) NOT NULL COMMENT 'role name' , `status` ENUM('0','1') NOT NULL COMMENT 'status of the role' , `created_on` DATETIME NOT NULL , `updated_on` DATETIME NOT NULL , PRIMARY KEY (`role_id`)) ENGINE = InnoDB;
 CREATE TABLE `farmers_helpline`.`user_role` ( `user_role_id` INT NOT NULL AUTO_INCREMENT , `user_id` INT NOT NULL , `role_id` INT NOT NULL , PRIMARY KEY (`user_role_id`)) ENGINE = InnoDB;
+
+/*
+* Added By : Sushrut Deshpande.
+* Added On : 18/10/2018.
+* Query to create modules table.
+*/
+CREATE TABLE `modules` (
+ `modules_id` int(11) NOT NULL AUTO_INCREMENT,
+ `module_name` varchar(50) NOT NULL,
+ `created_on` datetime NOT NULL,
+ PRIMARY KEY (`modules_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+/*
+* Added By : Sushrut Deshpande.
+* Added On : 18/10/2018.
+* Query to create role_modules table.
+*/
+CREATE TABLE `role_modules` (
+ `role_module_id` int(11) NOT NULL AUTO_INCREMENT,
+ `module_id` int(11) NOT NULL COMMENT 'id from module table',
+ `role_id` int(11) NOT NULL COMMENT 'id from role table',
+ `status` enum('0','1') NOT NULL COMMENT '0 - inactive ,1 - active',
+ `created_by` int(11) NOT NULL COMMENT 'creators id',
+ `created_on` datetime NOT NULL,
+ PRIMARY KEY (`role_module_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+/*
+* Added By : Sushrut Deshpande.
+* Added On : 18/10/2018.
+* Query to create sms_management table.
+*/
+CREATE TABLE `sms_management` (
+ `sms_mng_id` int(11) NOT NULL AUTO_INCREMENT,
+ `sms_gateway_security` varchar(100) DEFAULT NULL COMMENT 'gateway password',
+ `sms_gateway_key` varchar(100) DEFAULT NULL COMMENT 'gateway key',
+ `status` enum('0','1') NOT NULL COMMENT '0 - inactive, 1 - active',
+ `created_on` datetime NOT NULL,
+ `updated_on` datetime NOT NULL,
+ PRIMARY KEY (`sms_mng_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
