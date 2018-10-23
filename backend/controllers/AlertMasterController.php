@@ -32,6 +32,7 @@ class AlertMasterController extends Controller
                         'actions' => ['logout', 'index','requestpasswordreset','signup'],
                         'allow' => true,
                         'roles' => ['index'],
+
                     ],
                 ],
             ],
