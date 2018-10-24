@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             'question:html',
+            'created_on',
             ['class' => 'yii\grid\ActionColumn',
             'template' => '{view}'],
         ],
