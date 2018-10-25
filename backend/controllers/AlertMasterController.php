@@ -1,9 +1,9 @@
 <?php
 
-namespace backend\models;
+namespace backend\controllers;
 
 use Yii;
-use backend\models\AlertMaster;
+use app\models\AlertMaster;
 use backend\models\AlertMasterSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
