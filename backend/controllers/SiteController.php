@@ -66,6 +66,12 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
+    public function actionCms()
+    {
+        return $this->render('home');
+    }
+
     /**
      * Login action.
      *
