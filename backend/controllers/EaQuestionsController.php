@@ -56,13 +56,8 @@ class EaQuestionsController extends Controller
         $model = EaQuestions::findOne($id);        
         //Get all request & response
         $data = EaQuestions::find()
-        ->joinWith(['answer'])
-        ->where('ea_answers.token=ea_questions.token AND ea_questions.token='.$model->token)
-        ->all();
-        //Get Not answerd Questions
-        $questionModel = EaQuestions::find()
-        ->where(["=","status","0"])
-        ->andWhere(["=","token", $model->token])
+        ->leftJoin('ea_answers','ea_answers.token=ea_questions.token AND ea_answers.ea_question_id=ea_questions.query_id')
+        ->where(' ea_questions.token='.$model->token.' ORDER BY ea_questions.query_id')
         ->all();
         //get Question having no response
         $queModel = new EaQuestions();
@@ -70,8 +65,7 @@ class EaQuestionsController extends Controller
         $queModel['token'] = $model->token;
         return $this->render('view', [
             'model' => $queModel,
-            'data' => $data,
-            'questionModel'=>$questionModel
+            'data' => $data
         ]);
 
     }
@@ -159,6 +153,13 @@ public function getToken(){
                 'model' => $model
             ]);
         }
+    }
+
+    public function actionPendingquestion(){
+        $questionModel = EaQuestions::find()
+        ->where('(UNIX_TIMESTAMP(`created_on`)+43200) < '.time().' AND status=\'0\'')
+        ->all();
+        print_r($questionModel);
     }
 
     /**

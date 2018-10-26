@@ -56,25 +56,17 @@ class EaAnswersController extends Controller
         $model = EaQuestions::findOne($id);        
         //Get all request & response
         $data = EaQuestions::find()
-        ->joinWith(['answer'])
-        ->where('ea_answers.token=ea_questions.token AND ea_questions.token='.$model->token)
+        ->leftJoin('ea_answers','ea_answers.token=ea_questions.token AND ea_answers.ea_question_id=ea_questions.query_id')
+        ->where(' ea_questions.token='.$model->token.' ORDER BY ea_questions.query_id')
         ->all();
-        //Get Not answerd Questions
-        $questionModel = EaQuestions::find()
-        ->where(["=","status","0"])
-        ->andWhere(["=","token", $model->token])
-        ->all();
+
         //get Question having no response
-        
         $queModel = new EaAnswers();
         $queModel['ea_id'] = 2;
-        if(!empty($questionModel))
-            $queModel['ea_question_id'] =  $questionModel[0]->query_id;
         $queModel['token'] = $model->token;
         return $this->render('view', [
             'model' => $queModel,
-            'data' => $data,
-            'questionModel'=>$questionModel
+            'data' => $data
         ]);
        /* return $this->render('view', [
             'model' => $this->findModel($id),

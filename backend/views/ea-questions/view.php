@@ -13,42 +13,30 @@ $this->title = 'Questions';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
 ?>
 <div class="ea-questions-create">
- <?php //echo "<pre>"; print_r($questionModel); ?>
-
-    
-
     <?php
+    $flag=1;
     foreach($data AS $models){
     ?>
-        <?= Html::tag('div', $models->question, ['class' => 'question','align'=>'left']) ?><br>
-         <?php foreach($models->answer AS $answer){ ?>
-        <?= Html::tag('div', $answer->response, ['class' => 'response','align'=>'right',]) ?>
-         <?php } ?>
-         <hr>
+        <?= Html::tag('div', $models->question, ['class' => 'question','align'=>'left']) ?>
+         <?php if(isset($models->answer) && $models->answer != NULL){
+            foreach($models->answer AS $answer){ ?>
+            <?= Html::tag('div', $answer->response, ['class' => 'response','align'=>'right',]) ?>
+            <?php } 
+        }else{
+           $flag=0;
+         }?><hr>
     <?php } 
-    if(!empty($questionModel)){
-    foreach($questionModel AS $quesnModel){
-    ?>
-        <?= Html::tag('div', $quesnModel->question, ['class' => 'question','align'=>'left']) ?>
-        <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $quesnModel->query_id], [
-            'style'=>'float:right',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>&nbsp;
-        <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['update', 'id' => $quesnModel->query_id], ['style'=>'float:right']) ?>
-    <?php } 
-    }else{ $form = ActiveForm::begin(['action' => ['ea-questions/create'],'options' => ['method' => 'post']]); ?>
-
-    <?= $form->field($model, 'user_id')->hiddenInput()->label(false) ?>
-    <?= $form->field($model, 'token')->hiddenInput()->label(false) ?>
-    <?= $form->field($model, 'question')->widget(CKEditor::className(), ['options' => ['rows' => 6],'preset' => 'basic']) ?>
-    <div class="form-group">
-        <?= Html::submitButton('Post', ['class' => 'btn btn-success']) ?>
-    </div>
-
-    <?php ActiveForm::end(); }?>
+    if($flag==1){
+        ?><div><?php
+        $form = ActiveForm::begin(['action' => ['ea-questions/create'],'options' => ['method' => 'post']]); ?>
+        <?= $form->field($model, 'user_id')->hiddenInput()->label(false) ?>
+        <?= $form->field($model, 'token')->hiddenInput()->label(false) ?>
+        <?= $form->field($model, 'question')->widget(CKEditor::className(), ['options' => ['rows' => 6],'preset' => 'basic']) ?>
+        <div class="form-group">
+            <?= Html::submitButton('Post', ['class' => 'btn btn-success']) ?>
+        </div>
+        <?php ActiveForm::end();?></div><?php
+     } ?>
 
 
     
