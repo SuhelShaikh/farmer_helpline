@@ -159,10 +159,10 @@
 	<div class="clearfix mb-3"></div>
     <div class="row">
         <div class="col col-sm-6 col-lg-3 mb-4 text-center">
-            <div class="card h-100">
+            <div class="card h-100 bg-light-green">
                 <div class="card-body">
                     <div class="feat-icon">
-                        <img src="images/icon-network-streamline.png" class="img-fluid" alt="Agronomists" />
+                        <img src="images/icons/agronomist.png" class="img-fluid" alt="Agronomists" />
                     </div>
                     <h5 class="card-title">Agronomists</h5>
                     <p class="card-text">Farmers can seek advice from VAS certified agronomists</p>
@@ -170,10 +170,10 @@
             </div>
         </div>
         <div class="col col-sm-6 col-lg-3 mb-4 text-center">
-            <div class="card h-100">
+            <div class="card h-100 bg-light-blue">
                 <div class="card-body">
                     <div class="feat-icon">
-                        <img src="images/icon-network-streamline.png" class="img-fluid" alt="Field Agents" />
+                        <img src="images/icons/field_agent.png" class="img-fluid" alt="Field Agents" />
                     </div>
                     <h5 class="card-title">Field Agents</h5>
                     <p class="card-text">Data capture device through low cost android smartphones</p>
@@ -181,10 +181,10 @@
             </div>
 		</div>
 		<div class="col col-sm-6 col-lg-3 mb-4 text-center">
-            <div class="card h-100">
+            <div class="card h-100 bg-light-orange">
                 <div class="card-body">
                     <div class="feat-icon">
-                        <img src="images/icon-network-streamline.png" class="img-fluid" alt="Financial Institutions" />
+                        <img src="images/icons/financial_institutions.png" class="img-fluid" alt="Financial Institutions" />
                     </div>
                     <h5 class="card-title">Financial Institutions</h5>
                     <p class="card-text">Banks, insurance bodies and other financial bodies...</p>
@@ -192,10 +192,10 @@
             </div>
 		</div>
 		<div class="col col-sm-6 col-lg-3 mb-4 text-center">
-            <div class="card h-100">
+            <div class="card h-100 bg-light-pink">
                 <div class="card-body">
                     <div class="feat-icon">
-                        <img src="images/icon-network-streamline.png" class="img-fluid" alt="Govt. Agencies" />
+                        <img src="images/icons/govt_agencies.png" class="img-fluid" alt="Govt. Agencies" />
                     </div>
                     <h5 class="card-title">Govt. Agencies</h5>
                     <p class="card-text">Agriculture policy makers can get real time ground level data...</p>

@@ -42,9 +42,9 @@
        url('../fonts/proxima-nova/proxima-nova-soft-bold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 } 
 /* common */
-body{font-family:Nova Medium,arial,sans-serif;}
-#connect .section-title, .about h2{font-family:Nova Bold,arial,sans-serif;}
-.login-title, .navbar-expand-md .navbar-nav .nav-link{font-family:Nova Semibold,arial,sans-serif;}
+body{font-family:Nova Medium,arial,sans-serif; color: #29534F;}
+#connect .section-title, .about h2, .features h2{font-family:Nova Bold,arial,sans-serif; color: #29534F;}
+.login-title, .navbar-expand-md .navbar-nav .nav-link{font-family:Nova Semibold,arial,sans-serif;color: #29534F;}
 footer, .btn{font-family:Nova Regular,arial,sans-serif;}
 #page-data h1, h1.page-title, h2.page-title{color: #0072bc;font-weight: normal !important;}
 .pointer{cursor:pointer;}
@@ -52,6 +52,10 @@ footer, .btn{font-family:Nova Regular,arial,sans-serif;}
 .border-left-5 {border-left: 5px solid;}
 .list-style-circle{list-style-type:circle;}
 .list-style-none{list-style-type:none;}
+.bg-light-green{background: #d4edda;}
+.bg-light-blue{background: #d1ecf1;}
+.bg-light-orange{background: #fff3cd;}
+.bg-light-pink{background: #f8d7da;}
 
 /* header */
 a.nav-link {
@@ -66,9 +70,12 @@ a.nav-link {
 }    
 .container.main-header .top-15.top-0{
     top:0;
-    background: #f1f1f1;
+    background: #fff3cd;
     padding-top: 0;
     padding-bottom: 0;
+}
+.features .card:hover{
+box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
 /* home page about section */
