@@ -17,3 +17,4 @@ ALTER TABLE `alert_master`
 
 ALTER TABLE `alert_master`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `alert_master` CHANGE `alert_type` `alert_type` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
