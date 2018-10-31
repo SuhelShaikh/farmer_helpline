@@ -155,12 +155,6 @@ public function getToken(){
         }
     }
 
-    public function actionPendingquestion(){
-        $questionModel = EaQuestions::find()
-        ->where('(UNIX_TIMESTAMP(`created_on`)+43200) < '.time().' AND status=\'0\'')
-        ->all();
-        print_r($questionModel);
-    }
 
     /**
      * Finds the EaQuestions model based on its primary key value.

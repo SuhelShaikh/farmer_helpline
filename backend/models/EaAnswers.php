@@ -3,7 +3,7 @@
 namespace backend\models;
 
 use Yii;
-
+use yii\base\Model;
 /**
  * This is the model class for table "ea_answers".
  *
@@ -35,7 +35,7 @@ class EaAnswers extends \yii\db\ActiveRecord
             [['ea_question_id', 'ea_id', 'response'], 'required'],
             [['ea_question_id', 'ea_id'], 'integer'],
             [['response'], 'string'],
-            [['created_on', 'updated_on','token','status'], 'safe'],
+            [['created_on', 'updated_on','token','status','email','content'], 'safe'],
         ];
     }
 
@@ -64,5 +64,28 @@ class EaAnswers extends \yii\db\ActiveRecord
 	public function getEaQuestion()
     {
         return $this->hasOne(EaQuestions::className(), ['query_id' => 'ea_question_id']);
+    }
+    public function sendNotificationEmail()
+    {
+        /* @var $user User */
+        $questionModel = EaQuestions::find()
+        ->joinWith('userEa',true, 'INNER JOIN')
+        ->andWhere("(UNIX_TIMESTAMP(ea_questions.`created_on`) + 43200) < " . time() . " AND ea_questions.status='0' AND ea_questions.mail_sent='0'")
+        ->all();
+        //print_r($questionModel);
+        foreach ($questionModel as $key => $value) {
+            Yii::$app->mailer->compose()
+              ->setFrom(['gawaderc@gmail.com'=>'Ravindra'])
+              ->setTo($value->userEa->email)
+              ->setSubject('Notification')
+              ->setHtmlBody("Our EA- ".$value->userEa->username . ' didnt respond to farmer.')
+              ->send();
+
+        //update flag
+            $model = EaQuestions::findOne($value->query_id);
+            $model['mail_sent'] = '1';
+            $model->save();
+        }
+        return 1;
     }
 }

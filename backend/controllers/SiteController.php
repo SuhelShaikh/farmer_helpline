@@ -13,6 +13,9 @@ use backend\models\SignupForm;
 use backend\models\UserRole;
 use backend\models\Role;
 use frontend\models\ContactForm;
+use backend\models\EaQuestions;
+use backend\models\EaAnswers;
+use backend\models\UserRelation;
 /**
  * Site controller
  */
@@ -21,7 +24,7 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-    public function behaviors()
+    /*public function behaviors()
     {
         return [
             'access' => [
@@ -42,6 +45,17 @@ class SiteController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
+                ],
+            ],
+        ];
+    }*/
+     public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
                 ],
             ],
         ];
@@ -189,4 +203,10 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionPendingquestion(){
+           $model = new EaAnswers();
+           $model->sendNotificationEmail();
+    }
+
 }

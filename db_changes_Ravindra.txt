@@ -6,6 +6,7 @@
 * Query to create qa_answers table.
 * Query to create crops table.
 * Query to create schedules table.
+* Query to create user relation table.
 */
 ======================================================
 CREATE TABLE `cms_pages` (
@@ -34,8 +35,6 @@ ALTER TABLE `ea_questions`
   ADD KEY `user_id` (`user_id`);
 ALTER TABLE `ea_questions`
   MODIFY `query_id` int(11) NOT NULL AUTO_INCREMENT;
-ALTER TABLE `ea_questions`
-  ADD CONSTRAINT `ea_questions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 ====================================================
 CREATE TABLE `ea_answers` (
@@ -50,7 +49,6 @@ ALTER TABLE `ea_answers` ADD PRIMARY KEY (`ea_resp_id`),
   ADD KEY `ea_question_id` (`ea_question_id`),
   ADD KEY `ea_id` (`ea_id`);
   ALTER TABLE `ea_answers` MODIFY `ea_resp_id` int(11) NOT NULL AUTO_INCREMENT;
-ALTER TABLE `ea_answers` ADD CONSTRAINT `ea_answers_ibfk_1` FOREIGN KEY (`ea_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 =====================================================
 CREATE TABLE `crops` (
@@ -76,8 +74,6 @@ CREATE TABLE `schedules` (
 ALTER TABLE `schedules` ADD PRIMARY KEY (`sched_id`),
   ADD KEY `crop_id` (`crop_id`);
 ALTER TABLE `schedules` MODIFY `sched_id` int(11) NOT NULL AUTO_INCREMENT;
-ALTER TABLE `schedules` ADD CONSTRAINT `schedules_ibfk_1` FOREIGN KEY (`crop_id`) REFERENCES `crops` (`crop_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
 
 ======================================================
 alter queries
@@ -85,3 +81,12 @@ alter queries
 ALTER TABLE `ea_answers` ADD `token` VARCHAR(20) NOT NULL AFTER `ea_resp_id`;
 ALTER TABLE `ea_questions` ADD `token` VARCHAR(20) NOT NULL AFTER `query_id`;
 ALTER TABLE `ea_questions` ADD `main_question` enum('0', '1')  NOT NULL AFTER `status`;
+ALTER TABLE `ea_questions` ADD `mail_sent` enum('0', '1')  NOT NULL AFTER `main_question`;
+
+=======================================================
+CREATE TABLE `user_relation` (
+  `relation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ea_id` int(11) NOT NULL,
+  `farmer_id` int(11) NOT NULL,
+  ADD PRIMARY KEY (`relation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

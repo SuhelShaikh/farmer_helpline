@@ -74,10 +74,16 @@ class EaQuestionsSearch extends EaQuestions
         return $dataProvider;
     }
 
-    public function searchPending($params)
+    public function searchPending($params,$flag)
     {
-        $query = EaQuestions::find()
-        ->where(['status' => '0']);
+        if($flag == 1){
+            $query = EaQuestions::find()
+            ->where("(UNIX_TIMESTAMP(ea_questions.`created_on`) + 43200) < " . time() . " AND ea_questions.status='0' AND ea_questions.mail_sent='0'");
+        }else{
+            $query = EaQuestions::find()
+            ->where(['status' => '0']);    
+        }
+        
 
         // add conditions that should always apply here
 

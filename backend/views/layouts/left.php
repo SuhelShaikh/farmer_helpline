@@ -42,10 +42,11 @@
                         'url' => '#',
                         'items' => [
                             ['label' => 'Response','icon' => 'file-code-o','url' => ['ea-answers/index']],
-                            ['label' => 'Pending Question','icon' => 'file-code-o','url' => ['ea-answers/pending']]
+                            ['label' => 'Pending Response','icon' => 'file-code-o','url' => ['ea-answers/pending']]
                         ]
                     ],
-                    
+                    ['label' => 'Pending Question','icon' => 'file-code-o','url' => ['ea-answers/pendingquesadmin']],
+                    ['label' => 'Assign Farmer','icon' => 'file-code-o','url' => ['userrelation/index']],
 
 					['label' => 'Create New User','icon' => 'file-code-o','url' => ['site/signup']],
 					['label' => 'Role','icon' => 'file-code-o','url' => ['role/index']],

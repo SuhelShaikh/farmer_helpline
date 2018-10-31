@@ -146,9 +146,18 @@ class EaAnswersController extends Controller
     public function actionPending()
     {
        $searchModel = new EaQuestionsSearch();
-       $dataProvider = $searchModel->searchPending(Yii::$app->request->queryParams);
+       $dataProvider = $searchModel->searchPending(Yii::$app->request->queryParams,0);
 
         return $this->render('pending', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionPendingquesadmin()
+    {
+       $searchModel = new EaQuestionsSearch();
+       $dataProvider = $searchModel->searchPending(Yii::$app->request->queryParams,1);
+        return $this->render('pendingquesadmin', [
             'dataProvider' => $dataProvider,
         ]);
     }

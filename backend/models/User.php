@@ -70,9 +70,10 @@ class User extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEaAnswers()
+    public function getUserRole()
     {
-        return $this->hasMany(EaAnswers::className(), ['ea_id' => 'id']);
+        
+       return $this->hasOne(Role::className(), array('role_id' => 'role_id'))->viaTable('user_role', array('user_id' => 'id'));
     }
 
     /**

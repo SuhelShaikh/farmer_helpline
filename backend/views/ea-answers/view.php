@@ -10,7 +10,7 @@ use backend\models\User;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Answers';
-$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
+//$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
 ?>
 <div class="ea-answers-create form-group">
      <?php

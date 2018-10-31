@@ -49,7 +49,7 @@ class EaQuestions extends \yii\db\ActiveRecord
     {
         return [
             'query_id' => 'Query ID',
-            'user_id' => 'Farmer',
+            'user_id' => 'Responsible EA',
             'question' => 'Question',
             'image_path' => 'Image Path',
             'audio_video_path' => 'Audio Video Path',
@@ -65,6 +65,10 @@ class EaQuestions extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+    public function getUserEa(){
+        return $this->hasOne(User::className(), array('id' => 'ea_id'))->viaTable('user_relation', array('farmer_id' => 'user_id'));
+
     }
     public function getAnswer(){
         return $this->hasMany(EaAnswers::className(), ['ea_question_id' => 'query_id']);   
