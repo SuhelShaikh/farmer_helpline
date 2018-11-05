@@ -1,0 +1,1 @@
+composer require --prefer-dist zyx/zyx-phpmailer "@stable"
