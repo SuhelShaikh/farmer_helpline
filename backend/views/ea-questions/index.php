@@ -11,15 +11,7 @@ $this->title = 'Questions';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<?php $this->registerJsFile('js/audiojs/audio.min.js', [yii\web\JqueryAsset::className()]); ?> 
-<script>
-      audiojs.events.ready(function() {
-        audiojs.createAll();
-      });
-    </script>
 <div class="ea-questions-index">
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Ask Questions', ['create'], ['class' => 'btn btn-success']) ?>
