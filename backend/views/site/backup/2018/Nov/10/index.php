@@ -1,109 +1,85 @@
 <?php
+
+use dosamigos\google\maps\LatLng;
+use dosamigos\google\maps\services\DirectionsWayPoint;
+use dosamigos\google\maps\services\TravelMode;
+use dosamigos\google\maps\overlays\PolylineOptions;
+use dosamigos\google\maps\services\DirectionsRenderer;
+use dosamigos\google\maps\services\DirectionsService;
+use dosamigos\google\maps\overlays\InfoWindow;
+use dosamigos\google\maps\overlays\Marker;
+use dosamigos\google\maps\Map;
+use dosamigos\google\maps\services\DirectionsRequest;
+use dosamigos\google\maps\overlays\Polygon;
+use dosamigos\google\maps\layers\BicyclingLayer;
 /* @var $this yii\web\View */
 
 $this->title = 'Dashboard';
 ?>
       <!-- Small boxes (Stat box) -->
-	  <!-- added by swanand -->
-	  <div class="row">        
-		<div class="col-lg-5 col-xs-12 user_stat">
-			<div class="stat_wrap bg-white pull-left w-100 pb-3">
-				<label class="box-title p-3 w-100 mb-0"><i class="fa fa-bell-o font-weight-bold mr-2"></i>Alerts</label>
-			
-				<div class="clearfix"></div>
-				<div class="col-lg-6 ">
-					<div class="p-2 alert alert-success small-box">
-						<div class="inner">
-							<h3 class="stat_cnt font-weight-bold">150</h3>
-							<p>Overdue Advice</p>						
-						</div>	
-						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-					</div>	
-				</div>
-				<div class="col-lg-6">
-					<div class="p-2 alert alert-danger small-box">
-						<div class="inner">
-							<h3 class="stat_cnt font-weight-bold">30</h3>
-							<p>Followup Overdue</p>
-						</div>
-						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-					</div>	
-				</div>
-			</div>	
-		</div>
-		<div class="col-lg-7 col-xs-12 user_stat">
-			<div class="stat_wrap bg-white pull-left w-100 pb-3">
-				<label class="box-title p-3 w-100 mb-0"><i class="fa fa-refresh font-weight-bold mr-2"></i>Farmers</label>
-				<div class="clearfix"></div>
-				<div class="col-lg-4">
-					<div class="p-2 alert alert-info small-box">
-						<div class="inner">
-							<h3 class="stat_cnt font-weight-bold">400</h3>
-							<p>Farmers</p>
-						</div>	
-						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-					</div>	
-				</div>
-				<div class="col-lg-4">
-					<div class="p-2 alert alert-success small-box">
-						<div class="inner">
-							<h3 class="stat_cnt font-weight-bold">50</h3>
-							<p>Followup Set</p>
-						</div>
-						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-					</div>
-				</div>
-				
-				<div class="col-lg-4">
-					<div class="p-2 alert alert-warning small-box">
-						<div class="inner">
-							<h3 class="stat_cnt font-weight-bold">200</h3>
-							<p>New Requests</p>
-						</div>	
-						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-					</div>
-				</div>
-			</div>	
-		</div>
-	   </div>
-	   <div class="clearfix">&nbsp;</div>
-	   <div class="row">
-			<div class="col-lg-12">
-				<div class="stat_wrap bg-white pull-left w-100 pb-3 pt-3">
-					<div class="col-lg-4">
-						<div class="p-2 alert alert-info small-box">
-							<div class="inner">
-								<h3 class="stat_cnt font-weight-bold">25</h3>
-								<p>Plot Crops Without Bahar</p>
-							</div>
-							<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-						</div>	
-					</div>
-					<div class="col-lg-4">
-						<div class="p-2 alert alert-danger small-box">
-							<div class="inner">
-								<h3 class="stat_cnt font-weight-bold">100</h3>
-								<p>EA Missing Updates</p>
-							</div>	
-							<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					
-					<div class="col-lg-4">
-						<div class="p-2 alert alert-warning small-box">
-							<div class="inner">
-								<h3 class="stat_cnt font-weight-bold">80</h3>
-								<p>Schedules Missing Updates</p>
-							</div>
-							<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>        
-	  </div>
-	  <!-- added by swanand -->
-	  <div class="clearfix">&nbsp;</div>
-	  
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>Farmers</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+              <p>Follow Up Set</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>44</h3>
+
+              <p>New Requests</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>65</h3>
+
+              <p>EA Missing Updates</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
@@ -162,3 +138,93 @@ $this->title = 'Dashboard';
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
+      <?php
+/*$coord = new LatLng(['lat' => 39.720089311812094, 'lng' => 2.91165944519042]);
+$map = new Map([
+    'center' => $coord,
+    'zoom' => 14,
+]);
+
+// lets use the directions renderer
+$home = new LatLng(['lat' => 39.720991014764536, 'lng' => 2.911801719665541]);
+$school = new LatLng(['lat' => 39.719456079114956, 'lng' => 2.8979293346405166]);
+$santo_domingo = new LatLng(['lat' => 39.72118906848983, 'lng' => 2.907628202438368]);
+
+// setup just one waypoint (Google allows a max of 8)
+$waypoints = [
+    new DirectionsWayPoint(['location' => $santo_domingo])
+];
+
+$directionsRequest = new DirectionsRequest([
+    'origin' => $home,
+    'destination' => $school,
+    'waypoints' => $waypoints,
+    'travelMode' => TravelMode::DRIVING
+]);
+
+// Lets configure the polyline that renders the direction
+$polylineOptions = new PolylineOptions([
+    'strokeColor' => '#FFAA00',
+    'draggable' => true
+]);
+
+// Now the renderer
+$directionsRenderer = new DirectionsRenderer([
+    'map' => $map->getName(),
+    'polylineOptions' => $polylineOptions
+]);
+
+// Finally the directions service
+$directionsService = new DirectionsService([
+    'directionsRenderer' => $directionsRenderer,
+    'directionsRequest' => $directionsRequest
+]);
+
+// Thats it, append the resulting script to the map
+$map->appendScript($directionsService->getJs());
+
+// Lets add a marker now
+$marker = new Marker([
+    'position' => $coord,
+    'title' => 'My Home Town',
+]);
+
+// Provide a shared InfoWindow to the marker
+$marker->attachInfoWindow(
+    new InfoWindow([
+        'content' => '<p>This is my super cool content</p>'
+    ])
+);
+
+// Add marker to the map
+$map->addOverlay($marker);
+
+// Now lets write a polygon
+$coords = [
+    new LatLng(['lat' => 25.774252, 'lng' => -80.190262]),
+    new LatLng(['lat' => 18.466465, 'lng' => -66.118292]),
+    new LatLng(['lat' => 32.321384, 'lng' => -64.75737]),
+    new LatLng(['lat' => 25.774252, 'lng' => -80.190262])
+];
+
+$polygon = new Polygon([
+    'paths' => $coords
+]);
+
+// Add a shared info window
+$polygon->attachInfoWindow(new InfoWindow([
+        'content' => '<p>This is my super cool Polygon</p>'
+    ]));
+
+// Add it now to the map
+$map->addOverlay($polygon);
+
+
+// Lets show the BicyclingLayer :)
+$bikeLayer = new BicyclingLayer(['map' => $map->getName()]);
+
+// Append its resulting script
+$map->appendScript($bikeLayer->getJs());
+
+// Display the map -finally :)
+echo $map->display();*/

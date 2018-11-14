@@ -70,12 +70,8 @@ class EaQuestions extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), array('id' => 'ea_id'))->viaTable('user_relation', array('farmer_id' => 'user_id'));
 
     }
-    public function getUserAssignedEa(){
-        return $this->hasOne(User::className(), array('id' => 'ea_id'))->viaTable('user_relation', array('ea_id' => 'user_id'));
-
-    }
     public function getAnswer(){
-        return $this->hasOne(EaAnswers::className(), ['ea_question_id' => 'query_id']);   
+        return $this->hasMany(EaAnswers::className(), ['ea_question_id' => 'query_id']);   
     }
 	
 	public static function getQuestionAndAnswer($model){
@@ -84,8 +80,8 @@ class EaQuestions extends \yii\db\ActiveRecord
 		->all();
 		return $questionAnswerDetails;
     }
-    public static function getPendingQuestionCount(){
-        $questionAnswerDetails = self::find()->where("ea_questions.status='0'")->count();
+    public static function getPendingQuestionCount($token){
+        $questionAnswerDetails = self::find()->where("ea_questions.status='0' AND token=".$token)->count();
         return $questionAnswerDetails;
     }
 }		
