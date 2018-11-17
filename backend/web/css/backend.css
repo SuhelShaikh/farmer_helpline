@@ -53,6 +53,7 @@ transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out !important
 .login-logo.text-center img.img-responsive{display:inline-block;margin-top:25px;}
 .login-box-body, .register-box-body{padding:0 30px 30px 30px;}
 .login-box-msg, .register-box-msg{font-size:18px;}
+
 /* login, register pages ends */
  .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {/*background-color: #f8f8f8 !important;*/ background-color:rgba(245,245,245,0.9) !important;}
 .skin-blue .user-panel>.info, .skin-blue .user-panel>.info>a{color:#313131 !important;}
