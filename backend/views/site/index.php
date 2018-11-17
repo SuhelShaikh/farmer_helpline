@@ -33,7 +33,7 @@ $this->title = 'Dashboard';
 		</div>
 		<div class="col-lg-7 col-xs-12 user_stat">
 			<div class="stat_wrap bg-white pull-left w-100 pb-3">
-				<label class="box-title p-3 w-100 mb-0"><i class="fa fa-refresh font-weight-bold mr-2"></i>Farmers</label>
+				<label class="box-title p-3 w-100 mb-0"><i class="fa fa-users font-weight-bold mr-2"></i>Farmers</label>
 				<div class="clearfix"></div>
 				<div class="col-lg-4">
 					<div class="p-2 alert alert-info small-box">

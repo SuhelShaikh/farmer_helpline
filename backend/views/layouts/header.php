@@ -40,7 +40,7 @@ use yii\helpers\Html;
                                             Support Team
                                             <small><i class="fa fa-clock-o"></i> 5 mins</small>
                                         </h4>
-                                        <p>Why not buy a new awesome theme?</p>
+                                        <p>Support team message here</p>
                                     </a>
                                 </li>
                                 <!-- end message -->
@@ -51,10 +51,10 @@ use yii\helpers\Html;
                                                  alt="user image"/>
                                         </div>
                                         <h4>
-                                            AdminLTE Design Team
+                                            Admin Team
                                             <small><i class="fa fa-clock-o"></i> 2 hours</small>
                                         </h4>
-                                        <p>Why not buy a new awesome theme?</p>
+                                        <p>Admin team message here</p>
                                     </a>
                                 </li>
                                 <li>
@@ -64,10 +64,10 @@ use yii\helpers\Html;
                                                  alt="user image"/>
                                         </div>
                                         <h4>
-                                            Developers
+                                            Farmer
                                             <small><i class="fa fa-clock-o"></i> Today</small>
                                         </h4>
-                                        <p>Why not buy a new awesome theme?</p>
+                                        <p>farmer text here</p>
                                     </a>
                                 </li>
                                 <li>
@@ -80,7 +80,7 @@ use yii\helpers\Html;
                                             Sales Department
                                             <small><i class="fa fa-clock-o"></i> Yesterday</small>
                                         </h4>
-                                        <p>Why not buy a new awesome theme?</p>
+                                        <p>Sales department text here</p>
                                     </a>
                                 </li>
                                 <li>
@@ -93,7 +93,7 @@ use yii\helpers\Html;
                                             Reviewers
                                             <small><i class="fa fa-clock-o"></i> 2 days</small>
                                         </h4>
-                                        <p>Why not buy a new awesome theme?</p>
+                                        <p>Reviewers text here</p>
                                     </a>
                                 </li>
                             </ul>
@@ -157,7 +157,7 @@ use yii\helpers\Html;
                                 <li><!-- Task item -->
                                     <a href="#">
                                         <h3>
-                                            Design some buttons
+                                            Task number 1
                                             <small class="pull-right">20%</small>
                                         </h3>
                                         <div class="progress xs">
@@ -173,7 +173,7 @@ use yii\helpers\Html;
                                 <li><!-- Task item -->
                                     <a href="#">
                                         <h3>
-                                            Create a nice theme
+                                            Task number 2
                                             <small class="pull-right">40%</small>
                                         </h3>
                                         <div class="progress xs">
@@ -189,7 +189,7 @@ use yii\helpers\Html;
                                 <li><!-- Task item -->
                                     <a href="#">
                                         <h3>
-                                            Some task I need to do
+                                            Task number 3
                                             <small class="pull-right">60%</small>
                                         </h3>
                                         <div class="progress xs">
@@ -205,7 +205,7 @@ use yii\helpers\Html;
                                 <li><!-- Task item -->
                                     <a href="#">
                                         <h3>
-                                            Make beautiful transitions
+                                            Task number 4
                                             <small class="pull-right">80%</small>
                                         </h3>
                                         <div class="progress xs">
@@ -239,32 +239,19 @@ use yii\helpers\Html;
                                  alt="User Image"/>
 
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                UserName - Farmer
+                                <small>Member since Nov. 2018</small>
                             </p>
                         </li>
-                        <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Followers</a>
-                            </div>
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Sales</a>
-                            </div>
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Friends</a>
-                            </div>
-                        </li>
-                        <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="#" class="btn btn-primary btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
                                 <?= Html::a(
                                     'Sign out',
                                     ['/site/logout'],
-                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
+                                    ['data-method' => 'post', 'class' => 'btn btn-primary btn-flat']
                                 ) ?>
                             </div>
                         </li>
