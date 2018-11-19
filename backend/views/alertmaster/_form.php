@@ -30,10 +30,13 @@ $statusArray = ['0'=>'Inactive','1'=>'Active'];
     ]) ?>
 
     <?= $form->field($model, 'status')->dropDownList($statusArray , ['prompt' => 'Select Status']) ?>
-
-     <div class="form-group" style="margin-left: 180px;margin-top:20px;">
+	
+     <div class="form-group">
+		<label class="control-label col-sm-3"></label>
+		<div class="col-sm-6">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success btncreate' : 'btn btn-primary btnupdate']) ?>
         <?= Html::a('Cancel', ['index'], ['class' => 'btn btn-secondary btncancel']) ?>
+		</div>
     </div>
 
     <?php ActiveForm::end(); ?>

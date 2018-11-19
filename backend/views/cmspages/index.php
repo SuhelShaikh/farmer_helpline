@@ -8,16 +8,18 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Cms Pages';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cms-pages-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+	<div>
+		<h1 class="mt-0">
+			<?= Html::encode($this->title) ?>
+			<p class="pull-right"><?= Html::a('Create Cms Pages', ['create'], ['class' => 'btn btn-success']) ?></p>
+		</h1>
+	</div>	
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Cms Pages', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+	<div class="clearfix"></div>
+    <div class="table-responsive w-100">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -33,4 +35,5 @@ $this->params['breadcrumbs'][] = $this->title;
 			'template' => '{update}',],
         ],
     ]); ?>
+	</div>
 </div>

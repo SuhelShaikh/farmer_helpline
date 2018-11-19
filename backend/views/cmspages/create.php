@@ -7,12 +7,12 @@ use yii\helpers\Html;
 /* @var $model app\models\CmsPages */
 
 $this->title = 'Create Cms Pages';
-$this->params['breadcrumbs'][] = ['label' => 'Cms Pages', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = ['label' => 'Cms Pages', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cms-pages-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="mt-0"><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

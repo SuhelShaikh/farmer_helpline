@@ -11,36 +11,35 @@ $this->title = 'Alert Messages';
 
 ?>
 <div class="alert-master-index">
-
-	
 	<div>
-	<p class="pull-right" style="margin-top: 43px;">
-	<?php
-	$draft = $publish = $all = '';
-	switch($from) {
-		case 'inactive' :
-			$draft = 'visitedlink';
-			break;
-		case 'active' :
-			$publish = 'visitedlink';
-			break;
-		case 'all' :
-			$all = 'visitedlink';
-			break;
-	}
-	?>
-	<?= Html::a('Active', ['active'], ['class' => $publish]) ?> |
-	<?= Html::a('Inactive', ['inactive'], ['class' => $draft]) ?> |
-	<?= Html::a('Show All', ['index'], ['class' => $all]) ?>
-	</p></div>
-<p class="pull-right" style="margin-right: -165px;">
-        	<?= Html::a('Create Alert Messages', ['create'], ['class' => 'btn btn-success']) ?>
-    	</p>
-    <h2><?= Html::encode($this->title) ?></h2>
+		<h2 class="mt-0"><?= Html::encode($this->title) ?>
+			<p class="pull-right"><?= Html::a('Create Alert Messages', ['create'], ['class' => 'btn btn-success']) ?></p>
+		</h2>	
+		<div class="clearfix"></div>
+		<p class="pull-right">
+			<?php
+			$draft = $publish = $all = '';
+			switch($from) {
+				case 'inactive' :
+					$draft = 'visitedlink';
+					break;
+				case 'active' :
+					$publish = 'visitedlink';
+					break;
+				case 'all' :
+					$all = 'visitedlink';
+					break;
+			}
+			?>
+			<?= Html::a('Active', ['active'], ['class' => $publish]) ?> |
+			<?= Html::a('Inactive', ['inactive'], ['class' => $draft]) ?> |
+			<?= Html::a('Show All', ['index'], ['class' => $all]) ?>
+		</p>
+	</div>
 	
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    
+    <div class="table-responsive w-100">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -76,4 +75,5 @@ $this->title = 'Alert Messages';
              ['class' => 'yii\grid\ActionColumn', 'template' => '{update} {delete}'],
         ],
     ]); ?>
+	</div>
 </div>

@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
+	<div class="table-responsive w-100">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -38,5 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'updated_on',
         ],
     ]) ?>
+	</div>
 
 </div>

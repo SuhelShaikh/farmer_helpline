@@ -10,7 +10,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Signup';
 ?>
 <div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="mt-0"><?= Html::encode($this->title) ?></h1>
 
     <p>Please fill out the following fields to signup:</p>
 
