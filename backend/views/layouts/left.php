@@ -24,7 +24,9 @@
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-
+<?php 
+use backend\models\EaQuestions;
+?>
         <!-- search form -->
         <!-- <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
@@ -43,27 +45,29 @@
                 'items' => [
                     //['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
 
-					['label' => 'Dashboard', 'icon' => 'dashboard', 'url' => ['site/index']],
-                    ['label' => 'Alert', 'icon' => 'bell-o', 'url' => ['alertmaster/index']],
-                    ['label' => 'SMS Management', 'icon' => 'envelope-o', 'url' => ['smsmanagement/index']],
-                    ['label' => 'CMS', 'icon' => 'desktop', 'url' => ['cmspages/index']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
+					['label' => 'Dashboard', 'icon' => 'file-code-o', 'url' => ['site/index']],
+                    ['label' => 'Alert', 'icon' => 'file-code-o', 'url' => ['alertmaster/index']],
+                    ['label' => 'SMS Management', 'icon' => 'file-code-o', 'url' => ['smsmanagement/index']],
+                    ['label' => 'CMS', 'icon' => 'file-code-o', 'url' => ['cmspages/index']],
+                   // ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
 					$alertClass,
-					['label' => 'Role','icon' => 'user-circle','url' => ['role/index']],
-					['label' => 'Modules','icon' => 'cubes','url' => ['modules/index']],
-					['label' => 'Role Modules','icon' => 'cube','url' => ['rolemodules/index']],
-                    ['label' => 'Question','icon' => 'bullhorn','url' => ['ea-questions/index']],
+					['label' => 'Role','icon' => 'file-code-o','url' => ['role/index']],
+					['label' => 'Modules','icon' => 'file-code-o','url' => ['modules/index']],
+				   // ['label' => 'Role Modules','icon' => 'file-code-o','url' => ['rolemodules/index']],
+                    ['label' => 'Question','icon' => 'file-code-o','url' => ['ea-questions/index']],
 
                     [
-                        'label' => 'Response',
-                        'icon' => 'envelope-open-o',
-                        'url' => '#',
-                        'items' => [
-                            ['label' => 'Response','icon' => 'comments','url' => ['ea-answers/index']],
-                            ['label' => 'Pending Response','icon' => 'comment','url' => ['ea-answers/pending']]
-                        ]
+                        'label' => 'Response ('.EaQuestions::getPendingQuestionCount().')   ',
+                        'icon' => 'file-code-o',
+                        'url' =>  ['ea-answers/index'],
+                        /*'items' => [
+                            ['label' => 'Response','icon' => 'file-code-o','url' => ['ea-answers/index']],
+                            ['label' => 'Pending Response','icon' => 'file-code-o','url' => ['ea-answers/pending']]
+                        ]*/
                     ],
-                    ['label' => 'Pending Question','icon' => 'question-circle-o','url' => ['ea-answers/pendingquesadmin']],
+                    ['label' => 'Pending Question','icon' => 'file-code-o','url' => ['ea-answers/pendingquesadmin']],
+                    ['label' => 'Create New User','icon' => 'file-code-o','url' => ['site/signup']],
+                    ['label' => 'Assign Farmers','icon' => 'file-code-o','url' => ['userrelation/index']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [

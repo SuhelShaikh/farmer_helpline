@@ -3,25 +3,23 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\EaAnswers;
-use backend\models\EaAnswersSearch;
 use backend\models\EaQuestions;
+use backend\models\EaAnswers;
 use backend\models\EaQuestionsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-
 /**
- * EaAnswersController implements the CRUD actions for EaAnswers model.
+ * EaQuestionsController implements the CRUD actions for EaQuestions model.
  */
-class EaAnswersController extends Controller
+class EaQuestionsController extends Controller
 {
     /**
      * @inheritdoc
      */
-   public function behaviors()
+    public function behaviors()
     {
         return [
             'access' => [
@@ -32,7 +30,7 @@ class EaAnswersController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index','pendingquesadmin','pending','view','create','update','respond'],
+                        'actions' => ['logout', 'index','questions','token','view','create','update'],
                         'allow' => true,
                         'roles' => ['@'],
 
@@ -47,15 +45,14 @@ class EaAnswersController extends Controller
             ],
         ];
     }
-
     /**
-     * Lists all EaAnswers models.
+     * Lists all EaQuestions models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new EaAnswersSearch();
-        $dataProvider = $searchModel->searchResponse(Yii::$app->request->queryParams);
+        $searchModel = new EaQuestionsSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -64,55 +61,59 @@ class EaAnswersController extends Controller
     }
 
     /**
-     * Displays a single EaAnswers model.
+     * Displays a single EaQuestions model.
      * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
+
         $model = EaQuestions::findOne($id);        
         //Get all request & response
-        $data = EaQuestions::getQuestionAndAnswer($model);
+		$data = EaQuestions::getQuestionAndAnswer($model);
 
         //get Question having no response
-        $queModel = new EaAnswers();
-        $queModel->ea_id = $_SESSION['__id'];
-        $queModel->token = $model->token;
+        $queModel = new EaQuestions();
+        $queModel['user_id'] = $_SESSION['__id'];
+        $queModel['token'] = $model->token;
         return $this->render('view', [
             'model' => $queModel,
             'data' => $data
         ]);
+
     }
 
     /**
-     * Creates a new EaAnswers model.
+     * Creates a new EaQuestions model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new EaAnswers();
+        $model = new EaQuestions();
         if ($model->load(Yii::$app->request->post())) {
+            if(!isset($model['token'])){
+                $model['token'] = $this->getToken();
+                $model['main_question'] =1;
+            }
             if($model->save()) {
-                //update questin status
-                $respModel = EaQuestions::findOne($model->ea_question_id);
-                $respModel->status = '1';
-                $respModel->save();
-                return $this->redirect(['index']);
+                return $this->redirect(['index', 'id' => $model->query_id]);
             }else{
-                return $this->render('view', [
+                return $this->render('create', [
                 'model' => $model,
             ]);
             }
+            
         } else {
-            return $this->render('view', [
+            $model['user_id'] = $_SESSION['__id'];
+            return $this->render('create', [
                 'model' => $model,
             ]);
         }
     }
 
     /**
-     * Updates an existing EaAnswers model.
+     * Updates an existing EaQuestions model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -122,59 +123,18 @@ class EaAnswersController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
-			$model->updated_on = date('Y-m-d h:i:s');
+			$model['updated_on'] = date('Y-m-d h:i:s');
 			$model->save();
-            return $this->redirect(['view', 'id' => $model->ea_resp_id]);
+            return $this->redirect(['view', 'id' => $model->query_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
             ]);
         }
     }
-	public function actionRespond($id)
-    {
-        $model = new EaAnswers();
-		$QuesModel = EaQuestions::findOne($id);
-        if ($model->load(Yii::$app->request->post())) {
-			$model->status = '1';
-			if($model->save()){
-            return $this->redirect(['view', 'id' => $model->ea_resp_id]); 
-			}
-        } else {
-			
-			$model->ea_question_id = $QuesModel->query_id;
-			//logged ea user id
-			$model->ea_id = $_SESSION['__id'];
-			$model->ea_id = $QuesModel->query_id;
-            $model->token = $QuesModel->token;
-            return $this->render('respond', [
-                'model' => $model,
-				'Quemodel'=>$QuesModel
-            ]);
-        }
-    }
-
-    public function actionPending()
-    {
-       $searchModel = new EaQuestionsSearch();
-       $dataProvider = $searchModel->searchPending(Yii::$app->request->queryParams,0);
-
-        return $this->render('pending', [
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    public function actionPendingquesadmin()
-    {
-       $searchModel = new EaQuestionsSearch();
-       $dataProvider = $searchModel->searchPending(Yii::$app->request->queryParams,1);
-        return $this->render('pendingquesadmin', [
-            'dataProvider' => $dataProvider,
-        ]);
-    }
 
     /**
-     * Deletes an existing EaAnswers model.
+     * Deletes an existing EaQuestions model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -186,16 +146,39 @@ class EaAnswersController extends Controller
         return $this->redirect(['index']);
     }
 
+	public function getToken(){
+		$num = rand(10,99);
+		return time().$num;
+
+	}
+    public function actionQuestions($id)
+    {
+        $model = new EaQuestions();
+        $QuesModel = EaAnswers::findOne($id);
+        if ($model->load(Yii::$app->request->post())) {
+            $model['status'] = '1';
+            if($model->save()){
+            return $this->redirect(['questionView', 'id' => $model->ea_resp_id]);
+            }
+        } else {
+            
+            return $this->render('questions', [
+                'model' => $model
+            ]);
+        }
+    }
+
+
     /**
-     * Finds the EaAnswers model based on its primary key value.
+     * Finds the EaQuestions model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return EaAnswers the loaded model
+     * @return EaQuestions the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = EaAnswers::findOne($id)) !== null) {
+        if (($model = EaQuestions::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

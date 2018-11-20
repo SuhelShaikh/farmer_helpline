@@ -5,13 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\EaAnswers;
 use backend\models\EaQuestions;
 
 /**
- * EaAnswersSearch represents the model behind the search form about `backend\models\EaAnswers`.
+ * EaQuestionsSearch represents the model behind the search form about `backend\models\EaQuestions`.
  */
-class EaAnswersSearch extends EaAnswers
+class EaQuestionsSearch extends EaQuestions
 {
     /**
      * @inheritdoc
@@ -19,8 +18,8 @@ class EaAnswersSearch extends EaAnswers
     public function rules()
     {
         return [
-            [['ea_resp_id', 'ea_question_id', 'ea_id'], 'integer'],
-            [['response', 'created_on', 'updated_on'], 'safe'],
+            [['query_id', 'user_id'], 'integer'],
+            [['question', 'image_path', 'audio_video_path', 'created_on', 'updated_on', 'status','answer'], 'safe'],
         ];
     }
 
@@ -42,13 +41,9 @@ class EaAnswersSearch extends EaAnswers
      */
     public function search($params)
     {
-        $query = EaAnswers::find()
-        ->select("ea_question_id,question,ea_id,response,ea_question_id")
-        ->joinWith('eaQuestion',true,'RIGHT JOIN')
-        //->rightJoin('ea_questions','ea_answers.ea_question_id=ea_questions.query_id')
-        ->where(['ea_questions.main_question' => '1']);
+        $query = EaQuestions::find()
+        ->where(['main_question' => '1']);
 
-       // ->joinWith('eaQuestion')
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -65,22 +60,30 @@ class EaAnswersSearch extends EaAnswers
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'ea_resp_id' => $this->ea_resp_id,
-            'ea_question_id' => $this->ea_question_id,
-            'ea_id' => $this->ea_id,
+            'query_id' => $this->query_id,
+            'user_id' => $this->user_id,
             'created_on' => $this->created_on,
             'updated_on' => $this->updated_on,
+            'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'response', $this->response]);
+        $query->andFilterWhere(['like', 'question', $this->question])
+            ->andFilterWhere(['like', 'image_path', $this->image_path])
+            ->andFilterWhere(['like', 'audio_video_path', $this->audio_video_path]);
 
         return $dataProvider;
     }
-    public function searchResponse($params){
-        $query = EaQuestions::find()
-        ->joinWith('answer',true,'LEFT JOIN')
-        ->where(['ea_questions.main_question' => '1'])
-        ->orderBy(['status'=>SORT_ASC],['created_on' => SORT_DESC]);
+
+    public function searchPending($params,$flag)
+    {
+        if($flag == 1){
+            $query = EaQuestions::find()
+            ->where("(UNIX_TIMESTAMP(ea_questions.`created_on`) + 43200) < " . time() . " AND ea_questions.status='0' AND ea_questions.mail_sent='0'");
+        }else{
+            $query = EaQuestions::find()
+            ->where(['status' => '0']);    
+        }
+        
 
         // add conditions that should always apply here
 
@@ -95,6 +98,18 @@ class EaAnswersSearch extends EaAnswers
             // $query->where('0=1');
             return $dataProvider;
         }
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'query_id' => $this->query_id,
+            'user_id' => $this->user_id,
+            'created_on' => $this->created_on,
+            'updated_on' => $this->updated_on,
+        ]);
+
+        $query->andFilterWhere(['like', 'question', $this->question])
+            ->andFilterWhere(['like', 'image_path', $this->image_path])
+            ->andFilterWhere(['like', 'audio_video_path', $this->audio_video_path]);
 
         return $dataProvider;
     }

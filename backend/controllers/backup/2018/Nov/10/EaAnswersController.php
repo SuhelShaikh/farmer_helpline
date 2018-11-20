@@ -55,7 +55,7 @@ class EaAnswersController extends Controller
     public function actionIndex()
     {
         $searchModel = new EaAnswersSearch();
-        $dataProvider = $searchModel->searchResponse(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
