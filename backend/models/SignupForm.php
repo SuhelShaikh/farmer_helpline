@@ -14,7 +14,14 @@ class SignupForm extends Model
     public $password;
 	public $mobile_number;
 	public $user_role;
-
+	public $first_name;
+	public $middle_name;
+	public $last_name;
+	public $age;
+	public $birth_date;
+	public $gender;
+	public $home_address;
+	public $assign_users;
     /**
      * @inheritdoc
      */
@@ -38,7 +45,11 @@ class SignupForm extends Model
 			['mobile_number','required'],
 			['mobile_number','string','max'=>10],
 			
-			['user_role','required'],
+			[['user_role','first_name','last_name','age','gender'],'required'],
+            /*[['age','birth_date','gender','home_address','assign_users'],'required', 'when' => function($model) {
+                return $model->user_role == 6;
+                //return $model->user_role == 6;
+            }],*/
         ];
     }
 
@@ -58,7 +69,13 @@ class SignupForm extends Model
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
-        
+        $user->first_name = $this->first_name;
+        $user->middle_name = $this->middle_name;
+        $user->last_name = $this->last_name;
+        $user->age = $this->age;
+        $user->birth_date = $this->birth_date;
+        $user->gender = $this->gender;
+        $user->mobile_number = $this->mobile_number;
         return $user->save() ? $user : null;
     }
 }

@@ -8,6 +8,9 @@ use backend\models\UserRoleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\models\User;
+use backend\models\FarmDetails;
+use backend\models\CropDetails;
 
 /**
  * UserroleController implements the CRUD actions for UserRole model.
@@ -37,7 +40,6 @@ class UserroleController extends Controller
     {
         $searchModel = new UserRoleSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -51,8 +53,13 @@ class UserroleController extends Controller
      */
     public function actionView($id)
     {
+        $userDetails = User::find()->where(['id'=>$id])->one();
+        $farmDetails = FarmDetails::find()->where(['farmer_id'=>$id])->one();
+        $cropDetails = CropDetails::find()->where(['farmer_id'=>$id])->one();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'userdetails' => $userDetails,
+            'farmdetails' => $farmDetails,
+            'cropdetails' => $cropDetails,
         ]);
     }
 

@@ -53,8 +53,28 @@ class Role extends \yii\db\ActiveRecord
 	
 	public static function getUserRoleList()
 	{
-		$userRoleList = self::find()->all();
+	    $userRoleList = self::getRole();
 		$userRoleDropDownList = ArrayHelper::map($userRoleList,'role_id','role_name');
 		return $userRoleDropDownList;
+	}
+	
+	public static function getRole($id=[])
+	{
+	    if(!empty($id) && is_array($id)) {
+	        $userRoleList = self::find()->where(['NOT IN','role_id',$id])->all();
+	    } else {
+	        $userRoleList = self::find()->all();
+	    }
+	    return $userRoleList;
+	}
+	
+	public static function getRoleIds()
+	{
+	    $roleIds = [];
+	    $userRoleList = self::getRole([6]);
+	    foreach($userRoleList as $userRoleLst) {
+	        $roleIds[] =  $userRoleLst->role_id;
+	    }
+	    return $roleIds;
 	}
 }

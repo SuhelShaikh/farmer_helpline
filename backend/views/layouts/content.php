@@ -37,9 +37,9 @@ use dmstr\widgets\Alert;
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 2.0
+        Powered by <a href="javascript:void(0);" class="font-weight-bold">Qloud Solutions Pvt. Ltd.</a>
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2018-2019 <a href="http://farm.marvelousfact.com">Future Farms</a>.</strong> All rights
     reserved.
 </footer>
 

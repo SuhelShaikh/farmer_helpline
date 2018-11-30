@@ -13,6 +13,14 @@ use yii\helpers\ArrayHelper;
  */
 class UserRole extends \yii\db\ActiveRecord
 {
+    public $first_name;
+    public $last_name;
+    public $age;
+    public $state;
+    public $district;
+    public $mandal;
+    public $village;
+    public $id;
     /**
      * @inheritdoc
      */
@@ -28,8 +36,9 @@ class UserRole extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'role_id'], 'required'],
-            [['user_id', 'role_id'], 'integer'],
-        ];
+            [['user_id', 'role_id','age'], 'integer'],
+            [['first_name','last_name'],'string']
+,        ];
     }
 
     /**
@@ -48,5 +57,38 @@ class UserRole extends \yii\db\ActiveRecord
 	{
 		$userRoleDetails = self::find()->where(['user_id'=>$userId])->one();
 		return $userRoleDetails->role_id;
+	}
+	
+	public static function getUserIds($roles) {
+	    $userRoleDetails = self::find()->where(['IN','role_id',$roles])->all();
+	    $userIds = [];
+	    foreach($userRoleDetails as $userRoleDtls) {
+	        $userIds[] = $userRoleDtls->user_id;
+	    }
+	    return $userIds;
+	}
+	
+	public function getState()
+	{
+	    $stateDetails = State::find()->select('name')->where(['state_id'=>$this->state])->one();
+	    return $stateDetails['name'];
+	}
+	
+	public function getDistrict()
+	{
+	    $districtDetails = District::find()->select('name')->where(['dis_id'=>$this->district])->one();
+	    return $districtDetails['name'];
+	}
+	
+	public function getMandal()
+	{
+	    $mandalDetails = Mandal::find()->select('name')->where(['mandal_id'=>$this->mandal])->one();
+	    return $mandalDetails['name'];
+	}
+	
+	public function getVillage()
+	{
+	    $villageDetails = Village::find()->select('name')->where(['village_id'=>$this->village])->one();
+	    return $villageDetails['name'];
 	}
 }

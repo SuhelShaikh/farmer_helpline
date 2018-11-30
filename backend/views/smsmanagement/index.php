@@ -8,36 +8,36 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Sms Managements';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sms-management-index">
-
-    <div>
-    <p class="pull-right" style="margin-top: 43px;">
-    <?php
-    $draft = $publish = $all = '';
-    switch($from) {
-        case 'inactive' :
-            $draft = 'visitedlink';
-            break;
-        case 'active' :
-            $publish = 'visitedlink';
-            break;
-        case 'all' :
-            $all = 'visitedlink';
-            break;
-    }
-    ?>
-    <?= Html::a('Active', ['active'], ['class' => $publish]) ?> |
-    <?= Html::a('Inactive', ['inactive'], ['class' => $draft]) ?> |
-    <?= Html::a('Show All', ['index'], ['class' => $all]) ?>
-    </p></div>
-
-    <p class="pull-right" style="margin-right: -165px;">
-        <?= Html::a('Create Sms Management', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <h2><?= Html::encode($this->title) ?></h2>
-
+	<div>
+		<h2 class="mt-0"><?= Html::encode($this->title) ?>
+			<p class="pull-right"><?= Html::a('Create Sms Management', ['create'], ['class' => 'btn btn-success']) ?></p>
+		</h2>
+		<div class="clearfix"></div>
+		<p class="pull-right">
+		<?php
+			$draft = $publish = $all = '';
+			switch($from) {
+				case 'inactive' :
+					$draft = 'visitedlink';
+					break;
+				case 'active' :
+					$publish = 'visitedlink';
+					break;
+				case 'all' :
+					$all = 'visitedlink';
+					break;
+			}
+			?>
+			<?= Html::a('Active', ['active'], ['class' => $publish]) ?> |
+			<?= Html::a('Inactive', ['inactive'], ['class' => $draft]) ?> |
+			<?= Html::a('Show All', ['index'], ['class' => $all]) ?>
+		</p>
+	</div>
+	<div class="clearfix"></div>
+	<div class="table-responsive w-100">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -69,4 +69,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+	</div>
 </div>
