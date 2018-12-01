@@ -8,16 +8,9 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Roles';
-$this->params['breadcrumbs'][] = $this->title;
-?>
-<div class="role-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Role', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+//$this->params['breadcrumbs'][] = $this->title;
+?><div class="clearfix"></div>
+<div class="role-index">	<div>		<h1 class="mt-0">			<?= Html::encode($this->title) ?>			<?php // echo $this->render('_search', ['model' => $searchModel]); ?>			<p class="pull-right"> <?= Html::a('Create Role', ['create'], ['class' => 'btn btn-success']) ?> </p>		</h1>	</div>		<div class="clearfix"></div>	<div class="table-responsive">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -32,5 +25,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}'],
         ],
-    ]); ?>
+    ]); ?>	</div>
 </div>

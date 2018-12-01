@@ -7,8 +7,8 @@ use yii\helpers\Html;
 /* @var $model backend\models\UserRelation */
 
 $this->title = 'Assign Farmer';
-$this->params['breadcrumbs'][] = ['label' => 'Assign Farmer', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = ['label' => 'Assign Farmer', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-relation-create">
 

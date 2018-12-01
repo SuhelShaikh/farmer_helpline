@@ -9,10 +9,10 @@ use backend\models\EaQuestions;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Answers';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ea-answers-index">
-<?php //echo "<pre>";print_r($searchModel);?>
+<div class="ea-answers-index">	<div>		<h1 class="mt-0">			<?= Html::encode($this->title) ?>		</h1>	</div>
+<?php //echo "<pre>";print_r($searchModel);?>	<div class="clearfix"></div>	<div class="table-responsive">
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
@@ -58,4 +58,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]);
     ?>
+	</div>
 </div>

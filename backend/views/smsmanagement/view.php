@@ -7,24 +7,27 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\SmsManagement */
 
 $this->title = $model->sms_mng_id;
-$this->params['breadcrumbs'][] = ['label' => 'Sms Managements', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = ['label' => 'Sms Managements', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sms-management-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="mt-0">
+		<?= Html::encode($this->title) ?>
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->sms_mng_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->sms_mng_id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
+		<p class="pull-right">
+			<?= Html::a('Update', ['update', 'id' => $model->sms_mng_id], ['class' => 'btn btn-primary']) ?>
+			<?= Html::a('Delete', ['delete', 'id' => $model->sms_mng_id], [
+				'class' => 'btn btn-danger',
+				'data' => [
+					'confirm' => 'Are you sure you want to delete this item?',
+					'method' => 'post',
+				],
+			]) ?>
+		</p>
+	</h1>
+	<div class="clearfix">&nbsp;</div>
+	<div class="table-responsive w-100">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -38,5 +41,5 @@ $this->params['breadcrumbs'][] = $this->title;
             'updated_on',
         ],
     ]) ?>
-
+	</div>
 </div>

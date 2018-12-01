@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use backend\models\UserRelation;
 
 /**
- * UserrelationSearch represents the model behind the search form about `backend\models\UserRelation`.
+ * UserRelationSearch represents the model behind the search form about `backend\models\UserRelation`.
  */
-class UserrelationSearch extends UserRelation
+class UserRelationSearch extends UserRelation
 {
     /**
      * @inheritdoc

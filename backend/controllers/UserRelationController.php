@@ -4,11 +4,15 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\UserRelation;
-use backend\models\UserrelationSearch;
+use backend\models\UserRelationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
+use backend\models\UserRole;
+use backend\models\User;
+use backend\models\Role;
+use yii\helpers\ArrayHelper;
+use backend\models\State;
 
 /**
  * UserrelationController implements the CRUD actions for UserRelation model.
@@ -21,25 +25,10 @@ class UserrelationController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index','view','create','update','delete'],
-                        'allow' => true,
-                        'roles' => ['@'],
-
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'delete' => ['POST'],
                 ],
             ],
         ];
@@ -51,7 +40,7 @@ class UserrelationController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new UserrelationSearch();
+        $searchModel = new UserRelationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -136,5 +125,86 @@ class UserrelationController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    
+    public function actionUnassign()
+    {
+        $model = new UserRelation();
+        $users = UserRole::find()->select('user_id')->where(['role_id'=>6])->all();
+        $userIdss = [];
+        foreach($users as $user) {
+            $userRelationData = UserRelation::find()->where(['farmer_id'=>$user['user_id']])->all();
+            if(empty($userRelationData)) {
+                $userIdss[] =  $user['user_id'];
+                
+            }
+        }
+        $details = ArrayHelper::map(
+            User::find()->asArray()->where(['IN','id',$userIdss])->all(),
+            'id',
+            function($model) {
+                return $model['first_name'].' '.$model['last_name'];
+            }
+            );
+        $roles = Role::getRoleIds();
+        $userIds = UserRole::getUserIds($roles);
+        $users = ArrayHelper::map(
+            User::find()->asArray()->where(['IN','id',$userIds])->all(),
+            'id',
+            function($model) {
+                return $model['first_name'].' '.$model['last_name'];
+            }
+            );
+        $states = State::find()->all();
+        $stateList = ArrayHelper::map($states,'state_id','name');
+        if (Yii::$app->request->post()) {
+            $post = Yii::$app->request->post('UserRelation');
+            if(!empty($post['farmer_id'])) {
+                $farmers = $post['farmer_id'];
+                foreach($farmers as $farmer) {
+                    echo 1;
+                    $userRelationModel = new UserRelation();
+                    $userRelationModel->ea_id = $post['ea_id'];
+                    $userRelationModel->farmer_id = $farmer;
+                    $userRelationModel->save();
+                }
+            } 
+            return $this->redirect(['unassign']);
+        }
+        return $this->render('unassign_users',['model'=>$model,'details' => $details,'users'=>$users,'stateList'=>$stateList]);
+    }
+    
+    public function actionGetfilterdfarmer()
+    {
+        $this->layout = '';
+        $model = new UserRelation();
+        $users = UserRole::find()->select('user_id')->where(['role_id'=>6])->all();
+        $userIdss = [];
+        foreach($users as $user) {
+            $userRelationData = UserRelation::find()->Join('join','farm_details','user.id=farm_details.farmer_id')->where(['farmer_id'=>$user['user_id'],'farm_details.state' => $_POST['state-id']])->all();
+            if(empty($userRelationData)) {
+                $userIdss[] =  $user['user_id'];
+                
+            }
+        }
+        $details = ArrayHelper::map(
+            User::find()->asArray()->where(['IN','id',$userIdss])->all(),
+            'id',
+            function($model) {
+                return $model['first_name'].' '.$model['last_name'];
+            }
+            );
+        $roles = Role::getRoleIds();
+        $userIds = UserRole::getUserIds($roles);
+        $users = ArrayHelper::map(
+            User::find()->asArray()->where(['IN','id',$userIds])->all(),
+            'id',
+            function($model) {
+                return $model['first_name'].' '.$model['last_name'];
+            }
+            );
+        $states = State::find()->all();
+        $stateList = ArrayHelper::map($states,'state_id','name');
+        return $this->renderPartial('unassign_users_with_filters',['model'=>$model,'details' => $details,'users'=>$users,'stateList'=>$stateList]);
     }
 }

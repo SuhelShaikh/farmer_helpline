@@ -20,6 +20,7 @@ $this->title = 'Answers';
       });
     </script>
 <div class="ea-answers-create form-group">
+<div class="col-md-12 chat-wrapper">
      <?php
      $flag = 1;
     foreach($data AS $models){
@@ -50,6 +51,7 @@ $this->title = 'Answers';
         $model['ea_question_id'] = $models->query_id;
     } 
 }?>
+</div>
 <div class="col-md-12"><?php
     if($flag == 1){
         $form = ActiveForm::begin(['action' => ['ea-answers/create'],'options' => ['method' => 'post']]); ?>

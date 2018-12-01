@@ -13,6 +13,10 @@ use Yii;
  */
 class UserRelation extends \yii\db\ActiveRecord
 {
+    public $state;
+    public $district;
+    public $mandal;
+    public $village;
     /**
      * @inheritdoc
      */
@@ -27,7 +31,8 @@ class UserRelation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ea_id', 'farmer_id'], 'required'],
+            [['ea_id'], 'required'],
+            ['farmer_id','required','message'=>'Select at least one farmer to assign'],
             [['ea_id', 'farmer_id'], 'integer'],
         ];
     }
@@ -38,19 +43,13 @@ class UserRelation extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'relation_id' => 'ID',
-            'ea_id' => 'EA',
-            'farmer_id' => 'Farmer',
+            'relation_id' => 'Relation ID',
+            'ea_id' => 'Assign To',
+            'farmer_id' => 'Unassined Farmers',
+            'state'=>'State',
+            'district'=>'District',
+            'manda'=>'Mandal',
+            'village'=>'Village',
         ];
-    }
-
-    public function getAssignedQuestion(){
-        return $this->hasMany(EaQuestions::className(), ['user_id' => 'farmer_id']);   
-    }
-    public function getAssignedEa(){
-        return $this->hasOne(User::className(), ['id' => 'ea_id']);   
-    }
-    public function getUserName(){
-        return $this->hasOne(User::className(), ['id' => 'farmer_id']);   
     }
 }

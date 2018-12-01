@@ -114,7 +114,7 @@ $this->title = 'Dashboard';
             <ul class="nav nav-tabs pull-right ui-sortable-handle">
               <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
               <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-              <li class="pull-left header"><i class="fa fa-inbox"></i> Famer</li>
+              <li class="pull-left header"><i class="fa fa-bar-chart"></i> Famer</li>
             </ul>
             <div class="tab-content no-padding">
               <!-- Morris chart - Sales -->
@@ -140,23 +140,9 @@ $this->title = 'Dashboard';
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         <section class="col-lg-5 connectedSortable ui-sortable">
-
-          <!-- Map box -->
-          <div id="my_map_add" style="width:100%;height:300px;"></div>
-
-              <script type="text/javascript">
-              function my_map_add() {
-              var myMapCenter = new google.maps.LatLng(18.495120, 73.838410);
-              var myMapProp = {center:myMapCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-              var map = new google.maps.Map(document.getElementById("my_map_add"),myMapProp);
-              var marker = new google.maps.Marker({position:myMapCenter});
-              marker.setMap(map);
-              }
-              </script>
-
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrxdJlFE835mJ12cHJGkM59Fzt0hNJoF8&callback=my_map_add"></script>
-          <!-- /.box -->
-
+		<!-- google map -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.68102012854!2d73.72287963110963!3d18.52489042040445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1542885269408" width="600" height="450" frameborder="0" style="border:0;width:100%;height:350px;" allowfullscreen></iframe>
+		<!-- google map -->  
           <!-- /.box -->
         </section>
         <!-- right col -->
