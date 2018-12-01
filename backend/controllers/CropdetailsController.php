@@ -70,7 +70,10 @@ class CropdetailsController extends Controller
         $model = new CropDetails();
         $session = Yii::$app->session;
         if ($model->load(Yii::$app->request->post())) {
+            $post = Yii::$app->request->post('CropDetails');
             $model->farmer_id = $session['farmer_id'];
+ 	    //$model->crop_typ_id = $post['crop_type_id'];
+	    //echo '<pre>';print_r($model);exit;
             if($model->save()) {
                 return $this->redirect(['userrole/index']);
             }
