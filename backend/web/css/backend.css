@@ -338,6 +338,7 @@ input[type="checkbox"]:disabled + .label-text:before{
 
 
 /* EA chatting module */
+.test-class{color:red;}
 .ea-answers-create .question:after {
     width: 0;
     height: 0;
