@@ -28,9 +28,9 @@ class CropDetails extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['farmer_id', 'crop_name', 'crop_type'], 'required'],
-            [['farmer_id'], 'integer'],
-            [['crop_name', 'crop_type'], 'string', 'max' => 50],
+            [['farmer_id', 'crop_name','crop_type_id'], 'required'],
+            [['farmer_id','crop_type_id'], 'integer'],
+            [['crop_name'], 'string', 'max' => 50],
         ];
     }
 
@@ -43,7 +43,7 @@ class CropDetails extends \yii\db\ActiveRecord
             'crop_id' => 'Crop ID',
             'farmer_id' => 'Farmer ID',
             'crop_name' => 'Crop Name',
-            'crop_type' => 'Crop Type',
+            'crop_type_id' => 'Crop Type',
         ];
     }
 }
