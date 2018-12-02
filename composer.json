@@ -20,11 +20,7 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "kartik-v/yii2-widget-select2": "@dev",
         "dmstr/yii2-adminlte-asset": "^2.1",
-        "kartik-v/yii2-widget-datepicker": "@dev",
-        "kartik-v/dependent-dropdown": "dev-master",
-        "kartik-v/yii2-widget-depdrop": "dev-master",
-        "yii-dream-team/yii2-upload-behavior": "*",
-        "budyaga/yii2-cropper": "*"
+        "2amigos/yii2-ckeditor-widget": "^2.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
