@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 //use yii\widgets\ActiveForm;
 use yii\bootstrap\ActiveForm;
-
+use backend\models\CropType;
+$cropTypeList = CropType::getCropType();
 /* @var $this yii\web\View */
 /* @var $model backend\models\CropDetails */
 /* @var $form yii\widgets\ActiveForm */
@@ -53,7 +54,8 @@ use yii\bootstrap\ActiveForm;
 
     <?= $form->field($model, 'crop_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'crop_type')->textInput(['maxlength' => true]) ?>
+    <?php echo $form->field($model, 'crop_type_id')->dropDownList($cropTypeList,['prompt'=>'Select Crop Type']);?>		
+
 
     <div class="form-group">
         <label class="control-label col-sm-3"></label>

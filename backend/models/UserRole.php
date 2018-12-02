@@ -4,6 +4,7 @@ namespace backend\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
+use backend\models\CropType;
 /**
  * This is the model class for table "user_role".
  *
@@ -90,5 +91,11 @@ class UserRole extends \yii\db\ActiveRecord
 	{
 	    $villageDetails = Village::find()->select('name')->where(['village_id'=>$this->village])->one();
 	    return $villageDetails['name'];
+	}
+
+	public static function getCropType($typeId)
+	{
+		$croptType = CropType::find()->select('crop_type_name')->where(['crop_type_id'=>$typeId])->one();
+		return $croptType->crop_type_name;
 	}
 }
