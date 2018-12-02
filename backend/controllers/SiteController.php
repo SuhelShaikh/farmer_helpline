@@ -8,13 +8,22 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
-use backend\models\PasswordResetRequestForm;
-use backend\models\ResetPasswordForm;
+use frontend\models\PasswordResetRequestForm;
+use frontend\models\ResetPasswordForm;
 use backend\models\SignupForm;
+use backend\models\FarmerSignupForm;
+use backend\models\User;
 use backend\models\UserRole;
 use backend\models\Role;
-use backend\models\ContactForm;
-
+use frontend\models\ContactForm;
+use yii\helpers\ArrayHelper;
+use backend\models\UserRelation;
+use yii\bootstrap\ActiveForm;
+use yii\web\Response;
+use backend\models\District;
+use yii\helpers\Json;
+use backend\models\Mandal;
+use backend\models\Village;
 /**
  * Site controller
  */
@@ -30,11 +39,12 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error','requestpasswordreset','testmail'],
+                        'actions' => ['login', 'error','requestpasswordreset'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'requestpasswordreset','signup','index'],
+                        'actions' => ['logout', 'index','requestpasswordreset','signup','validate','farmersignup','createcrop','district',
+                        'mandal','village'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -144,21 +154,97 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+        $userId = Yii::$app->user->id;
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
+            $post = Yii::$app->request->post('SignupForm');
+            $model->user_role = $post['user_role'];
             if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
+                $userRole = new UserRole();
+                $userRole->user_id = $user->id;
+                $userRole->role_id = $model->user_role;
+                if($userRole->save()) {
                     return $this->goHome();
+                } else {
+					echo '<pre>';print_r($userRole->errors);
+				}
+            } else {
+				echo '<pre>';print_r($model->errors);
+			}
+        }
+		$userRoleList = Role::getUserRoleList();
+		$roles = Role::getRoleIds();
+		$userIds = UserRole::getUserIds($roles);
+		$users = ArrayHelper::map(
+		    User::find()->asArray()->where(['IN','id',$userIds])->all(),
+		    'id',
+		    function($model) {
+		        return $model['first_name'].' '.$model['last_name'];
+		    }
+		    );
+		$userRole = userRole::getUserRole($userId);
+        return $this->render('signup', [
+            'model' => $model,
+			'userRoleList'=>$userRoleList,
+            'users'=>$users,
+            'userRole'=>$userRole,
+        ]);
+    }
+	
+	
+	public function actionFarmersignup()
+    {
+        $session = Yii::$app->session;
+        $userId = Yii::$app->user->id;
+        $model = new FarmerSignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            $post = Yii::$app->request->post('FarmerSignupForm');
+            $model->user_role = 6;
+            if ($user = $model->signup()) {
+                $userRole = new UserRole();
+                $userRole->user_id = $user->id;
+                $userRole->role_id = $model->user_role;
+                if($userRole->save()) {
+                    if(!empty($post['assign_users'])) {
+                        $userRelation = new UserRelation();
+                        $userRelation->ea_id = $post['assign_users'];
+                        $userRelation->farmer_id = $user->id;
+                        if($userRelation->save()) {
+                            $session['farmer_id'] = $user->id;
+                            return $this->redirect(['farmdetails/create']);
+                        }
+                    }
+                    return $this->goHome();
+                } else {
+                    echo '<pre>';print_r($userRole->errors);
                 }
             }
         }
-		$userRoleList = Role::getUserRoleList();
-        return $this->render('signup', [
+		//$userRoleList = Role::getUserRoleList();
+		$roles = Role::getRoleIds();
+		$userIds = UserRole::getUserIds($roles);
+		//echo '<pre>';print_r($userIds);exit;
+		$users = ArrayHelper::map(
+		    User::find()->asArray()->where(['IN','id',$userIds])->all(),
+		    'id',
+		    function($model) {
+		        return $model['first_name'].' '.$model['last_name'];
+		    }
+		    );
+		$userRole = userRole::getUserRole($userId);
+        return $this->render('farmersignup', [
             'model' => $model,
-			'userRoleList'=>$userRoleList
+			//'userRoleList'=>$userRoleList,
+            'users'=>$users,
+            'userRole'=>$userRole,
         ]);
     }
-
+    
+    
+    public function actionCreatecrop()
+    {
+        echo 3434;
+    }
     /**
      * Requests password reset.
      *
@@ -170,10 +256,11 @@ class SiteController extends Controller
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-				Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+
                 //return $this->goHome();
             } else {
-				Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
+                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
             }
         }
 
@@ -207,13 +294,74 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-	
-	public function actionTestmail()
-	{
-		 \Yii::$app->mail->compose()
-    ->setFrom([\Yii::$app->params['supportEmail'] => 'Test Mail'])
-    ->setTo('sushrutd16@gmail.com')
-    ->setSubject('This is a test mail ' )
-    ->send();
-	}
+    
+    public function actionValidate()
+    {
+        $model = new SignupForm();
+        $request = \Yii::$app->getRequest();      
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+        if (Yii::$app->request->post()) {
+            $post = Yii::$app->request->post('SignupForm');
+            $model->load($post);
+            $model->scenario = "farmer";
+            return ActiveForm::validate($model);
+        }       
+    }
+    
+    // THE CONTROLLER
+    public function actionDistrict() {
+        $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $parents = $_POST['depdrop_parents'];
+            if ($parents != null) {
+                $state_id = $parents[0];
+                $districts = District::find()->where(['state_id'=>$state_id])->all();
+                foreach($districts as $key=>$district) {
+                    $out[$key]['id'] = $district['dis_id'];
+                    $out[$key]['name'] = $district['name'];
+                }
+                echo Json::encode(['output'=>$out, 'selected'=>'']);
+                return;
+            }
+        }
+        echo Json::encode(['output'=>'', 'selected'=>'']);
+    }
+    
+    public function actionMandal() {
+        $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $parents = $_POST['depdrop_parents'];
+            if ($parents != null) {
+                $district_id = $parents[0];
+                $mandals = Mandal::find()->where(['district_id'=>$district_id])->all();
+                foreach($mandals as $key=>$mandal) {
+                    $out[$key]['id'] = $mandal['mandal_id'];
+                    $out[$key]['name'] = $mandal['name'];
+                }
+                //echo '<pre>';print_r($out);exit;
+                echo Json::encode(['output'=>$out, 'selected'=>'']);
+                return;
+            }
+        }
+        echo Json::encode(['output'=>'', 'selected'=>'']);
+    }
+    
+    public function actionVillage() {
+        $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $parents = $_POST['depdrop_parents'];
+            if ($parents != null) {
+                $mandal_id = $parents[0];
+                $villages =Village::find()->where(['mandal_id'=>$mandal_id])->all();
+                foreach($villages as $key=>$village) {
+                    $out[$key]['id'] = $village['village_id'];
+                    $out[$key]['name'] = $village['name'];
+                }
+                //echo '<pre>';print_r($out);exit;
+                echo Json::encode(['output'=>$out, 'selected'=>'']);
+                return;
+            }
+        }
+        echo Json::encode(['output'=>'', 'selected'=>'']);
+    }
 }

@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\EaAnswers;
+use backend\models\EaQuestions;
 
 /**
  * EaAnswersSearch represents the model behind the search form about `backend\models\EaAnswers`.
@@ -42,10 +43,12 @@ class EaAnswersSearch extends EaAnswers
     public function search($params)
     {
         $query = EaAnswers::find()
-        ->joinWith('eaQuestion')
+        ->select("ea_question_id,question,ea_id,response,ea_question_id")
+        ->joinWith('eaQuestion',true,'RIGHT JOIN')
         //->rightJoin('ea_questions','ea_answers.ea_question_id=ea_questions.query_id')
-        ->where(['main_question' => '1']);
+        ->where(['ea_questions.main_question' => '1']);
 
+       // ->joinWith('eaQuestion')
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -70,6 +73,28 @@ class EaAnswersSearch extends EaAnswers
         ]);
 
         $query->andFilterWhere(['like', 'response', $this->response]);
+
+        return $dataProvider;
+    }
+    public function searchResponse($params){
+        $query = EaQuestions::find()
+        ->joinWith('answer',true,'LEFT JOIN')
+        ->where(['ea_questions.main_question' => '1'])
+        ->orderBy(['status'=>SORT_ASC],['created_on' => SORT_DESC]);
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
 
         return $dataProvider;
     }

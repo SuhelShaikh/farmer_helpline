@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+//use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
 $statusArray = ['0'=>'Inactive','1'=>'Active'];
 
 /* @var $this yii\web\View */
@@ -15,9 +16,14 @@ $statusArray = ['0'=>'Inactive','1'=>'Active'];
     </div>
     <?php }
 ?>
-<div class="sms-management-form">
+<div class="clearfix"></div>
+<div class="sms-management-form mt-3">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+            'layout' => 'horizontal',
+            'id' => 'sms-management-form',
+            'options' => ['enctype' => 'multipart/form-data'],
+    ]); ?>
 
     <?= $form->field($model, 'sms_gateway_name')->textInput(['maxlength' => true]) ?>
 
@@ -30,7 +36,9 @@ $statusArray = ['0'=>'Inactive','1'=>'Active'];
     <?= $form->field($model, 'status')->dropDownList($statusArray, ['prompt' => 'Select Status']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+		<label class="control-label col-sm-3"></label>
+		<div class="col-sm-6">
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?></div>
     </div>
 
     <?php ActiveForm::end(); ?>

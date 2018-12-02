@@ -64,34 +64,32 @@ class RoleController extends Controller
      * @return mixed
      */
     public function actionCreate()
-    {
+    {		$assignModuleListError = '';
         $model = new Role();
 		$modulesData = Modules::getModulesList();
         if ($model->load(Yii::$app->request->post())) {
 			$model->created_on = date('Y-m-d H:i:s');
-			$modulesList = Yii::$app->request->post('modules');
-			if($model->save()) {
-				foreach($modulesList as $modules) {
-					$roleModulesModel = new RoleModules();
-					$roleModulesModel->module_id = $modules;
-					$roleModulesModel->role_id = $model->role_id;
-					$roleModulesModel->status = 1;
-					$roleModulesModel->created_by = Yii::$app->user->id;
-					$roleModulesModel->created_on = date('Y-m-d H:i:s');
-					if($roleModulesModel->save(false)) {
-						$this->redirect(['index']);
-					} else {
-						//echo '<pre>';print_r($model->errors);
-					}
-				}
-			} else {
-				echo '<pre>';print_r($model->errors);
-			}		
+			$modulesList = Yii::$app->request->post('modules');			if(!empty($modulesList)) {
+				if($model->save()) {				
+					foreach($modulesList as $modules) {
+						$roleModulesModel = new RoleModules();
+						$roleModulesModel->module_id = $modules;
+						$roleModulesModel->role_id = $model->role_id;
+						$roleModulesModel->status = 1;
+						$roleModulesModel->created_by = Yii::$app->user->id;
+						$roleModulesModel->created_on = date('Y-m-d H:i:s');
+						if($roleModulesModel->save(false)) {
+							$this->redirect(['index']);
+						} else {
+							//echo '<pre>';print_r($model->errors);
+						}
+					}				} else {					echo '<pre>';print_r($model->errors);				}	 			} else {				$assignModuleListError = 'select at least one module';				return $this->render('create', [					'model' => $model,					'modulesData'=>$modulesData,					'assignModuleListError'=>$assignModuleListError,				]);			}
+
             //return $this->redirect(['view', 'id' => $model->role_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
-				'modulesData'=>$modulesData,
+				'modulesData'=>$modulesData,				'assignModuleListError'=>$assignModuleListError,
             ]);
         }
     }

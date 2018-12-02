@@ -1,0 +1,1688 @@
+[11-Nov-2018 05:55:57 Etc/GMT] PHP Notice:  Array to string conversion in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/log/Target.php on line 310
+[11-Nov-2018 05:55:57 Etc/GMT] PHP Notice:  Array to string conversion in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/log/Target.php on line 310
+[11-Nov-2018 05:55:57 Etc/GMT] PHP Notice:  Array to string conversion in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/log/Target.php on line 310
+[11-Nov-2018 05:55:57 Etc/GMT] PHP Notice:  Array to string conversion in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/log/Target.php on line 310
+[11-Nov-2018 06:05:06 Etc/GMT] PHP Notice:  Array to string conversion in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/log/Target.php on line 310
+[11-Nov-2018 06:05:06 Etc/GMT] PHP Notice:  Array to string conversion in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/log/Target.php on line 310
+[11-Nov-2018 06:05:06 Etc/GMT] PHP Notice:  Array to string conversion in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/log/Target.php on line 310
+[11-Nov-2018 06:05:06 Etc/GMT] PHP Notice:  Array to string conversion in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/log/Target.php on line 310
+[11-Nov-2018 15:33:04 Etc/GMT] PHP Fatal error:  Class 'backend\models\UserrelationSearch' not found in /home/marveyr9/public_html/farm/backend/controllers/UserrelationController.php on line 54
+[22-Nov-2018 11:05:15 Etc/GMT] PHP Parse error:  syntax error, unexpected '?>', expecting ']' in /home/marveyr9/public_html/farm/backend/views/layouts/left.php on line 10
+[22-Nov-2018 11:06:14 Etc/GMT] PHP Parse error:  syntax error, unexpected '?>', expecting ']' in /home/marveyr9/public_html/farm/backend/views/layouts/left.php on line 1
+[22-Nov-2018 12:16:02 Etc/GMT] PHP Fatal error:  Cannot use yii\bootstrap\ActiveForm as ActiveForm because the name is already in use in /home/marveyr9/public_html/farm/backend/views/smsmanagement/_form.php on line 5
+[23-Nov-2018 06:44:15 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 06:48:41 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 06:51:36 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 06:51:40 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 06:54:58 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 06:55:26 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 06:56:04 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 07:05:37 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 07:08:13 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 07:09:11 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 07:09:22 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='6') AND (`state`='1')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'state' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-backend=nq1q9obr4fa4rdlm5oigellp33; _csrf-backend=cd11e00fcd4c456fdb8976844a77751f6ee0ce168bc2c0627564c16ff6286aeaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22VHbpTz8VD1WhHH2aXRVESvzy1fT_WSBd%22%3B%7D',
+    'HTTP_HOST' => 'farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://farm.marvelousfact.com/backend/web/index.php?r=userrole%2Findex',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'UNIQUE_ID' => 'W-enod@J2XdRhxbMxHCYbQAAAIQ',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '123.252.161.114',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '56228',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1542956961.9393599033355712890625,
+    'REQUEST_TIME' => 1542956961,
+]
+[23-Nov-2018 07:09:54 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 07:23:35 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 07:30:39 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 08:25:28 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 08:26:14 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 08:41:50 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 08:49:26 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 08:49:34 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 09:08:36 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/ea-answers/view.php on line 59
+[23-Nov-2018 09:09:18 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 09:14:25 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 09:14:36 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/ea-answers/view.php on line 59
+[23-Nov-2018 09:14:45 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 09:57:12 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[23-Nov-2018 10:06:02 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 37
+[23-Nov-2018 10:06:27 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 10:06:36 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='6') AND (`state`='1')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'state' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-backend=u07ah4hbbf8b7jr1vfhnuhcjd3; _csrf-backend=f0dfbc4bcb8bb91163de318ed49fbbc0b8d3e798d8e21a2076592a960403c808a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22DQ4s4U0YvdRTLoqrIAiyGRRmaAtHLsEu%22%3B%7D',
+    'HTTP_HOST' => 'farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://farm.marvelousfact.com/backend/web/index.php?r=userrole%2Findex',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'UNIQUE_ID' => 'W-fRKzWpfbkbjaPg01453wAAAAo',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '123.252.161.114',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '55988',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1542967595.845736980438232421875,
+    'REQUEST_TIME' => 1542967595,
+]
+[23-Nov-2018 10:06:47 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 10:06:53 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 10:16:14 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 10:24:07 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 10:30:16 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 12:32:32 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 37
+[23-Nov-2018 14:19:23 Etc/GMT] PHP Fatal error:  Class 'kartik\date\DatePicker' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 37
+[23-Nov-2018 14:24:17 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 14:24:42 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[23-Nov-2018 14:24:50 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 14:28:07 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 14:32:38 Etc/GMT] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/marveyr9/public_html/farm/vendor/kartik-v/yii2-widget-datepicker/src/DatePicker.php on line 344
+[23-Nov-2018 14:45:13 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[23-Nov-2018 17:10:56 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'district' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'district' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='6') AND (`district`='2')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'district' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=48c66871d103877f9fd65de247578bd779a631bc3555794f87e62c73609a20f8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22R7nUgwm6xtmglwJyTNioEofB8Xw0nAi3%22%3B%7D; advanced-backend=dfkca61eipt5jkeh9aepb47mq7',
+    'HTTP_HOST' => 'www.farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://www.farm.marvelousfact.com/backend/web/index.php?r=userrole%2Findex',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-g0oCcUq0yRZoZoItCPfQAAAQ4',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'www.farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '45.121.225.155',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '48850',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=&UserRoleSearch%5Bdistrict%5D=2&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=&UserRoleSearch%5Bdistrict%5D=2&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1542993056.1057689189910888671875,
+    'REQUEST_TIME' => 1542993056,
+]
+[23-Nov-2018 17:11:46 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'district' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'district' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='6') AND (`district`='1')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'district' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=48c66871d103877f9fd65de247578bd779a631bc3555794f87e62c73609a20f8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22R7nUgwm6xtmglwJyTNioEofB8Xw0nAi3%22%3B%7D; advanced-backend=dfkca61eipt5jkeh9aepb47mq7',
+    'HTTP_HOST' => 'www.farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://www.farm.marvelousfact.com/backend/web/index.php?r=userrole%2Findex',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-g00glFPeKKwm1hNJYESgAAAEk',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'www.farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '45.121.225.155',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '51849',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=&UserRoleSearch%5Bdistrict%5D=1&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=&UserRoleSearch%5Bdistrict%5D=1&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1542993106.1902630329132080078125,
+    'REQUEST_TIME' => 1542993106,
+]
+[23-Nov-2018 17:24:20 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='8') AND (`state`='1')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(103): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'state' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=48c66871d103877f9fd65de247578bd779a631bc3555794f87e62c73609a20f8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22R7nUgwm6xtmglwJyTNioEofB8Xw0nAi3%22%3B%7D; advanced-backend=dfkca61eipt5jkeh9aepb47mq7',
+    'HTTP_HOST' => 'www.farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://www.farm.marvelousfact.com/backend/web/index.php?r=userrole%2Findex',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-g3xFDB1aYbe2J-MJE@wwAAAgg',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'www.farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '45.121.225.155',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '40242',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1542993860.215034008026123046875,
+    'REQUEST_TIME' => 1542993860,
+]
+[25-Nov-2018 09:44:14 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\models\UserRelation::assignedEa' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('assignedEa')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('assignedEa')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(backend\models\UserRelation), 'assignedEa', NULL)
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(backend\models\UserRelation), 'assignedEa.user...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(backend\models\UserRelation), 1, 0)
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(backend\models\UserRelation), 1, 0)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(backend\models\UserRelation), 1, 0)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(backend\models\UserRelation), 1, 0)
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/marveyr9/public_html/farm/backend/views/userrelation/index.php(36): yii\base\Widget::widget(Array)
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#19 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserrelationController))
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserrelationController))
+#21 /home/marveyr9/public_html/farm/backend/controllers/UserrelationController.php(44): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\UserrelationController->actionIndex()
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrelation/in...', Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=145d2167adb06bb77d365fea2f6db4088f972de7e7c915ca900d27dbf6c88ccaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22_JFN0CWIX4_35LMy6oWnoR_rjx-NsG1-%22%3B%7D; advanced-backend=j2097f95tbh4lpt369ekivld50',
+    'HTTP_HOST' => 'farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://farm.marvelousfact.com/backend/web/index.php?r=site%2Fsignup',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-pu7lShApjAGo7ddCdtVAAAAAk',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '116.75.152.3',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '47314',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'r=userrelation%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?r=userrelation%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1543139054.75333404541015625,
+    'REQUEST_TIME' => 1543139054,
+]
+[25-Nov-2018 10:18:39 Etc/GMT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/marveyr9/public_html/farm/backend/controllers/RoleController.php on line 89
+[25-Nov-2018 10:18:43 Etc/GMT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/marveyr9/public_html/farm/backend/controllers/RoleController.php on line 89
+[25-Nov-2018 10:20:14 Etc/GMT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/marveyr9/public_html/farm/backend/controllers/RoleController.php on line 89
+[25-Nov-2018 10:20:14 Etc/GMT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/marveyr9/public_html/farm/backend/controllers/RoleController.php on line 89
+[25-Nov-2018 10:20:28 Etc/GMT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/marveyr9/public_html/farm/backend/controllers/RoleController.php on line 89
+[25-Nov-2018 10:20:29 Etc/GMT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/marveyr9/public_html/farm/backend/controllers/RoleController.php on line 89
+[25-Nov-2018 10:20:31 Etc/GMT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/marveyr9/public_html/farm/backend/controllers/RoleController.php on line 89
+[25-Nov-2018 10:20:32 Etc/GMT] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/marveyr9/public_html/farm/backend/controllers/RoleController.php on line 89
+[25-Nov-2018 10:23:50 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:23:51 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:24:01 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:24:02 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:24:03 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:24:05 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:24:06 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:24:12 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:24:13 Etc/GMT] PHP Parse error:  syntax error, unexpected ''layout'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/marveyr9/public_html/farm/backend/views/site/signup.php on line 23
+[25-Nov-2018 10:27:14 Etc/GMT] PHP Parse error:  syntax error, unexpected ';' in /home/marveyr9/public_html/farm/backend/controllers/SiteController.php on line 172
+[25-Nov-2018 11:44:30 Etc/GMT] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/marveyr9/public_html/farm/backend/views/layouts/left.php on line 113
+[25-Nov-2018 12:01:39 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\models\UserRelation::assignedEa' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('assignedEa')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('assignedEa')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(backend\models\UserRelation), 'assignedEa', NULL)
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(backend\models\UserRelation), 'assignedEa.user...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(backend\models\UserRelation), 1, 0)
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(backend\models\UserRelation), 1, 0)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(backend\models\UserRelation), 1, 0)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(backend\models\UserRelation), 1, 0)
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/marveyr9/public_html/farm/backend/views/userrelation/index.php(36): yii\base\Widget::widget(Array)
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#19 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserrelationController))
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserrelationController))
+#21 /home/marveyr9/public_html/farm/backend/controllers/UserrelationController.php(49): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\UserrelationController->actionIndex()
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrelation/in...', Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=66053f6070d6c1dca2edde417b02741c65863f387f37919193f9560abae0e446a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22e_2AyrlnbZcHnNi8-fPKwOSETt1145nb%22%3B%7D; advanced-backend=77p8ipjqodn9j8h6qn6ej8jgf0',
+    'HTTP_HOST' => 'farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://farm.marvelousfact.com/backend/web/index.php?r=site%2Fsignup',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-qPI2QKw@mVXO1JxJ2a4gAAAIk',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '116.75.152.3',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '33503',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'r=userrelation%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?r=userrelation%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1543147299.7922871112823486328125,
+    'REQUEST_TIME' => 1543147299,
+]
+[25-Nov-2018 13:05:23 Etc/GMT] PHP Parse error:  syntax error, unexpected '?>' in /home/marveyr9/public_html/farm/backend/views/role/view.php on line 13
+[25-Nov-2018 14:52:59 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\models\UserRelation::assignedEa' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('assignedEa')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('assignedEa')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(backend\models\UserRelation), 'assignedEa', NULL)
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(backend\models\UserRelation), 'assignedEa.user...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(backend\models\UserRelation), 1, 0)
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(backend\models\UserRelation), 1, 0)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(backend\models\UserRelation), 1, 0)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(backend\models\UserRelation), 1, 0)
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/marveyr9/public_html/farm/backend/views/userrelation/index.php(39): yii\base\Widget::widget(Array)
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#19 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserrelationController))
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserrelationController))
+#21 /home/marveyr9/public_html/farm/backend/controllers/UserrelationController.php(49): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\UserrelationController->actionIndex()
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrelation/in...', Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=8667573308e69022d0b255e6379e17662353ed63d561e7b784d95f9481248ca0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%225LdMODAK0zHmqTaI6CnbfiZ0pZzxErcq%22%3B%7D; advanced-backend=9ngomkp8d9r2o2t78fosr7moi6',
+    'HTTP_HOST' => 'farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://farm.marvelousfact.com/backend/web/index.php?r=role%2Fcreate',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-q3S9har8TQreQIJYFvowAAAIY',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '116.75.152.3',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '41250',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'r=userrelation%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?r=userrelation%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1543157579.346189975738525390625,
+    'REQUEST_TIME' => 1543157579,
+]
+[25-Nov-2018 17:43:42 Etc/GMT] PHP Fatal error:  Class 'Url' not found in /home/marveyr9/public_html/farm/backend/views/site/farmersignup.php on line 134
+[25-Nov-2018 17:46:38 Etc/GMT] PHP Fatal error:  Class 'common\components\Controller' not found in /home/marveyr9/public_html/farm/backend/controllers/UserController.php on line 20
+[25-Nov-2018 17:57:54 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\models\UserRelation::assignedEa' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('assignedEa')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('assignedEa')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(backend\models\UserRelation), 'assignedEa', NULL)
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(backend\models\UserRelation), 'assignedEa.user...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(backend\models\UserRelation), 1, 0)
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(backend\models\UserRelation), 1, 0)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(backend\models\UserRelation), 1, 0)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(backend\models\UserRelation), 1, 0)
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/marveyr9/public_html/farm/backend/views/userrelation/index.php(39): yii\base\Widget::widget(Array)
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#19 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserrelationController))
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserrelationController))
+#21 /home/marveyr9/public_html/farm/backend/controllers/UserrelationController.php(49): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\UserrelationController->actionIndex()
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrelation/in...', Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=eb77ea009784207113abbcf3af9c3baa32868949490f282f6d03f8b5350c8239a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22J6VJcbuUwjUKOlR4Qx6kQJP6dgq4o-IR%22%3B%7D; advanced-backend=6gvoi0mj62mo010fvjq77sfgp6',
+    'HTTP_HOST' => 'farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://farm.marvelousfact.com/backend/web/index.php?r=userrole%2Findex',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-riopQzZPEum@2sYO0OJAAAAJc',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '116.75.152.3',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '38974',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'r=userrelation%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?r=userrelation%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1543168674.3513700962066650390625,
+    'REQUEST_TIME' => 1543168674,
+]
+[25-Nov-2018 18:00:46 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/ea-questions/view.php on line 52
+[25-Nov-2018 18:00:54 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/ea-questions/_form.php on line 19
+[25-Nov-2018 18:01:07 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/ea-questions/_form.php on line 19
+[25-Nov-2018 18:01:30 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[25-Nov-2018 18:05:15 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[25-Nov-2018 18:05:18 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[25-Nov-2018 18:05:47 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[25-Nov-2018 18:06:31 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[25-Nov-2018 18:09:50 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[25-Nov-2018 18:12:14 Etc/GMT] PHP Fatal error:  Class 'dosamigos\ckeditor\CKEditor' not found in /home/marveyr9/public_html/farm/backend/views/alertmaster/_form.php on line 27
+[25-Nov-2018 19:49:11 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(95): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='6') AND (`state`='2')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(95): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'state' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => '*',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=cdbc109f7e47f48383932b15b64ff172a439cfcdfb21451e4d04cba836f5ada6a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TDIeMbDK_LycptrhFrKdz7GC6fYQM3gC%22%3B%7D; advanced-backend=vvf527iuttlrqm3tbledb790m6',
+    'HTTP_HOST' => 'www.farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://www.farm.marvelousfact.com/backend/web/index.php?r=userrole%2Findex',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 8.1.0; vivo 1723 Build/OPM1.171019.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36 VivoBrowser/5.7.0.2',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-r8t5vBraKzyvJrrCgIBwAAARc',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'www.farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '149.129.145.91',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '48547',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=2&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=2&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1543175351.062274932861328125,
+    'REQUEST_TIME' => 1543175351,
+]
+[25-Nov-2018 19:49:19 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(95): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='6') AND (`state`='1')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(95): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'state' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => '*',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => '_csrf-backend=cdbc109f7e47f48383932b15b64ff172a439cfcdfb21451e4d04cba836f5ada6a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22TDIeMbDK_LycptrhFrKdz7GC6fYQM3gC%22%3B%7D; advanced-backend=vvf527iuttlrqm3tbledb790m6',
+    'HTTP_HOST' => 'www.farm.marvelousfact.com',
+    'HTTP_REFERER' => 'http://www.farm.marvelousfact.com/backend/web/index.php?r=userrole%2Findex',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 8.1.0; vivo 1723 Build/OPM1.171019.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36 VivoBrowser/5.7.0.2',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'UNIQUE_ID' => 'W-r8v1XccNBsaXgaL84JLwAAAII',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'www.farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '149.129.145.91',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '49004',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1543175359.0590279102325439453125,
+    'REQUEST_TIME' => 1543175359,
+]
+[25-Nov-2018 19:50:11 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(95): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='6') AND (`state`='2')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(95): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'state' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_HOST' => 'www.farm.marvelousfact.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; U; Android 4.4.4; zh-CN; Coolpad Y82-520 Build/KTU84P) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/10.9.8.738 U3/0.8.0 Mobile Safari/534.30',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'UNIQUE_ID' => 'W-r885vBraKzyvJrrCgQoAAAAQ8',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'www.farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '101.89.239.216',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '52040',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=2&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=2&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1543175411.3200209140777587890625,
+    'REQUEST_TIME' => 1543175411,
+]
+[25-Nov-2018 19:50:20 Etc/GMT] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 17)
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\db\IntegrityException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\IntegrityException))
+#13 {main}
+Previous exception:
+exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php:902
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(902): PDOStatement->execute()
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(95): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'state' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `user_role` join `user` ON user.id=user_role.user_id join `user_relation` ON user.id=user_relation.farmer_id left join `farm_details` ON user.id=farm_details.farmer_id WHERE (`role_id`='6') AND (`state`='1')' in /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Schema.php:636
+Stack trace:
+#0 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(917): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(431): yii\db\Command->queryScalar()
+#3 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/db/Query.php(319): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(166): yii\db\Query->count('<span class="st...', '<span class="ke...')
+#6 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(149): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/ActiveDataProvider.php(106): yii\data\BaseDataProvider->getTotalCount()
+#8 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(81): yii\data\ActiveDataProvider->prepareModels()
+#9 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(94): yii\data\BaseDataProvider->prepare()
+#10 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/data/BaseDataProvider.php(135): yii\data\BaseDataProvider->getModels()
+#11 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(182): yii\data\BaseDataProvider->getCount()
+#12 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(153): yii\widgets\BaseListView->renderSummary()
+#13 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('<span class="st...')
+#14 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('<span class="st...')
+#15 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#16 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#17 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#18 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#19 /home/marveyr9/public_html/farm/backend/views/userrole/index.php(95): yii\base\Widget::widget(Array)
+#20 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(328): require('/home/marveyr9/...')
+#21 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/marveyr9/...', Array)
+#22 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/marveyr9/...', Array, Object(backend\controllers\UserroleController))
+#23 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserroleController))
+#24 /home/marveyr9/public_html/farm/backend/controllers/UserroleController.php(46): yii\base\Controller->render('index', Array)
+#25 [internal function]: backend\controllers\UserroleController->actionIndex()
+#26 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#27 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#28 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#29 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('userrole/index', Array)
+#30 /home/marveyr9/public_html/farm/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /home/marveyr9/public_html/farm/backend/web/index.php(17): yii\base\Application->run()
+#32 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'state' in where clause is ambiguous
+)
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+    'HTTP_CONNECTION' => 'close',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_HOST' => 'www.farm.marvelousfact.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 5.1.1; SM801 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko)     		Chrome/46.0.2490.11 Mobile Safari/537.36',
+    'HTTP_X_FORWARDED_FOR' => '209.99.16.245',
+    'UNIQUE_ID' => 'W-r8@5vBraKzyvJrrCgRpAAAAQA',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache/2.4.33 (cPanel) OpenSSL/1.0.2o mod_bwlimited/1.4 Phusion_Passenger/5.1.12',
+    'SERVER_NAME' => 'www.farm.marvelousfact.com',
+    'SERVER_ADDR' => '209.99.16.245',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '61.151.178.166',
+    'DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marveyr9/public_html/farm',
+    'SERVER_ADMIN' => 'webmaster@farm.marvelousfact.com',
+    'SCRIPT_FILENAME' => '/home/marveyr9/public_html/farm/backend/web/index.php',
+    'REMOTE_PORT' => '52480',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'REQUEST_URI' => '/backend/web/index.php?UserRoleSearch%5Bfirst_name%5D=&UserRoleSearch%5Blast_name%5D=&UserRoleSearch%5Bstate%5D=1&UserRoleSearch%5Bdistrict%5D=&UserRoleSearch%5Bmandal%5D=&UserRoleSearch%5Bvillage%5D=&r=userrole%2Findex',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1543175419.9105560779571533203125,
+    'REQUEST_TIME' => 1543175419,
+]

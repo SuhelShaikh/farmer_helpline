@@ -55,7 +55,7 @@ class EaAnswersController extends Controller
     public function actionIndex()
     {
         $searchModel = new EaAnswersSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->searchResponse(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -98,7 +98,7 @@ class EaAnswersController extends Controller
                 $respModel = EaQuestions::findOne($model->ea_question_id);
                 $respModel->status = '1';
                 $respModel->save();
-                return $this->redirect(['view', 'id' => $model->ea_resp_id]);
+                return $this->redirect(['index']);
             }else{
                 return $this->render('view', [
                 'model' => $model,

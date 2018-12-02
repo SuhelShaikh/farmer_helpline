@@ -3,9 +3,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=farmers_helpline',
-            'username' => 'root',
-            'password' => '',
+            'dsn' => 'mysql:host=localhost;dbname=marveyr9_farmers_helpline',
+            'username' => 'marveyr9',
+            'password' => '5s3^$rS9?3Dx',
             'charset' => 'utf8',
         ],
 	/*'mail' => [
@@ -16,8 +16,8 @@ return [
         'transport' => [
             'class' => 'Swift_SmtpTransport',
             'host' => 'smtp.gmail.com',
-            'username' => 'sushrutd24@gmail.com',
-            'password' => 'TESTTEST',
+            'username' => 'farmers.gup@gmail.com',
+            'password' => 'farmer123@',
             'port' => '587',
             'encryption' => 'tls',
             ],

@@ -12,22 +12,34 @@ use backend\models\User;
 $this->title = 'Questions';
 $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
 ?>
+<script src="../web/js/audiojs/audio.min.js"></script>
+<script>
+      audiojs.events.ready(function() {
+        audiojs.createAll();
+      });
+    </script>
 <div class="ea-questions-create">
     <?php
     $flag=1;
     foreach($data AS $models){
     ?>
 	<div class="question">
-		<span style="font-weight:bold;color:#05059c;">Farmer Asked </span>
-		<span><?php echo $models->question; ?></span>
+		    <img src="images/default.png" alt="images/default.png" class="profile-img">&nbsp;
+        <span style="font-weight:bold;color:#05059c;"><?= $models->user->username ?> </span>
+		    <span><?php echo $models->question; ?></span>
+        <?php if(isset($models->audio_video_path) && $models->audio_video_path != NULL && $models->audio_video_path!= ''){?>
+            <audio src="../web/audio_file/<?= $models->audio_video_path ?>" preload="auto">TEST</audio>
+        <?php } ?>
+        <span style="float:right;">Asked On - <?php  echo $models->created_on; ?></span>  
 		</div>
-         <?php if(isset($models->answer) && $models->answer != NULL){
-            foreach($models->answer AS $answer){ ?>
-			<div class="response">
-			<span style="font-weight:bold;color:grey;">Admin Replied</span>
-			<span><?php echo $answer->response; ?></span>
-			</div>
-            <?php } 
+         <?php if(isset($models->answer) && $models->answer != NULL){ ?>
+			     <div class="response">
+            <img src="images/default.png" alt="images/default.png" class="profile-img">&nbsp;
+			       <span style="font-weight:bold;color:grey;"><?= $models->userEa->username ?></span>
+		        	<span><?php echo $models->answer->response; ?></span>
+              <span style="float:right;">Replied On - <?php  echo $models->created_on; ?></span>  
+			     </div>
+            <?php 
         }else{
            $flag=0;
          }?><hr>
