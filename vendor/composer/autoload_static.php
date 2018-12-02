@@ -34,11 +34,13 @@ class ComposerStaticInit9d3c7d4c0c181a7b96461bc608a650af
         'k' => 
         array (
             'kartik\\select2\\' => 15,
+            'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\depdrop\\' => 15,
+            'kartik\\date\\' => 12,
             'kartik\\base\\' => 12,
         ),
         'd' => 
         array (
-            'dosamigos\\ckeditor\\' => 19,
             'dmstr\\' => 6,
         ),
         'c' => 
@@ -120,13 +122,21 @@ class ComposerStaticInit9d3c7d4c0c181a7b96461bc608a650af
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2/src',
         ),
+        'kartik\\plugins\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
+        ),
+        'kartik\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop/src',
+        ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker/src',
+        ),
         'kartik\\base\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
-        ),
-        'dosamigos\\ckeditor\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/2amigos/yii2-ckeditor-widget/src',
         ),
         'dmstr\\' => 
         array (
