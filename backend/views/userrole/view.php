@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use backend\models\UserRole;
 /* @var $this yii\web\View */
 /* @var $model backend\models\UserRole */
 
@@ -164,7 +164,7 @@ use yii\widgets\DetailView;
 						</tr>
 						<tr>
 							<td><label>Crop Type</label></td>
-							<td><?php echo $cropdetails->crop_type;?></td>
+							<td><?php echo UserRole::getCropType($cropdetails->crop_type_id);?></td>
 						</tr>
 					</table>	
 					<?php } else { ?>
