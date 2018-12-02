@@ -338,15 +338,37 @@ input[type="checkbox"]:disabled + .label-text:before{
 
 
 /* EA chatting module */
-.test-class{color:red;}
-.ea-answers-create .question:after {
+
+.chat-wrapper ul{padding-left:0;width:100%;float:left;}
+.chat-wrapper ul li{padding-left:0;list-style:none;display:block;width:100%;float:left;margin-bottom:15px;}
+
+.chat-wrapper .response{background:#fff; border-radius:5px;box-shadow: 0px 2px 0px #D4D4D4; display:flex;}
+.chat-wrapper .response:before{
     width: 0;
     height: 0;
     content: "";
     top: -5px;
-    left: 14px;
+    left: -20px;
+    position: relative;
+    border-style: solid;
+    border-width: 0 13px 13px 0;
+    border-color: transparent #ffffff transparent transparent;
+}
+.chat-wrapper .question{background:whitesmoke; border-radius:5px;box-shadow: 0px 2px 0px #D4D4D4; display:flex;}
+.chat-wrapper .question:after {
+    width: 0;
+    height: 0;
+    content: "";
+    top: -5px;
+    left: 20px;
     position: relative;
     border-style: solid;
     border-width: 13px 13px 0 0;
     border-color: whitesmoke transparent transparent transparent;
 }
+
+.chat-wrapper ul li td{vertical-align:top;}
+
+.chat-wrapper ul li td .audiojs {
+    width: 100%;
+}	
