@@ -60,6 +60,17 @@ use backend\models\EaQuestions;
                             ['label' => 'Farmer Details','icon' => 'id-card-o','url' => ['userrole/index']],
                             ],
                     ],
+
+                    [
+                        'label' => 'Farmer New',
+                        'icon' => 'users',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'Manage Farmer','icon' => 'plus-circle','url' => ['farmers/index']],
+                            ['label' => 'Tag Farmers','icon' => 'file-code-o','url' => ['farmers/tag-farmers']],
+                            ['label' => 'UnTag Farmers','icon' => 'id-card-o','url' => ['farmers/untag-farmers']],
+                            ],
+                    ],
                    // ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
 					
 					['label' => 'Role','icon' => 'user-circle','url' => ['role/index']],

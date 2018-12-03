@@ -1,0 +1,205 @@
+
+--
+-- Database: `Suhel Changes for farmer module`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `farmer_call_details`
+--
+
+CREATE TABLE IF NOT EXISTS `farmer_call_details` (
+  `id` int(11) NOT NULL,
+  `farmer_id` int(11) NOT NULL,
+  `executive_id` int(11) NOT NULL,
+  `call_duration` varchar(255) NOT NULL,
+  `call_date_time` datetime DEFAULT NULL,
+  `call_response` int(11) NOT NULL,
+  `call_remark` text,
+  `question` text,
+  `answer` text,
+  `created_at` date DEFAULT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `farmer_farm_details`
+--
+
+CREATE TABLE IF NOT EXISTS `farmer_farm_details` (
+  `id` int(11) NOT NULL,
+  `farmer_id` int(11) DEFAULT NULL,
+  `farm_name` varchar(255) DEFAULT NULL,
+  `farm_photo` varchar(255) DEFAULT NULL,
+  `farm_location` varchar(255) DEFAULT NULL,
+  `village` int(11) DEFAULT NULL,
+  `tehsil` int(11) DEFAULT NULL,
+  `district` int(11) DEFAULT NULL,
+  `state` int(11) DEFAULT NULL,
+  `survey_no` varchar(255) DEFAULT NULL,
+  `total_area` varchar(255) DEFAULT NULL,
+  `area_unit` int(11) DEFAULT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=98 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `farmer_personal_details`
+--
+
+CREATE TABLE IF NOT EXISTS `farmer_personal_details` (
+  `id` int(11) NOT NULL,
+  `f_name` varchar(255) DEFAULT NULL,
+  `m_name` varchar(255) DEFAULT NULL,
+  `l_name` varchar(255) DEFAULT NULL,
+  `language` char(1) DEFAULT NULL,
+  `birth_date` datetime DEFAULT NULL,
+  `age` double DEFAULT NULL,
+  `mobile_no` varchar(15) DEFAULT NULL,
+  `whatsapp_no` varchar(15) DEFAULT NULL,
+  `photo_url` varchar(255) DEFAULT NULL,
+  `gender` char(1) DEFAULT NULL,
+  `address` text,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `is_registered` int(11) NOT NULL DEFAULT '0',
+  `tagged_to` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_dt` datetime DEFAULT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `farmer_personal_details`
+--
+
+INSERT INTO `farmer_personal_details` (`id`, `f_name`, `m_name`, `l_name`, `language`, `birth_date`, `age`, `mobile_no`, `whatsapp_no`, `photo_url`, `gender`, `address`, `status`, `is_registered`, `tagged_to`, `created_by`, `created_dt`) VALUES
+(21, 'Rahul', 'R', 'Kadam', 'E', '2018-11-26 00:00:00', NULL, '8238040052', '8238040052', NULL, 'M', '', 1, 0, 8, 8, '2018-12-01 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `farmer_plot_details`
+--
+
+CREATE TABLE IF NOT EXISTS `farmer_plot_details` (
+  `id` int(11) NOT NULL,
+  `farm_id` int(11) NOT NULL,
+  `plot_area` varchar(255) DEFAULT NULL,
+  `crop_name` varchar(255) NOT NULL,
+  `crop_type` int(11) DEFAULT NULL,
+  `variety_type` int(11) DEFAULT NULL,
+  `crop_grown_area` varchar(255) DEFAULT NULL,
+  `plot_numbers` int(11) DEFAULT NULL,
+  `soil_type` int(11) DEFAULT NULL,
+  `water_capacity` varchar(255) DEFAULT NULL,
+  `drain_out_period` varchar(255) DEFAULT NULL,
+  `line_distance` varchar(255) DEFAULT NULL,
+  `plant_distance` varchar(255) DEFAULT NULL,
+  `planting_date` datetime DEFAULT NULL,
+  `plant_age` int(11) DEFAULT NULL,
+  `defoilation_date` datetime DEFAULT NULL,
+  `irrigation_date` datetime DEFAULT NULL,
+  `irrigation_type` int(11) DEFAULT NULL,
+  `lateral_type` int(11) DEFAULT NULL,
+  `filterartion_system` int(11) DEFAULT NULL,
+  `mulching_method` int(11) DEFAULT NULL,
+  `firtigation_equipments` int(11) DEFAULT NULL,
+  `water_source` int(11) DEFAULT NULL,
+  `soil_details` text,
+  `water_details` text,
+  `soil_test_report` varchar(255) DEFAULT NULL,
+  `water_test_report` varchar(255) DEFAULT NULL,
+  `prelevant_diseases` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_locations`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_locations` (
+  `id` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_locations`
+--
+
+INSERT INTO `tbl_locations` (`id`, `type`, `parent_id`, `name`, `status`) VALUES
+(1, 1, NULL, 'Maharashtra', 1),
+(2, 2, 1, 'Sangli', 1),
+(3, 3, 2, 'Kadegaon', 1),
+(4, 4, 3, 'Hingongaon BK', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `farmer_call_details`
+--
+ALTER TABLE `farmer_call_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `farmer_farm_details`
+--
+ALTER TABLE `farmer_farm_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `farmer_personal_details`
+--
+ALTER TABLE `farmer_personal_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `farmer_plot_details`
+--
+ALTER TABLE `farmer_plot_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_locations`
+--
+ALTER TABLE `tbl_locations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `farmer_call_details`
+--
+ALTER TABLE `farmer_call_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `farmer_farm_details`
+--
+ALTER TABLE `farmer_farm_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=98;
+--
+-- AUTO_INCREMENT for table `farmer_personal_details`
+--
+ALTER TABLE `farmer_personal_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `farmer_plot_details`
+--
+ALTER TABLE `farmer_plot_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_locations`
+--
+ALTER TABLE `tbl_locations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
