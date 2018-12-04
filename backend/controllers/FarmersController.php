@@ -66,30 +66,34 @@ class FarmersController extends Controller
      */
     public function actionCreate()
     {
+        
         //$this->layout='dashboard';
         $model = new Farmers();
-
+        
         if ($model->load(Yii::$app->request->post())) {
-
+            
             $model->created_dt=date("Y-m-d");
             $model->birth_date=date("Y-m-d",strtotime($model->birth_date));
             $model->created_by=Yii::$app->user->identity->id;
             //echo "<pre>";print_r($model);die;
+            
             if ($model->validate()) {
-                $model->photo_url = UploadedFile::getInstance($model, 'photo_url');
+                $model->profile_pic = UploadedFile::getInstance($model, 'profile_pic');
 
-                if ($model->photo_url && $model->validate()) {
+                if ($model->profile_pic && $model->validate()) {
                     $fileName=date("Y-m-d")."_".rand(100,500000).".jpg";                
-                    $model->photo_url->saveAs('images/farmerImages/' . $fileName);
-                    $model->photo_url=$fileName;
+                    $model->profile_pic->saveAs('images/farmerImages/' . $fileName);
+                    $model->profile_pic=$fileName;
                 }else{
-                    $model->photo_url=null;
+                    $model->profile_pic=null;
                 }
+                
                 if($model->save()){
                     Yii::$app->session->setFlash('insert', "Farmer added successfully. Please add farm details.");
-                    return $this->redirect(['update', 'id' => $model->id, 'tab'=>2]);
+                    return $this->redirect(['update', 'farmer_id' => $model->farmer_id, 'tab'=>2]);
                 }
             } else {
+                
                 return $this->render('create', [
                     'model' => $model
                 ]);
@@ -119,18 +123,18 @@ class FarmersController extends Controller
             $model->birth_date=date("Y-m-d",strtotime($model->birth_date));
             //echo "<pre>";print_r($_FILES);die;
             if ($model->validate()) {
-            	if($_FILES['Farmers']['name']['photo_url']!=""){
-	                $model->photo_url = UploadedFile::getInstance($model, 'photo_url');
+            	if($_FILES['Farmers']['name']['profile_pic']!=""){
+	                $model->profile_pic = UploadedFile::getInstance($model, 'profile_pic');
 	
-	                if ($model->photo_url && $model->validate()) {
+	                if ($model->profile_pic && $model->validate()) {
 	                    $fileName=date("Y-m-d")."_".rand(100,500000).".jpg";                
-	                    $model->photo_url->saveAs('images/farmerImages/' . $fileName);
-	                    $model->photo_url=$fileName;
+	                    $model->profile_pic->saveAs('images/farmerImages/' . $fileName);
+	                    $model->profile_pic=$fileName;
 	                }
                 }
                 if($model->save()){
                     Yii::$app->session->setFlash('insert', "Farmer updated successfully. Please add farm details.");
-                    return $this->redirect(['update', 'id' => $model->id, 'tab'=>2]);
+                    return $this->redirect(['update', 'id' => $model->farmer_id, 'tab'=>2]);
                 }
             } else {
                 return $this->render('update', [
@@ -146,7 +150,6 @@ class FarmersController extends Controller
             'plotData'=>$plotData
         ]);
     }
-	
 	public function actionFarmDetails(){
         $this->layout='blank';
         $model=new FarmerFarmDetails();

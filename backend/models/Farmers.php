@@ -30,7 +30,7 @@ class Farmers extends \yii\db\ActiveRecord
     public $executive_id;
     public static function tableName()
     {
-        return 'farmer_personal_details';
+        return 'farmer_profile';
     }
 
     /**
@@ -39,13 +39,13 @@ class Farmers extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['language','f_name','m_name','l_name','birth_date','mobile_no','gender','is_registered'], 'required'],
+            [['language','first_name','middle_name','last_name','birth_date','mobile_no','gender','is_registered'], 'required'],
             [['farm_name'],'required','on'=>'farmDetails'],
-            [['f_name', 'm_name', 'l_name'], 'string', 'max' => 255],
+            [['first_name', 'middle_name', 'last_name'], 'string', 'max' => 255],
             [['mobile_no','whatsapp_no'],'number'],
             [['mobile_no','whatsapp_no'],'string', 'max' => 10, 'min' => 10],
             [['mobile_no'],'unique'],
-            [['age','address','tagged_to','executive_id'],'safe']
+            [['age','home_address','user_id','executive_id'],'safe']
             /*[['cretaed_by', 'status'], 'integer'],
             [['cretaed_at'], 'safe'],
             [['farmer_fname', 'farmer_mname', 'farmer_lname', 'village', 'taluka', 'district', 'state'], 'string', 'max' => 255],
@@ -83,7 +83,7 @@ class Farmers extends \yii\db\ActiveRecord
             $where.=" AND created_by=$executiveId";
         }*/
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT id,CONCAT(f_name, ' ', m_name, ' ', l_name) AS full_name,birth_date,mobile_no, (CASE WHEN gender='M' THEN 'Male' ELSE 'Female' END) as gender FROM farmer_personal_details ORDER BY id DESC");
+        $command = $connection->createCommand("SELECT farmer_id,CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name,birth_date,mobile_no, (CASE WHEN gender='M' THEN 'Male' ELSE 'Female' END) as gender FROM farmer_profile ORDER BY farmer_id DESC");
         $data=$command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;
@@ -91,7 +91,7 @@ class Farmers extends \yii\db\ActiveRecord
     public function getFarmersListForTag(){
 
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT a.id,CONCAT(a.f_name, ' ', a.m_name, ' ', a.l_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,b.user_fullname AS tagged_name FROM farmer_personal_details a LEFT JOIN user b ON a.tagged_to=b.id WHERE a.status=1 ORDER BY a.id DESC");
+        $command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,b.user_fullname AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.status=1 ORDER BY a.farmer_id DESC");
         $data=$command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;
@@ -114,7 +114,7 @@ class Farmers extends \yii\db\ActiveRecord
     public function getTaggedFarmers($executiveId){
         //echo $executiveId;die;
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT a.id,CONCAT(a.f_name, ' ', a.m_name, ' ', a.l_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,b.user_fullname AS tagged_name FROM farmer_personal_details a LEFT JOIN user b ON a.tagged_to=b.id WHERE a.status=1 AND tagged_to=$executiveId ORDER BY a.id DESC");
+        $command = $connection->createCommand("SELECT a.id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,b.user_fullname AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.status=1 AND user_id=$executiveId ORDER BY a.id DESC");
         $data=$command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;

@@ -6,7 +6,7 @@ use kartik\select2\Select2;
 use kartik\widgets\DatePicker;
 use backend\models\TblLocations;
 use yii\helpers\ArrayHelper;
-use	yii\helpers\Url;
+use yii\helpers\Url;
 
 $states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->orderBy('name')->all(), 'id', 'name');
 ?>

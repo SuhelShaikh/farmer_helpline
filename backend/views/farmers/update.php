@@ -10,10 +10,10 @@ use yii\helpers\ArrayHelper;
 use	yii\helpers\Url;
 $this->title = 'Update Farmer';
 
-$states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->orderBy('name')->all(), 'id', 'name');
+//$states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->orderBy('name')->all(), 'id', 'name');
 $model->age=date_diff(date_create($model->birth_date), date_create('today'))->y;
-$tagTo=ArrayHelper::map(User::find()->where(['type'=>2])->orderBy('username')->all(), 'id', 'username');
-$type=Yii::$app->user->identity->type;
+$tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')->all(), 'id', 'username');
+//$type=Yii::$app->user->identity->type;
 ?>
 <!-- Main content -->
   <section class="content-header">
@@ -67,13 +67,13 @@ $type=Yii::$app->user->identity->type;
 					           <b>First Name: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?php echo $form->field($model, 'f_name')->textInput(['class'=>'form-control','placeholder'=>'First Name'])->label(false); ?>
+					          <?php echo $form->field($model, 'first_name')->textInput(['class'=>'form-control','placeholder'=>'First Name'])->label(false); ?>
 					        </div>
 					        <div class="col-sm-2">
 					           <b>Middle Name: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?php echo $form->field($model, 'm_name')->textInput(['class'=>'form-control','placeholder'=>'Middle Name'])->label(false); ?>
+					          <?php echo $form->field($model, 'middle_name')->textInput(['class'=>'form-control','placeholder'=>'Middle Name'])->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
@@ -81,13 +81,13 @@ $type=Yii::$app->user->identity->type;
 					           <b>Last Name: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?php echo $form->field($model, 'l_name')->textInput(['class'=>'form-control','placeholder'=>'Last Name'])->label(false); ?>
+					          <?php echo $form->field($model, 'last_name')->textInput(['class'=>'form-control','placeholder'=>'Last Name'])->label(false); ?>
 					        </div>
 					        <div class="col-sm-2">
 					           <b>Photo: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?= $form->field($model, 'photo_url')->fileInput()->label(false); ?>
+					          <?= $form->field($model, 'profile_pic')->fileInput()->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
@@ -130,7 +130,7 @@ $type=Yii::$app->user->identity->type;
 					        </div>
 					        <div class="col-sm-4">
 					          <?php
-					          	echo $form->field($model, 'birth_date')->widget(DatePicker::classname(), [
+					          	/*echo $form->field($model, 'birth_date')->widget(DatePicker::classname(), [
 								    'options' => ['placeholder' => 'Enter birth date'],
 								    'pluginOptions' => [
 								        'autoclose'=>true,
@@ -138,6 +138,8 @@ $type=Yii::$app->user->identity->type;
 								        'todayHighlight' => true
 								    ]
 								])->label(false);
+                                                         * 
+                                                         */
 					          ?>
 					        </div>
 					        <div class="col-sm-2">
@@ -164,13 +166,15 @@ $type=Yii::$app->user->identity->type;
 					                ]);
 					          ?>
 					        </div>
-					        <?php if($type==1): ?>
+					        <?php
+                                                $type=1;
+                                                if($type==1): ?>
 						        <div class="col-sm-2">
 						           <b>Tagged To: </b>
 						        </div>
 						        <div class="col-sm-4">
 						          <?php
-						              echo $form->field($model, 'tagged_to')->label(FALSE)->widget(Select2::classname(), [
+						              echo $form->field($model, 'user_id')->label(FALSE)->widget(Select2::classname(), [
 						                  'data' => $tagTo,
 						                  'options' =>[
 						                      'placeholder' => 'Select Tagged To'
@@ -202,7 +206,7 @@ $type=Yii::$app->user->identity->type;
 					           <b>Address: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?php echo $form->field($model, 'address')->textArea(['class'=>'form-control','placeholder'=>'Address'])->label(false); ?>
+					          <?php echo $form->field($model, 'home_address')->textArea(['class'=>'form-control','placeholder'=>'Address'])->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
@@ -334,6 +338,7 @@ $type=Yii::$app->user->identity->type;
     <!-- Modal content-->
     <div class="modal-content">
     	<iframe frameborder="0" height="500px" width="100%" border="0" src="<?php echo Yii::$app->urlManager->createAbsoluteUrl(['farmers/farm-details','id'=>$_REQUEST['id']]);  ?>"></iframe>
+    	<!--<iframe frameborder="0" height="500px" width="100%" border="0" src="<?php // echo Yii::$app->urlManager->createAbsoluteUrl('farmers/farm-details',['id'=>$_REQUEST['id']]);  ?>"></iframe>-->
     </div>
 
   </div>

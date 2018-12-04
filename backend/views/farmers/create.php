@@ -46,13 +46,13 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 					           <b>First Name: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?php echo $form->field($model, 'f_name')->textInput(['class'=>'form-control','placeholder'=>'First Name'])->label(false); ?>
+					          <?php echo $form->field($model, 'first_name')->textInput(['class'=>'form-control','placeholder'=>'First Name'])->label(false); ?>
 					        </div>
 					        <div class="col-sm-2">
 					           <b>Middle Name: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?php echo $form->field($model, 'm_name')->textInput(['class'=>'form-control','placeholder'=>'Middle Name'])->label(false); ?>
+					          <?php echo $form->field($model, 'middle_name')->textInput(['class'=>'form-control','placeholder'=>'Middle Name'])->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
@@ -60,13 +60,13 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 					           <b>Last Name: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?php echo $form->field($model, 'l_name')->textInput(['class'=>'form-control','placeholder'=>'Last Name'])->label(false); ?>
+					          <?php echo $form->field($model, 'last_name')->textInput(['class'=>'form-control','placeholder'=>'Last Name'])->label(false); ?>
 					        </div>
 					        <div class="col-sm-2">
 					           <b>Photo: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?= $form->field($model, 'photo_url')->fileInput()->label(false); ?>
+					          <?= $form->field($model, 'profile_pic')->fileInput()->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
@@ -149,7 +149,7 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 						        </div>
 						        <div class="col-sm-4">
 						          <?php
-						              echo $form->field($model, 'tagged_to')->label(FALSE)->widget(Select2::classname(), [
+						              echo $form->field($model, 'user_id')->label(FALSE)->widget(Select2::classname(), [
 						                  'data' => $tagTo,
 						                  'options' =>[
 						                      'placeholder' => 'Select Tagged To'
@@ -183,7 +183,7 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 					           <b>Address: </b>
 					        </div>
 					        <div class="col-sm-4">
-					          <?php echo $form->field($model, 'address')->textArea(['class'=>'form-control','placeholder'=>'Address'])->label(false); ?>
+					          <?php echo $form->field($model, 'home_address')->textArea(['class'=>'form-control','placeholder'=>'Address'])->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">

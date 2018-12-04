@@ -56,8 +56,8 @@ $this->title = 'Manage Users';
                             <td><?php echo $data[$i]['mobile_no']; ?></td>
                             <td><?php echo $data[$i]['birth_date']; ?></td>
                             <td><?php echo $data[$i]['gender']; ?></td>
-                            <td><?php echo Html::a("Call Details", ['farmers/call-details','id'=>$data[$i]['id']]); ?></td>
-                            <td><?php echo Html::a("<i class='fa fa-edit'></i>", ['farmers/update','id'=>$data[$i]['id'],'tab'=>1]); ?></td>
+                            <td><?php echo Html::a("Call Details", ['farmers/call-details','id'=>$data[$i]['farmer_id']]); ?></td>
+                            <td><?php echo Html::a("<i class='fa fa-edit'></i>", ['farmers/update','id'=>$data[$i]['farmer_id'],'tab'=>1]); ?></td>
                         </tr>
                     <?php endfor; ?>
                 </tbody>
