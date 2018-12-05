@@ -70,6 +70,8 @@ use backend\models\EaQuestions;
                             ['label' => 'Tag Farmers','icon' => 'file-code-o','url' => ['farmers/tag-farmers']],
                             ['label' => 'UnTag Farmers','icon' => 'id-card-o','url' => ['farmers/untag-farmers']],
                             ],
+                            ['label' => 'Farmer Profile','icon' => 'id-card-o','url' => ['farmers/farmer_profile']],
+                            ],
                     ],
                    // ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
 					
