@@ -157,13 +157,15 @@ class FarmersController extends Controller
             //echo "<pre>";print_r($_FILES);die;
             if ($model->validate()) {
                 
-                if($_FILES['FarmerFarmDetails']['name']['farm_image']!=""){
+                /*if($_FILES['FarmerFarmDetails']['name']['farm_image']!=""){
                     $model->farm_image = UploadedFile::getInstances($model, 'farm_image');
                     $fullFileName="";
+                    //die();
                     if ($model->farm_image && $model->validate()) {
                         $cnt=1;
-                        foreach ($model->farm_image as $file) {
                         
+                        foreach ($model->farm_image as $file) {
+                            
                             $fileName=$cnt."_".$model->farmer_id."_".date("Y-m-d")."_".rand(100,500000).".jpg";                
                             $file->saveAs('images/farmImages/' . $fileName);
                             $fullFileName.=$fileName.",";
@@ -173,7 +175,8 @@ class FarmersController extends Controller
                         $fullFileName=rtrim($fullFileName,",");
                         $model->farm_image=$fullFileName;
                     }
-                }
+                }*/
+                $model->farm_image=null;
                 if($model->save()){
                     Yii::$app->session->setFlash('insert', "Farm added successfully.");
                     $externel_url=Yii::$app->urlManager->createAbsoluteUrl(['farmers/update','id'=>$model->farmer_id,'tab'=>2]);

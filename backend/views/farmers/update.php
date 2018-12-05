@@ -9,8 +9,9 @@ use backend\models\TblLocations;
 use backend\models\User;
 use yii\helpers\ArrayHelper;
 use	yii\helpers\Url;
+use backend\models\FarmDetails;
 $this->title = 'Update Farmer';
-
+$farmData =FarmDetails::find()->where(['farmer_id'=>$_REQUEST['id']])->all();
 //$states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->orderBy('name')->all(), 'id', 'name');
 $model->age=date_diff(date_create($model->birth_date), date_create('today'))->y;
 $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')->all(), 'id', 'username');
@@ -252,14 +253,14 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 					                        <tr>
 					                            <td><?php echo $i+1; ?></td>
 					                            <td><?php echo $farmData[$i]['farm_name']; ?></td>
-					                            <td><?php echo $farmData[$i]['farm_location']; ?></td>
-					                            <td><?php echo $farmData[$i]['survey_no']; ?></td>
+					                            <td><?php echo $farmData[$i]['elevation_farm_location']; ?></td>
+					                            <td><?php echo $farmData[$i]['survey_number']; ?></td>
 					                            <td><?php echo $farmData[$i]['total_area']; ?></td>
-					                            <?php if($farmData[$i]['farm_photo']==null): ?>
+					                            <?php if($farmData[$i]['farm_image']==null): ?>
 					                            	<td>-</td>
 					                            <?php else: ?>
 					                            	<?php
-					                            		$picArr=explode(",",$farmData[$i]['farm_photo']);
+					                            		$picArr=explode(",",$farmData[$i]['farm_image']);
 					                            	?>
 					                            	<td>
 					                            	<?php for($x=0;$x<count($picArr);$x++): ?>
@@ -269,7 +270,7 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 					                            	</td>
 
 					                            <?php endif; ?>
-					                            <td><?php echo Html::a("<i class='fa fa-trash'></i>", ['farmers/delete-farm','id'=>$farmData[$i]['id'],'farmerId'=>$_REQUEST['id']]); ?></td>
+					                            <td><?php echo Html::a("<i class='fa fa-trash'></i>", ['farmers/delete-farm','id'=>$farmData[$i]['farm_id'],'farmerId'=>$_REQUEST['id']]); ?></td>
 					                        </tr>
 					                    <?php endfor; ?>
 					                </tbody>
