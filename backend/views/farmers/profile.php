@@ -7,7 +7,7 @@ use kartik\widgets\DatePicker;
 use backend\models\TblLocations;
 use yii\helpers\ArrayHelper;
 use	yii\helpers\Url;*/
-
+$this->title = 'Farmer Profile';
 ?>
 <section class="content">                	
 	<h2 class="mt-0">
