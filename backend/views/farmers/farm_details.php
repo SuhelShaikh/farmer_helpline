@@ -4,11 +4,11 @@ use yii\widgets\ActiveForm;
 //use kartik\widgets\Select2;
 use kartik\select2\Select2;
 use kartik\widgets\DatePicker;
-use backend\models\TblLocations;
+use backend\models\State;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
-$states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->orderBy('name')->all(), 'id', 'name');
+$states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'name');
 ?>
 
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
@@ -30,7 +30,7 @@ $states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->o
 		           <b>Farm Photo: </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?= $form->field($model, 'farm_photo[]')->fileInput(['multiple'=>true])->label(false); ?>
+		          <?= $form->field($model, 'farm_image[]')->fileInput(['multiple'=>true])->label(false); ?>
 		        </div>
 		    </div>
 		    <div class="row">
@@ -38,13 +38,13 @@ $states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->o
 		           <b>Location: </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'farm_location')->textInput(['class'=>'form-control','placeholder'=>'Location'])->label(false); ?>
+		          <?php echo $form->field($model, 'elevation_farm_location')->textInput(['class'=>'form-control','placeholder'=>'Location'])->label(false); ?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Survey No.: </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'survey_no')->textInput(['class'=>'form-control','placeholder'=>'Survey Number'])->label(false); ?>
+		          <?php echo $form->field($model, 'survey_number')->textInput(['class'=>'form-control','placeholder'=>'Survey Number'])->label(false); ?>
 		        </div>
 		    </div> 
 		    <div class="row">
@@ -60,12 +60,12 @@ $states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->o
 					         	'onchange'=>'
                                     $("#farmerfarmdetails-district").find("option:gt(0)").remove();
                                     $("#farmerfarmdetails-district").select2("val", "");
-                                    $("#farmerfarmdetails-tehsil").find("option:gt(0)").remove();
-                                    $("#farmerfarmdetails-tehsil").select2("val", "");
+                                    $("#farmerfarmdetails-mandal").find("option:gt(0)").remove();
+                                    $("#farmerfarmdetails-mandal").select2("val", "");
                                     $("#farmerfarmdetails-village").find("option:gt(0)").remove();
                                     $("#farmerfarmdetails-village").select2("val", "");
                                     if($(this).val()!=""){
-                                        $.get( "'.Url::toRoute('tbl-locations/get-locations').'", { id: $(this).val(),type:2 } )
+                                        $.get( "'.Url::toRoute('district/get-locations').'", { id: $(this).val()} )
                                         .done(function( data )
                                         {
                                             $( "select#farmerfarmdetails-district" ).html( data );
@@ -73,7 +73,7 @@ $states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->o
                                     }
                                     else{
                                         $( "select#farmerfarmdetails-district" ).html("");
-                                        $( "select#farmerfarmdetails-tehsil" ).html("");
+                                        $( "select#farmerfarmdetails-mandal" ).html("");
                                         $( "select#farmerfarmdetails-village" ).html("");
                                     }'
 					        ],
@@ -93,19 +93,19 @@ $states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->o
 					        'options' =>[
 					         	'placeholder' => 'Select District',
 					         	'onchange'=>'
-                                    $("#farmerfarmdetails-tehsil").find("option:gt(0)").remove();
-                                    $("#farmerfarmdetails-tehsil").select2("val", "");
+                                    $("#farmerfarmdetails-mandal").find("option:gt(0)").remove();
+                                    $("#farmerfarmdetails-mandal").select2("val", "");
                                     $("#farmerfarmdetails-village").find("option:gt(0)").remove();
                                     $("#farmerfarmdetails-village").select2("val", "");
                                     if($(this).val()!=""){
-                                        $.get( "'.Url::toRoute('tbl-locations/get-locations').'", { id: $(this).val(),type:3 } )
+                                        $.get( "'.Url::toRoute('mandal/get-mandal').'", { id: $(this).val() } )
                                         .done(function( data )
                                         {
-                                            $( "select#farmerfarmdetails-tehsil" ).html( data );
+                                            $( "select#farmerfarmdetails-mandal" ).html( data );
                                         });
                                     }
                                     else{
-                                        $( "select#farmerfarmdetails-tehsil" ).html("");
+                                        $( "select#farmerfarmdetails-mandal" ).html("");
                                         $( "select#farmerfarmdetails-village" ).html("");
                                     }'
 					        ],
@@ -122,7 +122,7 @@ $states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->o
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-						echo $form->field($model, 'tehsil')->label(FALSE)->widget(Select2::classname(), [
+						echo $form->field($model, 'mandal')->label(FALSE)->widget(Select2::classname(), [
 					    	'data' => [],
 					        'options' =>[
 					         	'placeholder' => 'Select Taluka',
@@ -130,7 +130,7 @@ $states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->o
                                     $("#farmerfarmdetails-village").find("option:gt(0)").remove();
                                     $("#farmerfarmdetails-village").select2("val", "");
                                     if($(this).val()!=""){
-                                        $.get( "'.Url::toRoute('tbl-locations/get-locations').'", { id: $(this).val(),type:4 } )
+                                        $.get( "'.Url::toRoute('village/get-village').'", { id: $(this).val() } )
                                         .done(function( data )
                                         {
                                             $( "select#farmerfarmdetails-village" ).html( data );

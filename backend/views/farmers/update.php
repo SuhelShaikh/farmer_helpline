@@ -3,7 +3,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 //use kartik\widgets\Select2;
 use kartik\select2\Select2;
-use kartik\widgets\DatePicker;
+//use kartik\widgets\DatePicker;
+use kartik\date\DatePicker;
 use backend\models\TblLocations;
 use backend\models\User;
 use yii\helpers\ArrayHelper;
@@ -130,7 +131,7 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 					        </div>
 					        <div class="col-sm-4">
 					          <?php
-					          	/*echo $form->field($model, 'birth_date')->widget(DatePicker::classname(), [
+					          	echo $form->field($model, 'birth_date')->widget(DatePicker::classname(), [
 								    'options' => ['placeholder' => 'Enter birth date'],
 								    'pluginOptions' => [
 								        'autoclose'=>true,
@@ -138,8 +139,7 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 								        'todayHighlight' => true
 								    ]
 								])->label(false);
-                                                         * 
-                                                         */
+                                                        
 					          ?>
 					        </div>
 					        <div class="col-sm-2">

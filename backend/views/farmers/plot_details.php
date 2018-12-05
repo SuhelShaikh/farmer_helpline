@@ -20,7 +20,6 @@ use backend\models\MasterFirtigationType;
 use backend\models\MasterWaterSourceType;
 use backend\models\MasterPreleventDisType;
 
-echo "plot details";die();
 
 $farmerId=$_REQUEST['id'];
 $farms=ArrayHelper::map(FarmerFarmDetails::find()->where(['farmer_id'=>$farmerId])->orderBy('farm_name')->all(), 'id', 'farm_name');

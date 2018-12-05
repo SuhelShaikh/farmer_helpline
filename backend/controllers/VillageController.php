@@ -3,8 +3,8 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\District;
-use backend\models\DistrictSearch;
+use backend\models\Village;
+//use backend\models\DistrictSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\helpers\ArrayHelper;
@@ -13,7 +13,7 @@ use yii\filters\VerbFilter;
 /**
  * DistrictController implements the CRUD actions for District model.
  */
-class DistrictController extends Controller
+class VillageController extends Controller
 {
     /**
      * @inheritdoc
@@ -36,7 +36,7 @@ class DistrictController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new DistrictSearch();
+        $searchModel = new VillageSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -116,14 +116,14 @@ class DistrictController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = District::findOne($id)) !== null) {
+        if (($model = Mandal::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    public function actionGetLocations($id){
-        $data=ArrayHelper::map(District::find()->where(['state_id'=>$id])->orderBy('name')->all(), 'dis_id', 'name');
+    public function actionGetVillage($id){
+        $data=ArrayHelper::map(Village::find()->where(['mandal_id'=>$id])->orderBy('name')->all(), 'village_id', 'name');
       // echo '<pre>'; print_r($units);die;
         if($data>0)
         {
@@ -136,18 +136,4 @@ class DistrictController extends Controller
             echo "<option>No records</option>";
         }
     }
-    /*public function actionGetMandal($id){
-        $data=ArrayHelper::map(Mandal::find()->where(['district_id'=>$id])->orderBy('name')->all(), 'mandal_id', 'name');
-      // echo '<pre>'; print_r($units);die;
-        if($data>0)
-        {
-           echo '<option value="">All Units</option>';
-            foreach($data as $key=>$value)
-            {   echo "<option value='".$key."'>".$value."</option>";}
-        }
-        else
-        {
-            echo "<option>No records</option>";
-        }
-    }*/
 }

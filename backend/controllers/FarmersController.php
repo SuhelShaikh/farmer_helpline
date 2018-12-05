@@ -151,17 +151,20 @@ class FarmersController extends Controller
         ]);
     }
 	public function actionFarmDetails(){
-        $this->layout='blank';
+        //$this->layout='blank';
         $model=new FarmerFarmDetails();
         if ($model->load(Yii::$app->request->post())) {
             //echo "<pre>";print_r($_FILES);die;
             if ($model->validate()) {
-                if($_FILES['FarmerFarmDetails']['name']['farm_photo']!=""){
-                    $model->farm_photo = UploadedFile::getInstances($model, 'farm_photo');
+                
+                if($_FILES['FarmerFarmDetails']['name']['farm_image']!=""){
+                    $model->farm_image = UploadedFile::getInstances($model, 'farm_image');
                     $fullFileName="";
-                    if ($model->farm_photo && $model->validate()) {
+                    $model->farm_image;
+                    die();
+                    if ($model->farm_image && $model->validate()) {
                         $cnt=1;
-                        foreach ($model->farm_photo as $file) {
+                        foreach ($model->farm_image as $file) {
                         
                             $fileName=$cnt."_".$model->farmer_id."_".date("Y-m-d")."_".rand(100,500000).".jpg";                
                             $file->saveAs('images/farmImages/' . $fileName);
@@ -170,7 +173,7 @@ class FarmersController extends Controller
                             $cnt++;
                         }
                         $fullFileName=rtrim($fullFileName,",");
-                        $model->farm_photo=$fullFileName;
+                        $model->farm_image=$fullFileName;
                     }
                 }
                 if($model->save()){
@@ -192,7 +195,7 @@ class FarmersController extends Controller
         ]);
 	}
     public function actionPlotDetails(){
-        $this->layout='blank';
+        //$this->layout='blank';
         $model=new FarmerPlotDetails();
         if ($model->load(Yii::$app->request->post())) {
             //echo "<pre>";print_r($model);die;
