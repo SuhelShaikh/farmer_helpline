@@ -372,3 +372,57 @@ input[type="checkbox"]:disabled + .label-text:before{
 .chat-wrapper ul li td .audiojs {
     width: 100%;
 }	
+
+/* farmer profile tabs */
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 0 5px;
+	}
+	.panel.with-nav-tabs .nav-tabs{
+		border-bottom: none;
+	}
+	.panel.with-nav-tabs .nav-justified{
+		margin-bottom: -1px;
+	}
+		.with-nav-tabs.panel-success .nav-tabs > li > a,
+	.with-nav-tabs.panel-success .nav-tabs > li > a:hover,
+	.with-nav-tabs.panel-success .nav-tabs > li > a:focus {
+		color: #3c763d;
+	}
+	.with-nav-tabs.panel-success .nav-tabs > .open > a,
+	.with-nav-tabs.panel-success .nav-tabs > .open > a:hover,
+	.with-nav-tabs.panel-success .nav-tabs > .open > a:focus,
+	.with-nav-tabs.panel-success .nav-tabs > li > a:hover,
+	.with-nav-tabs.panel-success .nav-tabs > li > a:focus {
+		color: #3c763d;
+		background-color: #d6e9c6;
+		border-color: transparent;
+	}
+	.with-nav-tabs.panel-success .nav-tabs > li.active > a,
+	.with-nav-tabs.panel-success .nav-tabs > li.active > a:hover,
+	.with-nav-tabs.panel-success .nav-tabs > li.active > a:focus {
+		color: #3c763d;
+		background-color: #fff;
+		border-color: #d6e9c6;
+		border-bottom-color: transparent;
+	}
+	.with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu {
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+	}
+	.with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > li > a {
+		color: #3c763d;   
+	}
+	.with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+	.with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+		background-color: #d6e9c6;
+	}
+	.with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+	.with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+	.with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+		color: #fff;
+		background-color: #3c763d;
+	}
+	
+	.col-xs-12.profile-tabs {overflow: auto;}
+	.col-xs-12.profile-tabs .panel.with-nav-tabs{min-width:900px;}
+	.user-image-wrap img { width: 75px; margin: 0px auto;border-radius: 50%;}
