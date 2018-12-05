@@ -160,8 +160,6 @@ class FarmersController extends Controller
                 if($_FILES['FarmerFarmDetails']['name']['farm_image']!=""){
                     $model->farm_image = UploadedFile::getInstances($model, 'farm_image');
                     $fullFileName="";
-                    $model->farm_image;
-                    die();
                     if ($model->farm_image && $model->validate()) {
                         $cnt=1;
                         foreach ($model->farm_image as $file) {
