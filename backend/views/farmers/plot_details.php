@@ -28,14 +28,20 @@ $cropTypes=ArrayHelper::map(MasterCropType::find()->orderBy('crop_type_name')->a
 $varietyTypes=ArrayHelper::map(MasterVarietyType::find()->orderBy('crop_variety_name')->all(), 'crop_variety_id', 'crop_variety_name');
 $soilTypes=ArrayHelper::map(MasterSoilType::find()->orderBy('soil_type_name')->all(), 'soil_type_id', 'soil_type_name');
 $irigationTypes=ArrayHelper::map(MasterIrigationType::find()->orderBy('irrigation_type_name')->all(), 'irrigation_type_id', 'irrigation_type_name');
-/*$lateralTypes=ArrayHelper::map(MasterLateralType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
-$filterationTypes=ArrayHelper::map(MasterFilterationType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
+$lateralTypes=ArrayHelper::map(MasterLateralType::find()->orderBy('dripping_method_name')->all(), 'dripping_method_id', 'dripping_method_name');
+/*$filterationTypes=ArrayHelper::map(MasterFilterationType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
 $mulchingTypes=ArrayHelper::map(MasterMulchingMethodType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
 $firtigationTypes=ArrayHelper::map(MasterFirtigationType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
 $waterSourceTypes=ArrayHelper::map(MasterWaterSourceType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
 $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
  * 
  */
+$filterationTypes=array('1'=>'filteration 1','2'=>'filteration 2');
+$mulchingTypes=array('1'=>'mulching 1','2'=>'mulching 2');
+$firtigationTypes=array('1'=>'firtigation 1','2'=>'firtigation 2');
+$waterSourceTypes=array('1'=>'waterSource 1','2'=>'waterSource 2');
+$preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
+
 ?>
 
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
@@ -242,7 +248,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    /*echo $form->field($model, 'lateral_type')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'lateral_type')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $lateralTypes,
 					        'options' =>[
 					            'placeholder' => 'Lateral Type'
@@ -251,8 +257,6 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					            'allowClear' => true,
 					        ],
 					    ]);
-                                             * 
-                                             */
 					?>
 		        </div>
 		    </div>
@@ -262,7 +266,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    /*echo $form->field($model, 'filterartion_system')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'filterartion_system')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $filterationTypes,
 					        'options' =>[
 					            'placeholder' => 'Filterartion System'
@@ -271,8 +275,6 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					            'allowClear' => true,
 					        ],
 					    ]);
-                                             * 
-                                             */
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -280,7 +282,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    /*echo $form->field($model, 'mulching_method')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'mulching_method')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $mulchingTypes,
 					        'options' =>[
 					            'placeholder' => 'Mulching Method'
@@ -289,8 +291,6 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					            'allowClear' => true,
 					        ],
 					    ]);
-                                             * 
-                                             */
 					?>
 		        </div>
 		    </div>
@@ -300,7 +300,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    /*echo $form->field($model, 'firtigation_equipments')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'firtigation_equipments')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $firtigationTypes,
 					        'options' =>[
 					            'placeholder' => 'Fertigation Equipments'
@@ -309,8 +309,6 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					            'allowClear' => true,
 					        ],
 					    ]);
-                                             * 
-                                             */
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -318,7 +316,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    /*echo $form->field($model, 'water_source')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'water_source')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $waterSourceTypes,
 					        'options' =>[
 					            'placeholder' => 'Water Source'
@@ -327,8 +325,6 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					            'allowClear' => true,
 					        ],
 					    ]);
-                                             * 
-                                             */
 					?>
 		        </div>
 		        

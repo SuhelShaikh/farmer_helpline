@@ -76,7 +76,7 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 					        <div class="col-sm-4">
 					          <?php
 					              echo $form->field($model, 'gender')->label(FALSE)->widget(Select2::classname(), [
-					                  'data' => ['M'=>'Male','F'=>'Female'],
+					                  'data' => ['1'=>'Male','0'=>'Female'],
 					                  'options' =>[
 					                      'placeholder' => 'Select Gender'
 					                  ],
