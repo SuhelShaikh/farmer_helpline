@@ -1,14 +1,19 @@
 <?php
-/*use yii\helpers\Html;
+use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 //use kartik\widgets\Select2;
 use kartik\select2\Select2;
 use kartik\widgets\DatePicker;
 use backend\models\TblLocations;
 use yii\helpers\ArrayHelper;
-use	yii\helpers\Url;*/
+use	yii\helpers\Url;
+
 $this->title = 'Farmer Profile';
+print_r($model);
+$this->title = $model->farmer_id;
+
 ?>
+<h1><?= Html::encode($this->title) ?></h1>
 <section class="content">                	
 	<h2 class="mt-0">
 		Farmer Profile
