@@ -3,7 +3,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 //use kartik\widgets\Select2;
 use kartik\select2\Select2;
-use kartik\widgets\DatePicker;
+//use kartik\widgets\DatePicker;
+use kartik\date\DatePicker;
 use backend\models\FarmerFarmDetails;
 use yii\helpers\ArrayHelper;
 use	yii\helpers\Url;
@@ -22,12 +23,12 @@ use backend\models\MasterPreleventDisType;
 
 
 $farmerId=$_REQUEST['id'];
-$farms=ArrayHelper::map(FarmerFarmDetails::find()->where(['farmer_id'=>$farmerId])->orderBy('farm_name')->all(), 'id', 'farm_name');
-/*$cropTypes=ArrayHelper::map(MasterCropType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
-$varietyTypes=ArrayHelper::map(MasterVarietyType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
-$soilTypes=ArrayHelper::map(MasterSoilType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
-$irigationTypes=ArrayHelper::map(MasterIrigationType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
-$lateralTypes=ArrayHelper::map(MasterLateralType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
+$farms=ArrayHelper::map(FarmerFarmDetails::find()->where(['farmer_id'=>$farmerId])->orderBy('farm_name')->all(), 'farm_id', 'farm_name');
+$cropTypes=ArrayHelper::map(MasterCropType::find()->orderBy('crop_type_name')->all(), 'crop_type_id', 'crop_type_name');
+$varietyTypes=ArrayHelper::map(MasterVarietyType::find()->orderBy('crop_variety_name')->all(), 'crop_variety_id', 'crop_variety_name');
+$soilTypes=ArrayHelper::map(MasterSoilType::find()->orderBy('soil_type_name')->all(), 'soil_type_id', 'soil_type_name');
+$irigationTypes=ArrayHelper::map(MasterIrigationType::find()->orderBy('irrigation_type_name')->all(), 'irrigation_type_id', 'irrigation_type_name');
+/*$lateralTypes=ArrayHelper::map(MasterLateralType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
 $filterationTypes=ArrayHelper::map(MasterFilterationType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
 $mulchingTypes=ArrayHelper::map(MasterMulchingMethodType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
 $firtigationTypes=ArrayHelper::map(MasterFirtigationType::find()->where(['status'=>1])->orderBy('name')->all(), 'id', 'name');
@@ -80,7 +81,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    /*echo $form->field($model, 'crop_type')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'crop_type')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $cropTypes,
 					        'options' =>[
 					            'placeholder' => 'Crop Type'
@@ -88,7 +89,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					        'pluginOptions' => [
 					            'allowClear' => true,
 					        ],
-					    ]);*/
+					    ]);
 					?>
 		        </div>
 		    </div> 
@@ -98,7 +99,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    /*echo $form->field($model, 'variety_type')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'variety_type')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $varietyTypes,
 					        'options' =>[
 					            'placeholder' => 'Variety Type'
@@ -106,7 +107,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					        'pluginOptions' => [
 					            'allowClear' => true,
 					        ],
-					    ]);*/
+					    ]);
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -128,7 +129,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    /*echo $form->field($model, 'soil_type')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'soil_type')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $soilTypes,
 					        'options' =>[
 					            'placeholder' => 'Soil Type'
@@ -137,8 +138,6 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					            'allowClear' => true,
 					        ],
 					    ]);
-                                             * 
-                                             */
 					?>
 		        </div>
 		    </div> 
@@ -176,7 +175,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					   /* echo $form->field($model, 'planting_date')->widget(DatePicker::classname(), [
+					    echo $form->field($model, 'planting_date')->widget(DatePicker::classname(), [
 						    'options' => ['placeholder' => 'Planting date'],
 						    'pluginOptions' => [
 						        'autoclose'=>true,
@@ -184,8 +183,6 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 								'todayHighlight' => true
 						    ]
 						])->label(false);
-                                            * 
-                                            */
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -201,14 +198,12 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    /*echo $form->field($model, 'defoilation_date')->widget(DatePicker::classname(), [
+					    echo $form->field($model, 'defoilation_date')->widget(DatePicker::classname(), [
 						    'options' => ['placeholder' => 'Defoilation date'],
 						    'pluginOptions' => [
 						        'autoclose'=>true
 						    ]
 						])->label(false);
-                                             * 
-                                             */
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -216,12 +211,12 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    /*echo $form->field($model, 'irrigation_date')->widget(DatePicker::classname(), [
+					    echo $form->field($model, 'irrigation_date')->widget(DatePicker::classname(), [
 						    'options' => ['placeholder' => 'First Irrigation date'],
 						    'pluginOptions' => [
 						        'autoclose'=>true
 						    ]
-						])->label(false);*/
+						])->label(false);
 					?>
 		        </div>
 		    </div> 
@@ -231,7 +226,7 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    /*echo $form->field($model, 'irrigation_type')->label(FALSE)->widget(Select2::classname(), [
+					    echo $form->field($model, 'irrigation_type')->label(FALSE)->widget(Select2::classname(), [
 					        'data' => $irigationTypes,
 					        'options' =>[
 					            'placeholder' => 'Irrigation Type'
@@ -240,8 +235,6 @@ $preleventTypes=ArrayHelper::map(MasterPreleventDisType::find()->where(['status'
 					            'allowClear' => true,
 					        ],
 					    ]);
-                                             * 
-                                             */
 					?>
 		        </div>
 		        <div class="col-sm-2">

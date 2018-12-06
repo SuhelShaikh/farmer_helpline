@@ -39,4 +39,7 @@ ALTER TABLE `farmer_profile`
   
   ALTER TABLE `farmer_profile`
   MODIFY `farmer_id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
+
+ALTER TABLE `farm_details` CHANGE `elevation_farm_location` `elevation_farm_location` VARCHAR(100) NULL DEFAULT NULL;
+
+ALTER TABLE `farm_details` CHANGE `farm_image` `farm_image` VARCHAR(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
