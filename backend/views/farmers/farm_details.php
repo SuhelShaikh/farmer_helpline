@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\depdrop\DepDrop;
 //use kartik\widgets\Select2;
 use kartik\select2\Select2;
 use kartik\widgets\DatePicker;
@@ -11,11 +12,11 @@ use yii\helpers\Url;
 $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'name');
 ?>
 
-<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
-      <div class="modal-header">
+<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'],'action'=>'index.php?r=farmers/farmdetails']); ?>
+      <!--<div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" onclick="closePopup();">&times;</button>
-        <h4 class="modal-title">Add Farm</h4>
-      </div>
+        <!--<h4 class="modal-title">Add Farm</h4>
+      </div>-->
       <?php //echo $form->field($model, 'farmer_id')->hiddenInput(['value'=>$_REQUEST['id']])->label(false); ?>
       <div class="modal-body">
 			<div class="row">
@@ -24,7 +25,7 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 				</div>
 				<div class="col-sm-4">
 		          <?php echo $form->field($model, 'farm_name')->textInput(['class'=>'form-control','placeholder'=>'Farm Name'])->label(false); ?>
-		          <?php echo $form->field($model, 'farmer_id')->hiddenInput(['value'=>$_REQUEST['id']])->label(false); ?>
+		          <?php echo $form->field($model, 'farmer_id')->hiddenInput(['value'=>$id])->label(false); ?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Farm Photo: </b>
@@ -47,13 +48,28 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 		          <?php echo $form->field($model, 'survey_number')->textInput(['class'=>'form-control','placeholder'=>'Survey Number'])->label(false); ?>
 		        </div>
 		    </div> 
+<?php  ?>
+
+    <?php
+   
+    ?>
+
+    <?php
+   
+    ?>
+
+    <?php
+    
+    ?>
 		    <div class="row">
 		        <div class="col-sm-2">
 		           <b>State: </b>
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-						echo $form->field($model, 'state')->label(FALSE)->widget(Select2::classname(), [
+					echo $form->field($model, 'state')->dropDownList($states, ['prompt' => 'Select State', 'id' => 'state-id'])->label(false);
+					
+						/*echo $form->field($model, 'state')->label(FALSE)->widget(Select2::classname(), [
 					    	'data' => $states,
 					        'options' =>[
 					         	'placeholder' => 'Select State',
@@ -80,7 +96,7 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 					        'pluginOptions' => [
 					           	'allowClear' => true,
 					        ],
-					    ]);
+					    ]);*/
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -88,7 +104,16 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-						echo $form->field($model, 'district')->label(FALSE)->widget(Select2::classname(), [
+				 
+				 echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
+						'options' => ['id' => 'district-id'],
+						'pluginOptions' => [
+						    'depends' => ['state-id'],
+						    'placeholder' => 'Select...',
+						    'url' => Url::to(['/site/district'])
+						]
+					    ]);
+						/*echo $form->field($model, 'district')->label(FALSE)->widget(Select2::classname(), [
 					    	'data' => [],
 					        'options' =>[
 					         	'placeholder' => 'Select District',
@@ -112,7 +137,7 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 					        'pluginOptions' => [
 					           	'allowClear' => true,
 					        ],
-					    ]);
+					    ]);*/
 					?>
 		        </div>
 		    </div> 
@@ -122,7 +147,15 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-						echo $form->field($model, 'mandal')->label(FALSE)->widget(Select2::classname(), [
+					 echo $form->field($model, 'mandal')->label(false)->widget(DepDrop::classname(), [
+        'options' => ['id' => 'mandal-id'],
+        'pluginOptions' => [
+            'depends' => ['district-id'],
+            'placeholder' => 'Select...',
+            'url' => Url::to(['/site/mandal'])
+        ]
+    ]);
+						/*echo $form->field($model, 'mandal')->label(FALSE)->widget(Select2::classname(), [
 					    	'data' => [],
 					        'options' =>[
 					         	'placeholder' => 'Select Taluka',
@@ -143,7 +176,7 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 					        'pluginOptions' => [
 					           	'allowClear' => true,
 					        ],
-					    ]);
+					    ]);*/
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -151,7 +184,15 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-						echo $form->field($model, 'village')->label(FALSE)->widget(Select2::classname(), [
+				echo $form->field($model, 'village')->label(false)->widget(DepDrop::classname(), [
+        'options' => ['id' => 'village-id'],
+        'pluginOptions' => [
+            'depends' => ['mandal-id'],
+            'placeholder' => 'Select...',
+            'url' => Url::to(['/site/village'])
+        ]
+    ]);
+						/*echo $form->field($model, 'village')->label(FALSE)->widget(Select2::classname(), [
 					    	'data' => [],
 					        'options' =>[
 					         	'placeholder' => 'Select Village'
@@ -159,7 +200,7 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 					        'pluginOptions' => [
 					           	'allowClear' => true
 					        ],
-					    ]);
+					    ]);*/
 					?>
 		        </div>
 		    </div> 

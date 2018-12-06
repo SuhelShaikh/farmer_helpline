@@ -10,6 +10,8 @@ use backend\models\User;
 use yii\helpers\ArrayHelper;
 use	yii\helpers\Url;
 use backend\models\FarmDetails;
+use yii\bootstrap\Modal;
+use backend\models\FarmerFarmDetails;
 $this->title = 'Update Farmer';
 $farmData =FarmDetails::find()->where(['farmer_id'=>$_REQUEST['id']])->all();
 //$states=ArrayHelper::map(TblLocations::find()->where(['status'=>1,'type'=>1])->orderBy('name')->all(), 'id', 'name');
@@ -230,7 +232,8 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 			        <div class="panel-body">
 			        	<div class="row">
 					        <div class="col-sm-12 text-right">
-					        	<?php echo Html::Button("Add Farm",['class'=>'btn btn-primary btn-flat','data-toggle'=>'modal','data-target'=>'#farmModel']); ?>
+					        	<?php //echo Html::Button("Add Farm",['class'=>'btn btn-primary btn-flat','data-toggle'=>'modal','data-target'=>'#farmModel']); ?>
+<?php echo Html::Button("Add Farm",['class'=>'btn btn-primary btn-flats','href'=>'javascript:void(0);']); ?>
 					        </div>
 					    </div>
 					    <br />
@@ -270,7 +273,7 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 					                            	</td>
 
 					                            <?php endif; ?>
-					                            <td><?php echo Html::a("<i class='fa fa-trash'></i>", ['farmers/delete-farm','id'=>$farmData[$i]['farm_id'],'farmerId'=>$_REQUEST['id']]); ?></td>
+					                            <td><?php echo Html::a("<i class='fa fa-trash'></i>", ['farmdetails/delete','id'=>$farmData[$i]['farm_id'],'farmerId'=>$_REQUEST['id']]); ?></td>
 					                        </tr>
 					                    <?php endfor; ?>
 					                </tbody>
@@ -333,17 +336,17 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 
 
 
-<div id="farmModel" class="modal fade" role="dialog">
+<!--<div id="farmModel" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-    	<iframe frameborder="0" height="500px" width="100%" border="0" src="<?php echo Yii::$app->urlManager->createAbsoluteUrl(['farmers/farm-details','id'=>$_REQUEST['id']]);  ?>"></iframe>
+    <!-- Modal content
+    <div class="modal-content">-->
+    	
     	<!--<iframe frameborder="0" height="500px" width="100%" border="0" src="<?php // echo Yii::$app->urlManager->createAbsoluteUrl('farmers/farm-details',['id'=>$_REQUEST['id']]);  ?>"></iframe>-->
-    </div>
+    <!--</div>
 
   </div>
-</div>
+</div>-->
 
 <div id="plotModel" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
@@ -355,13 +358,17 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 
   </div>
 </div>
-
-
+<?php
+yii\bootstrap\Modal::begin(['header' => '<h2>Add Farm</h2>','id' =>'farm-form']);
+        echo $this->render('farm_details', ['model' => new \backend\models\FarmDetails(),'id'=>$_REQUEST['id']]);
+        yii\bootstrap\Modal::end();
+?>
 <style type="text/css">
 	a.disabled {
 	   pointer-events: none;
 	   color: cadetblue;
 	}
+.farm-form .modal-dialog {width: 720px;}
 </style>
 
 <?php
@@ -373,6 +380,9 @@ $script="$('#farmers-birth_date').on('change', function () {
 		var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
 		$('#farmers-age').val(age);
     });
+	$('.btn-flats').click(function(){
+		$('#farm-form').modal('show');
+	});
     $('#collapse".$tab."').collapse('toggle');"; 
     $this->registerJs($script);
 ?>

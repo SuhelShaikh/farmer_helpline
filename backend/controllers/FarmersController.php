@@ -6,6 +6,7 @@ use Yii;
 use backend\models\Farmers;
 use backend\models\FarmersSearch;
 use backend\models\FarmerFarmDetails;
+use backend\models\FarmDetails;
 use backend\models\FarmerPlotDetails;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -67,7 +68,7 @@ class FarmersController extends Controller
     public function actionCreate()
     {
         
-        //$this->layout='dashboard';
+        $this->layout='';
         $model = new Farmers();
         
         if ($model->load(Yii::$app->request->post())) {
@@ -150,12 +151,15 @@ class FarmersController extends Controller
             'plotData'=>$plotData
         ]);
     }
-	public function actionFarmDetails(){
+	public function actionFarmdetails(){
+
         //$this->layout='blank';
-        $model=new FarmerFarmDetails();
+        $model=new FarmDetails();
         if ($model->load(Yii::$app->request->post())) {
-            //echo "<pre>";print_r($_FILES);die;
-            if ($model->validate()) {
+	$id = $model->farmer_id;
+	//echo '<pre>';print_r($model);exit;
+     //echo "<pre>";print_r($_FILES);die;
+            //if ($model->validate()) {
                 
                 /*if($_FILES['FarmerFarmDetails']['name']['farm_image']!=""){
                     $model->farm_image = UploadedFile::getInstances($model, 'farm_image');
@@ -177,7 +181,7 @@ class FarmersController extends Controller
                     }
                 }*/
                 $model->farm_image=null;
-                if($model->save()){
+                if($model->save(false)){
                     Yii::$app->session->setFlash('insert', "Farm added successfully.");
                     $externel_url=Yii::$app->urlManager->createAbsoluteUrl(['farmers/update','id'=>$model->farmer_id,'tab'=>2]);
                     $_SESSION['farmInsert']="Farm added successfully.";
@@ -185,14 +189,19 @@ class FarmersController extends Controller
                     echo "this.parent.location.href = '$externel_url'";
                     echo "</script>";
                 }
-            } else {
-                return $this->render('farm_details', [
-                    'model' => $model
-                ]);
-            }
+
+
+            //} else {
+           //     return $this->render('farm_details', [
+           //         'model' => $model,
+	//		'id'=>$id,
+           //     ]);
+           // }
+
         }
         return $this->render('farm_details', [
-            'model' => $model
+            'model' => $model,
+'id'=>$id,
         ]);
 	}
     public function actionPlotDetails(){
@@ -341,8 +350,10 @@ class FarmersController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionProfile()
+    public function actionProfile($id)
     {
-        return $this->render('profile');
+        return $this->render('profile', [
+            'model' => $this->findModel($id),
+        ]);
     }
 }
