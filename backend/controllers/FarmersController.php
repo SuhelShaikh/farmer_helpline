@@ -69,7 +69,6 @@ class FarmersController extends Controller
     public function actionCreate()
     {
         
-       // $this->layout='';
         $model = new Farmers();
         
         if ($model->load(Yii::$app->request->post())) {

@@ -69,7 +69,7 @@ use backend\models\EaQuestions;
                             ['label' => 'Manage Farmer','icon' => 'plus-circle','url' => ['farmers/index']],
                             ['label' => 'Tag Farmers','icon' => 'file-code-o','url' => ['farmers/tag-farmers']],
                             ['label' => 'UnTag Farmers','icon' => 'id-card-o','url' => ['farmers/untag-farmers']],
-                            ['label' => 'Farmer Profile','icon' => 'id-card-o','url' => ['farmers/profile']],
+                            //['label' => 'Farmer Profile','icon' => 'id-card-o','url' => ['farmers/profile']],
                             ],
                     ],
                    // ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
