@@ -7,6 +7,7 @@ use backend\models\Farmers;
 use backend\models\FarmersSearch;
 use backend\models\FarmerFarmDetails;
 use backend\models\FarmDetails;
+use backend\models\Plot;
 use backend\models\FarmerPlotDetails;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -68,7 +69,6 @@ class FarmersController extends Controller
     public function actionCreate()
     {
         
-        //$this->layout='';
         $model = new Farmers();
         
         if ($model->load(Yii::$app->request->post())) {
@@ -352,8 +352,11 @@ class FarmersController extends Controller
 
     public function actionProfile($id)
     {
+        $model = new Farmers();
+        $data=$model->getFarmerDetails($id);
         return $this->render('profile', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'data' => $data
         ]);
     }
 }
