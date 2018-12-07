@@ -79,23 +79,23 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        <div class="col-sm-2">
 		           <b>Crop Name: </b>
 		        </div>
-		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'crop_name')->textInput(['class'=>'form-control','placeholder'=>'Crop Name'])->label(false); ?>
-		        </div>
+<!--		        <div class="col-sm-4">
+		          <?php //echo $form->field($model, 'crop_name')->textInput(['class'=>'form-control','placeholder'=>'Crop Name'])->label(false); ?>
+		        </div>-->
 		        <div class="col-sm-2">
 		           <b>Crop Type: </b>
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    echo $form->field($model, 'crop_type')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $cropTypes,
-					        'options' =>[
-					            'placeholder' => 'Crop Type'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'crop_type')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $cropTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Crop Type'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		    </div> 
@@ -105,22 +105,22 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    echo $form->field($model, 'variety_type')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $varietyTypes,
-					        'options' =>[
-					            'placeholder' => 'Variety Type'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'variety_type')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $varietyTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Variety Type'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Crop Grown Area: </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'crop_grown_area')->textInput(['class'=>'form-control','placeholder'=>'Crop Grown Area'])->label(false); ?>
+		          <?php //echo $form->field($model, 'crop_grown_area')->textInput(['class'=>'form-control','placeholder'=>'Crop Grown Area'])->label(false); ?>
 		        </div>
 		    </div>
 		    <div class="row">
@@ -128,22 +128,22 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		           <b>Plot Numbers: </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'plot_numbers')->textInput(['class'=>'form-control','placeholder'=>'Number of plots of this crop'])->label(false); ?>
+		          <?php //echo $form->field($model, 'plot_numbers')->textInput(['class'=>'form-control','placeholder'=>'Number of plots of this crop'])->label(false); ?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Soil Type: </b>
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    echo $form->field($model, 'soil_type')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $soilTypes,
-					        'options' =>[
-					            'placeholder' => 'Soil Type'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'soil_type')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $soilTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Soil Type'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		    </div> 
@@ -152,13 +152,13 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		           <b>Water Capacity: </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'water_capacity')->textInput(['class'=>'form-control','placeholder'=>'Water holding capacity'])->label(false); ?>
+		          <?php //echo $form->field($model, 'water_capacity')->textInput(['class'=>'form-control','placeholder'=>'Water holding capacity'])->label(false); ?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Drainout Period: </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'drain_out_period')->textInput(['class'=>'form-control','placeholder'=>'Drainout Period'])->label(false); ?>
+		          <?php //echo $form->field($model, 'drain_out_period')->textInput(['class'=>'form-control','placeholder'=>'Drainout Period'])->label(false); ?>
 		        </div>
 		    </div> 
 		    <div class="row">
@@ -166,13 +166,13 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		           <b>Distance(Two Lines): </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'line_distance')->textInput(['class'=>'form-control','placeholder'=>'Distance between two lines'])->label(false); ?>
+		          <?php //echo $form->field($model, 'line_distance')->textInput(['class'=>'form-control','placeholder'=>'Distance between two lines'])->label(false); ?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Distance(Two Plants): </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'plant_distance')->textInput(['class'=>'form-control','placeholder'=>'Distance between two plots'])->label(false); ?>
+		          <?php //echo $form->field($model, 'plant_distance')->textInput(['class'=>'form-control','placeholder'=>'Distance between two plots'])->label(false); ?>
 		        </div>
 		    </div> 
 		    <div class="row">
@@ -181,21 +181,21 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    echo $form->field($model, 'planting_date')->widget(DatePicker::classname(), [
-						    'options' => ['placeholder' => 'Planting date'],
-						    'pluginOptions' => [
-						        'autoclose'=>true,
-								'endDate' => "5y",
-								'todayHighlight' => true
-						    ]
-						])->label(false);
+//					    echo $form->field($model, 'planting_date')->widget(DatePicker::classname(), [
+//						    'options' => ['placeholder' => 'Planting date'],
+//						    'pluginOptions' => [
+//						        'autoclose'=>true,
+//								'endDate' => "5y",
+//								'todayHighlight' => true
+//						    ]
+//						])->label(false);
 					?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Plant Age: </b>
 		        </div>
 		        <div class="col-sm-4">
-		          <?php echo $form->field($model, 'plant_age')->textInput(['class'=>'form-control','placeholder'=>'Planting Age','disabled'=>true])->label(false); ?>
+		          <?php //echo $form->field($model, 'plant_age')->textInput(['class'=>'form-control','placeholder'=>'Planting Age','disabled'=>true])->label(false); ?>
 		        </div>
 		    </div> 
 		    <div class="row">
@@ -204,12 +204,12 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    echo $form->field($model, 'defoilation_date')->widget(DatePicker::classname(), [
-						    'options' => ['placeholder' => 'Defoilation date'],
-						    'pluginOptions' => [
-						        'autoclose'=>true
-						    ]
-						])->label(false);
+//					    echo $form->field($model, 'defoilation_date')->widget(DatePicker::classname(), [
+//						    'options' => ['placeholder' => 'Defoilation date'],
+//						    'pluginOptions' => [
+//						        'autoclose'=>true
+//						    ]
+//						])->label(false);
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -217,12 +217,12 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    echo $form->field($model, 'irrigation_date')->widget(DatePicker::classname(), [
-						    'options' => ['placeholder' => 'First Irrigation date'],
-						    'pluginOptions' => [
-						        'autoclose'=>true
-						    ]
-						])->label(false);
+//					    echo $form->field($model, 'irrigation_date')->widget(DatePicker::classname(), [
+//						    'options' => ['placeholder' => 'First Irrigation date'],
+//						    'pluginOptions' => [
+//						        'autoclose'=>true
+//						    ]
+//						])->label(false);
 					?>
 		        </div>
 		    </div> 
@@ -232,15 +232,15 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    echo $form->field($model, 'irrigation_type')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $irigationTypes,
-					        'options' =>[
-					            'placeholder' => 'Irrigation Type'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'irrigation_type')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $irigationTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Irrigation Type'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -248,15 +248,15 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    echo $form->field($model, 'lateral_type')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $lateralTypes,
-					        'options' =>[
-					            'placeholder' => 'Lateral Type'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'lateral_type')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $lateralTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Lateral Type'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		    </div>
@@ -266,15 +266,15 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    echo $form->field($model, 'filterartion_system')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $filterationTypes,
-					        'options' =>[
-					            'placeholder' => 'Filterartion System'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'filterartion_system')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $filterationTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Filterartion System'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -282,15 +282,15 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		        	<?php
-					    echo $form->field($model, 'mulching_method')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $mulchingTypes,
-					        'options' =>[
-					            'placeholder' => 'Mulching Method'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'mulching_method')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $mulchingTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Mulching Method'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		    </div>
@@ -300,15 +300,15 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    echo $form->field($model, 'firtigation_equipments')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $firtigationTypes,
-					        'options' =>[
-					            'placeholder' => 'Fertigation Equipments'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'firtigation_equipments')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $firtigationTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Fertigation Equipments'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -316,15 +316,15 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		        </div>
 		        <div class="col-sm-4">
 		          	<?php
-					    echo $form->field($model, 'water_source')->label(FALSE)->widget(Select2::classname(), [
-					        'data' => $waterSourceTypes,
-					        'options' =>[
-					            'placeholder' => 'Water Source'
-					        ],
-					        'pluginOptions' => [
-					            'allowClear' => true,
-					        ],
-					    ]);
+//					    echo $form->field($model, 'water_source')->label(FALSE)->widget(Select2::classname(), [
+//					        'data' => $waterSourceTypes,
+//					        'options' =>[
+//					            'placeholder' => 'Water Source'
+//					        ],
+//					        'pluginOptions' => [
+//					            'allowClear' => true,
+//					        ],
+//					    ]);
 					?>
 		        </div>
 		        
@@ -334,13 +334,13 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		           <b>Soil Details: </b>
 		        </div>
 		        <div class="col-sm-4">
-		        	<?php echo $form->field($model, 'soil_details')->textArea(['class'=>'form-control','placeholder'=>'Soil Details'])->label(false); ?>
+		        	<?php //echo $form->field($model, 'soil_details')->textArea(['class'=>'form-control','placeholder'=>'Soil Details'])->label(false); ?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Water Details: </b>
 		        </div>
 		        <div class="col-sm-4">
-		        	<?php echo $form->field($model, 'water_details')->textArea(['class'=>'form-control','placeholder'=>'Water Details'])->label(false); ?>
+		        	<?php //echo $form->field($model, 'water_details')->textArea(['class'=>'form-control','placeholder'=>'Water Details'])->label(false); ?>
 		        </div>
 		    </div>
 		    <div class="row">
@@ -348,13 +348,13 @@ $preleventTypes=array('1'=>'prelevent 1','2'=>'prelevent 2');
 		           <b>Soil Test Report: </b>
 		        </div>
 		        <div class="col-sm-4">
-		        	<?php echo $form->field($model, 'soil_test_report')->fileInput()->label(false); ?>
+		        	<?php //echo $form->field($model, 'soil_test_report')->fileInput()->label(false); ?>
 		        </div>
 		        <div class="col-sm-2">
 		           <b>Water Test Report: </b>
 		        </div>
 		        <div class="col-sm-4">
-		        	<?php echo $form->field($model, 'water_test_report')->fileInput()->label(false); ?>
+		        	<?php //echo $form->field($model, 'water_test_report')->fileInput()->label(false); ?>
 		        </div>
 		    </div>
 		    <div class="row">

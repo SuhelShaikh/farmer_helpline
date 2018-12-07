@@ -10,6 +10,7 @@ use backend\models\User;
 use yii\helpers\ArrayHelper;
 use	yii\helpers\Url;
 use backend\models\FarmDetails;
+use backend\models\Plot;
 use yii\bootstrap\Modal;
 use backend\models\FarmerFarmDetails;
 $this->title = 'Update Farmer';
@@ -294,7 +295,8 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
 			        <div class="panel-body">
 			        	<div class="row">
 					        <div class="col-sm-12 text-right">
-					        	<?php echo Html::Button("Add Plot",['class'=>'btn btn-primary btn-flat','data-toggle'=>'modal','data-target'=>'#plotModel']); ?>
+					        	<?php //echo Html::Button("Add Plot",['class'=>'btn btn-primary btn-flat','data-toggle'=>'modal','data-target'=>'#plotModel']); ?>
+                                                        <?php echo Html::Button("Add Farm",['class'=>'btn btn-primary btn-flats','href'=>'javascript:void(0);']); ?>
 					        </div>
 					    </div>
 					    <br />
@@ -348,19 +350,24 @@ $tagTo=ArrayHelper::map(User::find()->where(['status'=>10])->orderBy('username')
   </div>
 </div>-->
 
-<div id="plotModel" class="modal fade" role="dialog">
+<!--<div id="plotModel" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
-    <!-- Modal content-->
+     Modal content
     <div class="modal-content">
     	<iframe frameborder="0" height="900px" width="100%" border="0" src="<?php echo Yii::$app->urlManager->createAbsoluteUrl(['farmers/plot-details','id'=>$_REQUEST['id']]);  ?>"></iframe>
     </div>
 
   </div>
-</div>
+</div>-->
 <?php
 yii\bootstrap\Modal::begin(['header' => '<h2>Add Farm</h2>','id' =>'farm-form']);
         echo $this->render('farm_details', ['model' => new \backend\models\FarmDetails(),'id'=>$_REQUEST['id']]);
+        yii\bootstrap\Modal::end();
+?>
+<?php
+yii\bootstrap\Modal::begin(['header' => '<h2>Add Plot</h2>','id' =>'plot-form']);
+        echo $this->render('plot_details', ['model' => new \backend\models\Plot(),'id'=>$_REQUEST['id']]);
         yii\bootstrap\Modal::end();
 ?>
 <style type="text/css">
