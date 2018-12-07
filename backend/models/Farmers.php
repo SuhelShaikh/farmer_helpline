@@ -158,9 +158,9 @@ class Farmers extends \yii\db\ActiveRecord
                             LEFT JOIN crop_variety cv ON cv.crop_variety_id = cd.crop_variety_id
                         WHERE p.farm_id=$farm_id");
                 $data3=$command3->queryAll();
-                $data2[$j]['plot']=(object)$data3;
+                $data[$i]['plot']=$data3;
             }            
-            $data[$i]['farm']=(object)$data2;
+            $data[$i]['farm']=$data2;
         }
         return (object)$data[0];
     }
