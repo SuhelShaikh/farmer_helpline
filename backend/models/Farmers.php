@@ -163,8 +163,6 @@ class Farmers extends \yii\db\ActiveRecord {
                 $data3 = $command3->queryAll();
                 if (!empty($data3))
                     $data[$i]['plot'][$j] = $data3;
-                else
-                    $data[$i]['plot'][$j] = 0;
             }
             $data[$i]['farm'] = $data2;
         }

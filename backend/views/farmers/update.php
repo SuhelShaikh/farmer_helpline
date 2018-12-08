@@ -274,7 +274,7 @@ $tagTo = ArrayHelper::map(User::find()->where(['status' => 10])->orderBy('userna
                                                         </td>
 
                                                 <?php endif; ?>
-                                                    <td><?php echo Html::a("<i class='fa fa-trash'></i>", ['farmdetails/delete', 'id' => $data->farm[$i]['farm_id'], 'farmerId' => $_REQUEST['id']]); ?></td>
+                                                    <td><?php echo Html::a("<i class='fa fa-trash'></i>", ['farmers/delete-farm', 'id' => $data->farm[$i]['farm_id'], 'farmerId' => $_REQUEST['id']]); ?></td>
                                                 </tr>
 <?php endfor; ?>
                                         </tbody>
@@ -314,7 +314,10 @@ $tagTo = ArrayHelper::map(User::find()->where(['status' => 10])->orderBy('userna
                                         </thead>
                                         <tbody>             
                                             <?php $i=1;
+                                            if (isset($data->plot) && !empty($data->plot)) {
                                             foreach ($data->plot AS $plot) { 
+                                                if (isset($plot) && !empty($plot)) {
+
                                                 foreach ($plot AS $plot1){ ?>
                                                 <tr>
                                                     <td><?php echo $i++; ?></td>
@@ -324,7 +327,7 @@ $tagTo = ArrayHelper::map(User::find()->where(['status' => 10])->orderBy('userna
                                                     <!--<td><?php //echo $plot1['soil_details']; ?></td>-->
                                                     <td><?php echo Html::a("<i class='fa fa-trash'></i>", ['farmers/delete-plot', 'id' => $plot1['plot_id'], 'farmerId' => $_REQUEST['id']]); ?></td>
                                                 </tr>
-                                            <?php }} ?>
+                                            <?php }}}} ?>
                                         </tbody>
                                     </table>
                                 </div>
