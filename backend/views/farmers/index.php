@@ -9,7 +9,7 @@ use backend\models\State;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
-$this->title = 'Manage Users';
+$this->title = 'Manage Farmers';
 $states = ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'name');
 $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'username');
 //echo "<pre>";
@@ -18,42 +18,40 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
 ?>
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'action' => 'index.php?r=farmers/farmdetails']); ?>
 <!-- Main content -->
-<section class="content-header">
-    <h1>
-        Manage Farmers
-        <small>Control panel</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><?php echo Html::a("<i class='fa fa-dashboard'></i> Home", ['main/admin-dashboard']); ?></li>
-        <li class="active">Manage Farmers</li>
-    </ol>
-</section>
-<hr />
-<div class="row">
-    <div class="col-sm-2">
-        <b>State: </b>
-    </div>
-    <div class="col-sm-4">
-        <?php
-        echo $form->field($model, 'state')->dropDownList($states, ['prompt' => 'Select State', 'id' => 'state-id'])->label(false);
-        ?>
-    </div>
-    <div class="col-sm-2">
-        <b>District: </b>
-    </div>
-    <div class="col-sm-4">
-        <?php
-        echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
-            'options' => ['id' => 'district-id'],
-            'pluginOptions' => [
-                'depends' => ['state-id'],
-                'placeholder' => 'Select...',
-                'url' => Url::to(['/site/district'])
-            ]
-        ]);
-        ?>
-    </div>
-</div> 
+
+<div class="manage-farmer-index">
+	<div>
+		<h2 class="mt-0">
+			<?= Html::encode($this->title) ?>
+			<p class="pull-right"><?php echo Html::a("Add Farmer", ['farmers/create'],['class'=>'btn btn-success']); ?></p>
+		</h2>
+	</div>
+	<div class="clearfix"></div>
+	<div class="row">
+		<div class="col-sm-2">
+			<b>State: </b>
+		</div>
+		<div class="col-sm-4">
+			<?php
+			echo $form->field($model, 'state')->dropDownList($states, ['prompt' => 'Select State', 'id' => 'state-id'])->label(false);
+			?>
+		</div>
+		<div class="col-sm-2">
+			<b>District: </b>
+		</div>
+		<div class="col-sm-4">
+			<?php
+			echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
+				'options' => ['id' => 'district-id'],
+				'pluginOptions' => [
+					'depends' => ['state-id'],
+					'placeholder' => 'Select...',
+					'url' => Url::to(['/site/district'])
+				]
+			]);
+			?>
+		</div>
+	</div> 
 <div class="row">
     <div class="col-sm-2">
         <b>Tehsil: </b>
@@ -156,7 +154,7 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
     </div>
 
 </section>
-
+</div>
 <?php
 //$script = "$('#myTable').DataTable();";
 //$this->registerJs($script);
