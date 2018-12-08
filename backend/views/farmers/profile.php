@@ -15,7 +15,7 @@ $this->title = $data->farmer_id;
 //echo "<pre>";
 //print_r($data);exit;
 ?>
-<h1><?= Html::encode($this->title) ?></h1>
+<!--<h1><?= Html::encode($this->title) ?></h1>-->
 <section class="content">                	
     <h2 class="mt-0">
         Farmer Profile
@@ -29,7 +29,7 @@ $this->title = $data->farmer_id;
         </div>
         <div class="user-info col-sm-12 col-md-10">
             <div class="basic-info">
-                <label class="font-weight-bold"><?php echo $data->first_name . " " . $data->last_name;?></label>
+                <label class="font-weight-bold"><?php echo $data->first_name . " " . $data->last_name; ?></label>
                 <div class="clearfix"></div>				
                 <label class="user-phone"><i class="fa fa-phone font-weight-bold mr-1"></i> (+91 <?php echo $data->mobile_no ?>)</label>
                 <div class="clearfix"></div>				
@@ -49,17 +49,17 @@ $this->title = $data->farmer_id;
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1success" data-toggle="tab"><strong>Farmer Profile</strong></a></li>
-                        <li class=""><a href="#tab2success" data-toggle="tab"><strong>Farm (<?=  count($data->farm)?>)</strong></a></li>
-                        <li><a href="#tab3success" data-toggle="tab"><strong>Crop (<?=  count($data->plot)?>)</strong></a></li>
-                        <li class=""><a href="#tab4success" data-toggle="tab"><strong>Advices History </strong></a></li>
-                        <li class=""><a href="#tab5success" data-toggle="tab"><strong>Farmer Schedules</strong></a></li>
-                        <li class=""><a href="#tab6success" data-toggle="tab"><strong>Schedules Prescription</strong></a></li>
+                        <li><a href="#tab2success" data-toggle="tab"><strong>Farm <?php echo (isset($data->farm) && !empty($data->farm))?" (".count($data->farm).")": " (0)"; ?></strong></a></li>
+                        <li><a href="#tab3success" data-toggle="tab"><strong>Crop <?php echo (isset($data->plot) && !empty($data->plot))?" (".count($data->plot).")": " (0)"; ?></strong></a></li>
+                        <li><a href="#tab4success" data-toggle="tab"><strong>Advices History </strong></a></li>
+                        <li><a href="#tab5success" data-toggle="tab"><strong>Farmer Schedules</strong></a></li>
+                        <li><a href="#tab6success" data-toggle="tab"><strong>Schedules Prescription</strong></a></li>
                     </ul>
                 </div>
                 <div class="panel-body">
                     <div class="tab-content row">
                         <div class="tab-pane fade active in col-md-12" id="tab1success">
-                        <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+                            <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
                             <div class="row">
                                 <div class="col-sm-2"><b>First Name: </b></div>
                                 <div class="col-sm-4"><b><?php echo $data->first_name; ?></b></div>
@@ -94,7 +94,7 @@ $this->title = $data->farmer_id;
                                 <div class="col-sm-2"><b>Address: </b></div>
                                 <div class="col-sm-4"><b><?php echo $data->home_address ?></b></div>
                             </div>
-                        <?php ActiveForm::end(); ?>
+                            <?php ActiveForm::end(); ?>
                         </div>
                         <div class="tab-pane fade" id="tab2success">
                             <?php
@@ -137,69 +137,76 @@ $this->title = $data->farmer_id;
                                                 <div class="col-sm-2"><b>Area Of Unit: </b></div>
                                                 <div class="col-sm-4"><b><?php echo $farm->area_unit; ?></b></div>
                                             </div></div></div></div>
-                    <?php } ActiveForm::end(); ?>
+                            <?php } ActiveForm::end(); ?>
                         </div>
                         <div class="tab-pane fade" id="tab3success">
                             <?php
                             $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);
-                            foreach ($data->plot AS $plot1) {
-                                foreach ($plot1 AS $plot) {
-                                $plot = (object) $plot;
-                                ?><div class="panel-group" id="accordion">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><?php echo $plot->plot_name; ?></a>
-                                            </h4>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-sm-2"><b>Plot Name: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->plot_name; ?></b></div>
-                                                <div class="col-sm-2"><b>Plot Area: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->plot_area; ?></b></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-2"><b>Crop Name: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->crop_name; ?></b></div>
-                                                <div class="col-sm-2"><b>Crop Type: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->crop_type_name; ?></b></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-2"><b>Variety Name: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->crop_variety_name; ?></b></div>
-                                                <div class="col-sm-2"><b>No Of Valves: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->number_of_valves; ?></b></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-2"><b>No. Of Plants: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->number_of_plants; ?></b></div>
-                                                <div class="col-sm-2"><b>Plot Platnted Date: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->plot_planted_date; ?></b></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-2"><b>Planting Method: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->planting_method; ?></b></div>
-                                                <div class="col-sm-2"><b>Expected Yield/Plant: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->expected_yield_per_plant; ?></b></div>
-                                            </div>
-                                        <div class="row">
-                                                <div class="col-sm-2"><b>Total Expected Yield: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->total_expected_yield; ?></b></div>
-                                                <div class="col-sm-2"><b>Defoilation Date: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->defoliation_date; ?></b></div>
-                                            </div>
-                                        <div class="row">
-                                                <div class="col-sm-2"><b>First Water Date: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->first_water_date; ?></b></div>
-                                                <div class="col-sm-2"><b>Water in Liters: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->water_liters; ?></b></div>
-                                            </div>
-                                        <div class="row">
-                                                <div class="col-sm-2"><b>Mulching Date: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $plot->mulching_date; ?></b></div>
-                                        </div></div></div></div>
-                            <?php }} ActiveForm::end(); ?>
+                            if (isset($data->plot) && !empty($data->plot)) {
+                                foreach ($data->plot AS $plot1) {
+                                    if (isset($plot1) && !empty($plot1)) {
+                                        foreach ($plot1 AS $plot) {
+                                            $plot = (object) $plot;
+                                            ?><div class="panel-group" id="accordion">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><?php echo $plot->plot_name; ?></a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-2"><b>Plot Name: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->plot_name; ?></b></div>
+                                                            <div class="col-sm-2"><b>Plot Area: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->plot_area; ?></b></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-2"><b>Crop Name: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->crop_name; ?></b></div>
+                                                            <div class="col-sm-2"><b>Crop Type: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->crop_type_name; ?></b></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-2"><b>Variety Name: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->crop_variety_name; ?></b></div>
+                                                            <div class="col-sm-2"><b>No Of Valves: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->number_of_valves; ?></b></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-2"><b>No. Of Plants: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->number_of_plants; ?></b></div>
+                                                            <div class="col-sm-2"><b>Plot Platnted Date: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->plot_planted_date; ?></b></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-2"><b>Planting Method: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->planting_method; ?></b></div>
+                                                            <div class="col-sm-2"><b>Expected Yield/Plant: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->expected_yield_per_plant; ?></b></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-2"><b>Total Expected Yield: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->total_expected_yield; ?></b></div>
+                                                            <div class="col-sm-2"><b>Defoilation Date: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->defoliation_date; ?></b></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-2"><b>First Water Date: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->first_water_date; ?></b></div>
+                                                            <div class="col-sm-2"><b>Water in Liters: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->water_liters; ?></b></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-2"><b>Mulching Date: </b></div>
+                                                            <div class="col-sm-4"><b><?php echo $plot->mulching_date; ?></b></div>
+                                                        </div></div></div></div>
+                                        <?php
+                                        }
+                                    }
+                                }
+                            } ActiveForm::end();
+                            ?>
                         </div>
                         <div class="tab-pane fade" id="tab4success">Coming Soon..</div>
                         <div class="tab-pane fade" id="tab5success">Coming Soon..</div>

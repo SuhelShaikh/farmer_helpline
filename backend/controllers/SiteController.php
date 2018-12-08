@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\controllers;
 
 use Yii;
@@ -24,27 +25,27 @@ use backend\models\District;
 use yii\helpers\Json;
 use backend\models\Mandal;
 use backend\models\Village;
+
 /**
  * Site controller
  */
-class SiteController extends Controller
-{
+class SiteController extends Controller {
+
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error','requestpasswordreset'],
+                        'actions' => ['login', 'error', 'requestpasswordreset'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index','requestpasswordreset','signup','validate','farmersignup','createcrop','district',
-                        'mandal','village'],
+                        'actions' => ['logout', 'index', 'requestpasswordreset', 'signup', 'validate', 'farmersignup', 'createcrop', 'district',
+                            'mandal', 'village', "croptype", "cropvariety"],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -62,8 +63,7 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-    public function actions()
-    {
+    public function actions() {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -76,8 +76,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         return $this->render('index');
     }
 
@@ -86,8 +85,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionLogin()
-    {
+    public function actionLogin() {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -97,7 +95,7 @@ class SiteController extends Controller
             return $this->goBack();
         } else {
             return $this->render('login', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -107,20 +105,18 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionLogout()
-    {
+    public function actionLogout() {
         Yii::$app->user->logout();
 
         return $this->goHome();
     }
 
-	/**
+    /**
      * Displays contact page.
      *
      * @return mixed
      */
-    public function actionContact()
-    {
+    public function actionContact() {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
@@ -132,7 +128,7 @@ class SiteController extends Controller
             return $this->refresh();
         } else {
             return $this->render('contact', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -142,8 +138,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionAbout()
-    {
+    public function actionAbout() {
         return $this->render('about');
     }
 
@@ -152,8 +147,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionSignup()
-    {
+    public function actionSignup() {
         $userId = Yii::$app->user->id;
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
@@ -163,37 +157,35 @@ class SiteController extends Controller
                 $userRole = new UserRole();
                 $userRole->user_id = $user->id;
                 $userRole->role_id = $model->user_role;
-                if($userRole->save()) {
+                if ($userRole->save()) {
                     return $this->goHome();
                 } else {
-					echo '<pre>';print_r($userRole->errors);
-				}
+                    echo '<pre>';
+                    print_r($userRole->errors);
+                }
             } else {
-				echo '<pre>';print_r($model->errors);
-			}
+                echo '<pre>';
+                print_r($model->errors);
+            }
         }
-		$userRoleList = Role::getUserRoleList();
-		$roles = Role::getRoleIds();
-		$userIds = UserRole::getUserIds($roles);
-		$users = ArrayHelper::map(
-		    User::find()->asArray()->where(['IN','id',$userIds])->all(),
-		    'id',
-		    function($model) {
-		        return $model['first_name'].' '.$model['last_name'];
-		    }
-		    );
-		$userRole = userRole::getUserRole($userId);
+        $userRoleList = Role::getUserRoleList();
+        $roles = Role::getRoleIds();
+        $userIds = UserRole::getUserIds($roles);
+        $users = ArrayHelper::map(
+                        User::find()->asArray()->where(['IN', 'id', $userIds])->all(), 'id', function($model) {
+                    return $model['first_name'] . ' ' . $model['last_name'];
+                }
+        );
+        $userRole = userRole::getUserRole($userId);
         return $this->render('signup', [
-            'model' => $model,
-			'userRoleList'=>$userRoleList,
-            'users'=>$users,
-            'userRole'=>$userRole,
+                    'model' => $model,
+                    'userRoleList' => $userRoleList,
+                    'users' => $users,
+                    'userRole' => $userRole,
         ]);
     }
-	
-	
-	public function actionFarmersignup()
-    {
+
+    public function actionFarmersignup() {
         $session = Yii::$app->session;
         $userId = Yii::$app->user->id;
         $model = new FarmerSignupForm();
@@ -204,55 +196,52 @@ class SiteController extends Controller
                 $userRole = new UserRole();
                 $userRole->user_id = $user->id;
                 $userRole->role_id = $model->user_role;
-                if($userRole->save()) {
-                    if(!empty($post['assign_users'])) {
+                if ($userRole->save()) {
+                    if (!empty($post['assign_users'])) {
                         $userRelation = new UserRelation();
                         $userRelation->ea_id = $post['assign_users'];
                         $userRelation->farmer_id = $user->id;
-                        if($userRelation->save()) {
+                        if ($userRelation->save()) {
                             $session['farmer_id'] = $user->id;
                             return $this->redirect(['farmdetails/create']);
                         }
                     }
                     return $this->goHome();
                 } else {
-                    echo '<pre>';print_r($userRole->errors);
+                    echo '<pre>';
+                    print_r($userRole->errors);
                 }
             }
         }
-		//$userRoleList = Role::getUserRoleList();
-		$roles = Role::getRoleIds();
-		$userIds = UserRole::getUserIds($roles);
-		//echo '<pre>';print_r($userIds);exit;
-		$users = ArrayHelper::map(
-		    User::find()->asArray()->where(['IN','id',$userIds])->all(),
-		    'id',
-		    function($model) {
-		        return $model['first_name'].' '.$model['last_name'];
-		    }
-		    );
-		$userRole = userRole::getUserRole($userId);
+        //$userRoleList = Role::getUserRoleList();
+        $roles = Role::getRoleIds();
+        $userIds = UserRole::getUserIds($roles);
+        //echo '<pre>';print_r($userIds);exit;
+        $users = ArrayHelper::map(
+                        User::find()->asArray()->where(['IN', 'id', $userIds])->all(), 'id', function($model) {
+                    return $model['first_name'] . ' ' . $model['last_name'];
+                }
+        );
+        $userRole = userRole::getUserRole($userId);
         return $this->render('farmersignup', [
-            'model' => $model,
-			//'userRoleList'=>$userRoleList,
-            'users'=>$users,
-            'userRole'=>$userRole,
+                    'model' => $model,
+                    //'userRoleList'=>$userRoleList,
+                    'users' => $users,
+                    'userRole' => $userRole,
         ]);
     }
-    
-    
-    public function actionCreatecrop()
-    {
+
+    public function actionCreatecrop() {
         echo 3434;
     }
+
     /**
      * Requests password reset.
      *
      * @return mixed
      */
-    public function actionRequestpasswordreset()
-    {
-		$this->layout = 'main-login';
+    public function actionRequestpasswordreset() {
+        $this->layout = 'main-login';
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
@@ -265,7 +254,7 @@ class SiteController extends Controller
         }
 
         return $this->render('requestPasswordResetToken', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -276,8 +265,7 @@ class SiteController extends Controller
      * @return mixed
      * @throws BadRequestHttpException
      */
-    public function actionResetPassword($token)
-    {
+    public function actionResetPassword($token) {
         try {
             $model = new ResetPasswordForm($token);
         } catch (InvalidParamException $e) {
@@ -291,23 +279,22 @@ class SiteController extends Controller
         }
 
         return $this->render('resetPassword', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
-    
-    public function actionValidate()
-    {
+
+    public function actionValidate() {
         $model = new SignupForm();
-        $request = \Yii::$app->getRequest();      
+        $request = \Yii::$app->getRequest();
         \Yii::$app->response->format = Response::FORMAT_JSON;
         if (Yii::$app->request->post()) {
             $post = Yii::$app->request->post('SignupForm');
             $model->load($post);
             $model->scenario = "farmer";
             return ActiveForm::validate($model);
-        }       
+        }
     }
-    
+
     // THE CONTROLLER
     public function actionDistrict() {
         $out = [];
@@ -315,53 +302,92 @@ class SiteController extends Controller
             $parents = $_POST['depdrop_parents'];
             if ($parents != null) {
                 $state_id = $parents[0];
-                $districts = District::find()->where(['state_id'=>$state_id])->all();
-                foreach($districts as $key=>$district) {
+                $districts = District::find()->where(['state_id' => $state_id])->all();
+                foreach ($districts as $key => $district) {
                     $out[$key]['id'] = $district['dis_id'];
                     $out[$key]['name'] = $district['name'];
                 }
-                echo Json::encode(['output'=>$out, 'selected'=>'']);
+                echo Json::encode(['output' => $out, 'selected' => '']);
                 return;
             }
         }
-        echo Json::encode(['output'=>'', 'selected'=>'']);
+        echo Json::encode(['output' => '', 'selected' => '']);
     }
-    
+
     public function actionMandal() {
         $out = [];
         if (isset($_POST['depdrop_parents'])) {
             $parents = $_POST['depdrop_parents'];
             if ($parents != null) {
                 $district_id = $parents[0];
-                $mandals = Mandal::find()->where(['district_id'=>$district_id])->all();
-                foreach($mandals as $key=>$mandal) {
+                $mandals = Mandal::find()->where(['district_id' => $district_id])->all();
+                foreach ($mandals as $key => $mandal) {
                     $out[$key]['id'] = $mandal['mandal_id'];
                     $out[$key]['name'] = $mandal['name'];
                 }
                 //echo '<pre>';print_r($out);exit;
-                echo Json::encode(['output'=>$out, 'selected'=>'']);
+                echo Json::encode(['output' => $out, 'selected' => '']);
                 return;
             }
         }
-        echo Json::encode(['output'=>'', 'selected'=>'']);
+        echo Json::encode(['output' => '', 'selected' => '']);
     }
-    
+
     public function actionVillage() {
         $out = [];
         if (isset($_POST['depdrop_parents'])) {
             $parents = $_POST['depdrop_parents'];
             if ($parents != null) {
                 $mandal_id = $parents[0];
-                $villages =Village::find()->where(['mandal_id'=>$mandal_id])->all();
-                foreach($villages as $key=>$village) {
+                $villages = Village::find()->where(['mandal_id' => $mandal_id])->all();
+                foreach ($villages as $key => $village) {
                     $out[$key]['id'] = $village['village_id'];
                     $out[$key]['name'] = $village['name'];
                 }
                 //echo '<pre>';print_r($out);exit;
-                echo Json::encode(['output'=>$out, 'selected'=>'']);
+                echo Json::encode(['output' => $out, 'selected' => '']);
                 return;
             }
         }
-        echo Json::encode(['output'=>'', 'selected'=>'']);
+        echo Json::encode(['output' => '', 'selected' => '']);
     }
+    
+    public function actionCroptype() {
+        $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $parents = $_POST['depdrop_parents'];
+            if ($parents != null) {
+                $crop_id = $parents[0];
+                $crop_types = \backend\models\CropType::find()->where(['crop_id' => $crop_id])->all();
+                foreach ($crop_types as $key => $crop_type) {
+                    $out[$key]['id'] = $crop_type['crop_type_id'];
+                    $out[$key]['name'] = $crop_type['crop_type_name'];
+                }
+                //echo '<pre>';print_r($out);exit;
+                echo Json::encode(['output' => $out, 'selected' => '']);
+                return;
+            }
+        }
+        echo Json::encode(['output' => '', 'selected' => '']);
+    }
+    
+    public function actionCropvariety() {
+        $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $parents = $_POST['depdrop_parents'];
+            if ($parents != null) {
+                $crop_id = $parents[0];
+                $varietyTypes = \backend\models\VarietyType::find()->where(['crop_id' => $crop_id])->all();
+                foreach ($varietyTypes as $key => $varietyType) {
+                    $out[$key]['id'] = $varietyType['crop_variety_id'];
+                    $out[$key]['name'] = $varietyType['crop_variety_name'];
+                }
+                //echo '<pre>';print_r($out);exit;
+                echo Json::encode(['output' => $out, 'selected' => '']);
+                return;
+            }
+        }
+        echo Json::encode(['output' => '', 'selected' => '']);
+    }
+
 }

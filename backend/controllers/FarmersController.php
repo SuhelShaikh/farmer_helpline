@@ -66,8 +66,7 @@ class FarmersController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
 
         $model = new Farmers();
 
@@ -202,36 +201,17 @@ class FarmersController extends Controller {
         $cropModel = new CropDetails();
         if ($model->load(Yii::$app->request->post())) {
 //            if ($model->validate()) {
-//                if($_FILES['FarmerPlotDetails']['name']['soil_test_report']!=""){
-//                    $model->soil_test_report = UploadedFile::getInstance($model, 'soil_test_report');
-//    
-//                    if ($model->soil_test_report && $model->validate()) {
-//                        $fileName=$model->farm_id."_".date("Y-m-d")."_soil.jpg";                
-//                        $model->soil_test_report->saveAs('images/soilImages/' . $fileName);
-//                        $model->soil_test_report=$fileName;
-//                    }
-//                }
-//                if($_FILES['FarmerPlotDetails']['name']['water_test_report']!=""){
-//                    $model->water_test_report = UploadedFile::getInstance($model, 'water_test_report');
-//    
-//                    if ($model->water_test_report && $model->validate()) {
-//                        $fileName=$model->farm_id."_".date("Y-m-d")."_water.jpg";                
-//                        $model->water_test_report->saveAs('images/waterImages/' . $fileName);
-//                        $model->water_test_report=$fileName;
-//                    }
-//                }
             $model->plot_planted_date = date("Y-m-d", strtotime($model->plot_planted_date));
             $model->defoliation_date = date("Y-m-d", strtotime($model->defoliation_date));
-            //$model->irrigation_date=date("Y-m-d",strtotime($model->irrigation_date));
+//            $model->irrigation_date=date("Y-m-d",strtotime($model->irrigation_date));
             if ($model->save(false)) {
-
                 if ($cropModel->load(Yii::$app->request->post())) {
 //                        if ($cropModel->validate()) {
                     $cropModel->plot_id = $model->plot_id;
                     $cropModel->save(false);
 //                        } .
                     Yii::$app->session->setFlash('insert', "Plot added successfully.");
-                    $externel_url = Yii::$app->urlManager->createAbsoluteUrl(['farmers/update', 'id' => 1, 'tab' => 3]);
+                    $externel_url = Yii::$app->urlManager->createAbsoluteUrl(['farmers/update', 'id' => $_REQUEST['id'], 'tab' => 3]);
                     $_SESSION['farmInsert'] = "Plot added successfully.";
                     echo "<script>";
                     echo "this.parent.location.href = '$externel_url'";
@@ -252,16 +232,26 @@ class FarmersController extends Controller {
     }
 
     public function actionDeletePlot($id, $farmerId) {
-        $model = FarmerPlotDetails::find($id)->one()->delete();
+        $model = Plot::find($id)->one()->delete();
+        $cropModel = CropDetails::find(['plot_id' => $id])->one()->delete();
         Yii::$app->session->setFlash('insert', "Plot deleted successfully.");
         return $this->redirect(['update', 'id' => $farmerId, 'tab' => 3]);
     }
 
     public function actionDeleteFarm($id, $farmerId) {
-        $model = FarmerFarmDetails::find($id)->one()->delete();
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("DELETE FROM farmer_plot_details WHERE farm_id=$id");
+        $command2 = $connection->createCommand("DELETE FROM farm_details WHERE farm_id=$id");
+        $command2->execute();
+        
+        $plotModel = Plot::find(['farm_id' => $id])->all();
+        foreach ($plotModel AS $plot) {
+            $command1 = $connection->createCommand("DELETE FROM crop_details WHERE plot_id=$plot->plot_id");
+            $command1->execute();
+        }
+               
+        $command = $connection->createCommand("DELETE FROM plot WHERE farm_id=$id");
         $command->execute();
+
         Yii::$app->session->setFlash('insert', "Farm deleted successfully.");
         return $this->redirect(['update', 'id' => $farmerId, 'tab' => 2]);
     }
