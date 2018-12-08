@@ -66,9 +66,9 @@ class FarmersController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate() {
+    public function actionCreate()
+    {
 
-        // $this->layout='';
         $model = new Farmers();
 
         if ($model->load(Yii::$app->request->post())) {
