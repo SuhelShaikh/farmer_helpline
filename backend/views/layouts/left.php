@@ -50,7 +50,7 @@ use backend\models\EaQuestions;
                     ['label' => 'SMS Management', 'icon' => 'envelope-o', 'url' => ['smsmanagement/index']],
                     
                     $alertClass,
-					[
+					/*[
                         'label' => 'Farmer',
                         'icon' => 'users',
                         'url' => '#',
@@ -59,7 +59,7 @@ use backend\models\EaQuestions;
                             ['label' => 'Unassign Farmers','icon' => 'file-code-o','url' => ['userrelation/unassign']],
                             ['label' => 'Farmer Details','icon' => 'id-card-o','url' => ['userrole/index']],
                             ],
-                    ],
+                    ],*/
 
                     [
                         'label' => 'Farmer New',
