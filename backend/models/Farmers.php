@@ -91,7 +91,8 @@ class Farmers extends \yii\db\ActiveRecord {
     public function getFarmersListForTag() {
 
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,b.user_fullname AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.status=1 ORDER BY a.farmer_id DESC");
+        //$command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,b.user_fullname AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.status=1 ORDER BY a.farmer_id DESC");
+        $command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(b.first_name, ' ', b.middle_name, ' ', b.last_name) AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.user_id=0 ORDER BY a.farmer_id DESC");
         $data = $command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;
@@ -99,7 +100,7 @@ class Farmers extends \yii\db\ActiveRecord {
 
     public function getFarmDataByFarmer($id) {
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT * FROM farmer_farm_details WHERE farmer_id=$id");
+        $command = $connection->createCommand("SELECT * FROM farmer_profile WHERE farmer_id=$id");
         $data = $command->queryAll();
         return $data;
     }
@@ -162,6 +163,8 @@ class Farmers extends \yii\db\ActiveRecord {
                 $data3 = $command3->queryAll();
                 if (!empty($data3))
                     $data[$i]['plot'][$j] = $data3;
+                else
+                    $data[$i]['plot'][$j] = 0;
             }
             $data[$i]['farm'] = $data2;
         }
