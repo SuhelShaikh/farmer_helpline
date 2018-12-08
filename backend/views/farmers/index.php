@@ -18,17 +18,15 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
 ?>
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'action' => 'index.php?r=farmers/farmdetails']); ?>
 <!-- Main content -->
-<section class="content-header">
-    <h1>
-        Manage Farmers
-        <small>Control panel</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><?php echo Html::a("<i class='fa fa-dashboard'></i> Home", ['main/admin-dashboard']); ?></li>
-        <li class="active">Manage Farmers</li>
-    </ol>
-</section>
-<hr />
+
+<div class="manage-farmer-index">
+	<div>
+		<h2 class="mt-0">
+			<?= Html::encode($this->title) ?>
+			<p class="pull-right"><?php echo Html::a("Add Farmer", ['farmers/create'],['class'=>'btn btn-success']); ?></p>
+		</h2>
+	</div>
+	<div class="clearfix"></div>
 <div class="row">
     <div class="col-sm-2">
         <b>State: </b>
@@ -156,7 +154,7 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
     </div>
 
 </section>
-
+</div>
 <?php
 //$script = "$('#myTable').DataTable();";
 //$this->registerJs($script);
