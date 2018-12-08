@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\select2\Select2;
 use kartik\date\DatePicker;
+use kartik\depdrop\DepDrop;
 use backend\models\FarmerFarmDetails;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
@@ -22,8 +23,6 @@ use backend\models\IrigationType;
 $farmerId = $_REQUEST['id'];
 $farms = ArrayHelper::map(FarmerFarmDetails::find()->where(['farmer_id' => $farmerId])->orderBy('farm_name')->all(), 'farm_id', 'farm_name');
 $crops = ArrayHelper::map(backend\models\Crops::find()->orderBy('crop_name')->all(), 'crop_id', 'crop_name');
-$cropTypes = ArrayHelper::map(CropType::find()->orderBy('crop_type_name')->all(), 'crop_type_id', 'crop_type_name');
-$varietyTypes = ArrayHelper::map(VarietyType::find()->orderBy('crop_variety_name')->all(), 'crop_variety_id', 'crop_variety_name');
 $soilTypes = ArrayHelper::map(SoilType::find()->orderBy('soil_type_name')->all(), 'soil_type_id', 'soil_type_name');
 $irigationTypes = ArrayHelper::map(IrigationType::find()->orderBy('irrigation_type_name')->all(), 'irrigation_type_id', 'irrigation_type_name');
 //$lateralTypes = ArrayHelper::map(MasterLateralType::find()->orderBy('dripping_method_name')->all(), 'dripping_method_id', 'dripping_method_name');
@@ -50,7 +49,6 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'a
             <b>Select Farm: </b>
         </div>
         <div class="col-sm-4">
-            <?php echo $form->field($model, 'farmer_id')->hiddenInput(['value' => $farmerId])->label(false); ?>
             <?php
             echo $form->field($model, 'farm_id')->label(FALSE)->widget(Select2::classname(), [
                 'data' => $farms,
@@ -79,15 +77,7 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'a
         </div>
         <div class="col-sm-4">
             <?php
-            echo $form->field($cropModel, 'crop_id')->label(FALSE)->widget(Select2::classname(), [
-                'data' => $crops,
-                'options' => [
-                    'placeholder' => 'Crops'
-                ],
-                'pluginOptions' => [
-                    'allowClear' => true,
-                ],
-            ]);
+            echo $form->field($cropModel, 'crop_id')->dropDownList($crops, ['prompt' => 'Select Crop', 'id' => 'crop-id'])->label(false);
             ?>
         </div>
     </div> 
@@ -97,14 +87,13 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'a
         </div>
         <div class="col-sm-4">
             <?php
-            echo $form->field($cropModel, 'crop_type_id')->label(FALSE)->widget(Select2::classname(), [
-                'data' => $cropTypes,
-                'options' => [
-                    'placeholder' => 'Crop Type'
-                ],
+            echo $form->field($cropModel, 'crop_type_id')->label(false)->widget(DepDrop::classname(), [
+                'options' => ['id' => 'crop-type-id'],
                 'pluginOptions' => [
-                    'allowClear' => true,
-                ],
+                    'depends' => ['crop-id'],
+                    'placeholder' => 'Select...',
+                    'url' => Url::to(['/site/croptype'])
+                ]
             ]);
             ?>
         </div>
@@ -113,14 +102,13 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'a
         </div>
         <div class="col-sm-4">
             <?php
-            echo $form->field($cropModel, 'crop_variety_id')->label(FALSE)->widget(Select2::classname(), [
-                'data' => $varietyTypes,
-                'options' => [
-                    'placeholder' => 'Variety Type'
-                ],
+            echo $form->field($cropModel, 'crop_variety_id')->label(false)->widget(DepDrop::classname(), [
+                'options' => ['id' => 'crop-variety-id'],
                 'pluginOptions' => [
-                    'allowClear' => true,
-                ],
+                    'depends' => ['crop-id'],
+                    'placeholder' => 'Select...',
+                    'url' => Url::to(['/site/cropvariety'])
+                ]
             ]);
             ?>
         </div>
@@ -158,7 +146,7 @@ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'a
         <div class="col-sm-4">
             <?php echo $form->field($model, 'water_capacity')->textInput(['class' => 'form-control', 'placeholder' => 'Water holding capacity'])->label(false); ?>
         </div>
-        
+
     </div> 
     <div class="row">
         <div class="col-sm-2">

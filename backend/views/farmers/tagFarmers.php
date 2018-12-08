@@ -58,14 +58,14 @@ $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'us
             </div>
             <div class="col-sm-4">
               <?php
-           /*echo $form->field($model, 'mandal')->label(false)->widget(DepDrop::classname(), [
+           echo $form->field($model, 'city')->label(false)->widget(DepDrop::classname(), [
         'options' => ['id' => 'mandal-id'],
         'pluginOptions' => [
             'depends' => ['district-id'],
             'placeholder' => 'Select...',
             'url' => Url::to(['/site/mandal'])
         ]
-    ]);*/
+    ]);
           ?>
             </div>
             <div class="col-sm-2">
