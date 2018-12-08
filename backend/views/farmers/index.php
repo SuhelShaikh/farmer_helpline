@@ -44,7 +44,6 @@ $this->title = 'Manage Users';
                         <th>Mobile Number</th>
                         <th>Birth Date</th>
                         <th>Gender</th>
-                        <th>Call Details</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -56,9 +55,10 @@ $this->title = 'Manage Users';
                             <td><?php echo $data[$i]['mobile_no']; ?></td>
                             <td><?php echo $data[$i]['birth_date']; ?></td>
                             <td><?php echo $data[$i]['gender']; ?></td>
-                            <td><?php echo Html::a("Call Details", ['farmers/call-details','id'=>$data[$i]['farmer_id']]); ?></td>
-                            <td><?php echo Html::a("<i class='fa fa-edit'></i>", ['farmers/update','id'=>$data[$i]['farmer_id'],'tab'=>1]); ?>
-                            <?php echo Html::a("<i class='fa fa-eye'></i>", ['farmers/profile','id'=>$data[$i]['farmer_id']]); ?></td>
+                            <td>
+                              <?php echo Html::a("<i class='fa fa-eye'></i>", ['farmers/profile','id'=>$data[$i]['farmer_id']]); ?>
+                              <?php echo Html::a("<i class='fa fa-edit'></i>", ['farmers/update','id'=>$data[$i]['farmer_id'],'tab'=>1]); ?>
+                            </td>
                         </tr>
                     <?php endfor; ?>
                 </tbody>

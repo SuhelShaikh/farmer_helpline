@@ -74,7 +74,7 @@ $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'us
                             <td><?php echo $data[$i]['birth_date']; ?></td>
                             <td><?php echo $data[$i]['gender']; ?></td>
                             <td><?php echo $data[$i]['tagged_name']; ?></td>
-                            <td><input type="checkbox" value="<?php echo $data[$i]['id']; ?>"></td>
+                            <td><input type="checkbox" value="<?php echo $data[$i]['farmer_id']; ?>"></td>
                         </tr>
                     <?php endfor; ?>
                 </tbody>
