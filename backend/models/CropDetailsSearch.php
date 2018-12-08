@@ -18,8 +18,8 @@ class CropDetailsSearch extends CropDetails
     public function rules()
     {
         return [
-            [['crop_id', 'farmer_id'], 'integer'],
-            [['crop_name', 'crop_type'], 'safe'],
+            [['crop_detail_id', 'plot_id', 'farmer_id', 'crop_id', 'crop_type_id', 'crop_variety_id'], 'integer'],
+            [['crop_name', 'dist_two_lines', 'dist_two_crop'], 'safe'],
         ];
     }
 
@@ -59,12 +59,17 @@ class CropDetailsSearch extends CropDetails
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'crop_id' => $this->crop_id,
+            'crop_detail_id' => $this->crop_detail_id,
+            'plot_id' => $this->plot_id,
             'farmer_id' => $this->farmer_id,
+            'crop_id' => $this->crop_id,
+            'crop_type_id' => $this->crop_type_id,
+            'crop_variety_id' => $this->crop_variety_id,
         ]);
 
         $query->andFilterWhere(['like', 'crop_name', $this->crop_name])
-            ->andFilterWhere(['like', 'crop_type', $this->crop_type]);
+            ->andFilterWhere(['like', 'dist_two_lines', $this->dist_two_lines])
+            ->andFilterWhere(['like', 'dist_two_crop', $this->dist_two_crop]);
 
         return $dataProvider;
     }

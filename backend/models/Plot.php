@@ -21,6 +21,11 @@ use Yii;
  * @property string $first_water_date
  * @property integer $water_liters
  * @property string $mulching_date
+ * @property integer $soil_type
+ * @property string $water_capacity
+ * @property string $drain_out_period
+ * @property integer $irigation_type
+ * @property string $water_source
  */
 class Plot extends \yii\db\ActiveRecord
 {
@@ -38,11 +43,12 @@ class Plot extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['farm_id', 'plot_name', 'plot_area', 'number_of_valves', 'planting_method', 'expected_yield_per_plant', 'total_expected_yield', 'water_liters'], 'required'],
-            [['farm_id', 'number_of_valves', 'number_of_plants', 'water_liters'], 'integer'],
-            [['plot_planted_date', 'defoliation_date', 'first_water_date', 'mulching_date'], 'safe'],
+            [['farm_id', 'plot_name', 'plot_area', 'number_of_valves', 'planting_method', 'soil_type', 'water_capacity', 'drain_out_period'], 'required'],
+            [['farm_id', 'number_of_valves', 'number_of_plants', 'water_liters', 'soil_type', 'irigation_type'], 'integer'],
+            [['plot_planted_date', 'defoliation_date', 'first_water_date', 'mulching_date','expected_yield_per_plant', 'total_expected_yield', 'water_liters', 'irigation_type', 'water_source'], 'safe'],
             [['plot_name'], 'string', 'max' => 500],
-            [['plot_area', 'planting_method', 'expected_yield_per_plant', 'total_expected_yield'], 'string', 'max' => 100],
+            [['plot_area', 'planting_method', 'expected_yield_per_plant', 'total_expected_yield', 'water_source'], 'string', 'max' => 100],
+            [['water_capacity', 'drain_out_period'], 'string', 'max' => 45],
         ];
     }
 
@@ -66,6 +72,11 @@ class Plot extends \yii\db\ActiveRecord
             'first_water_date' => 'First Water Date',
             'water_liters' => 'Water Liters',
             'mulching_date' => 'Mulching Date',
+            'soil_type' => 'Soil Type',
+            'water_capacity' => 'Water Capacity',
+            'drain_out_period' => 'Drain Out Period',
+            'irigation_type' => 'Irigation Type',
+            'water_source' => 'Water Source',
         ];
     }
 }

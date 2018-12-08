@@ -11,12 +11,9 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
 $this->title = 'Farmer Profile';
-//echo "<pre>";
-//echo count($data->farm);
-//echo count($data->plot);
-//print_r($data);
-//exit;
 $this->title = $data->farmer_id;
+//echo "<pre>";
+//print_r($data);exit;
 ?>
 <h1><?= Html::encode($this->title) ?></h1>
 <section class="content">                	
@@ -32,9 +29,7 @@ $this->title = $data->farmer_id;
         </div>
         <div class="user-info col-sm-12 col-md-10">
             <div class="basic-info">
-                <label class="font-weight-bold"><?php echo $data->first_name . " " . $data->last_name;
-;
-?></label>
+                <label class="font-weight-bold"><?php echo $data->first_name . " " . $data->last_name;?></label>
                 <div class="clearfix"></div>				
                 <label class="user-phone"><i class="fa fa-phone font-weight-bold mr-1"></i> (+91 <?php echo $data->mobile_no ?>)</label>
                 <div class="clearfix"></div>				
@@ -147,7 +142,8 @@ $this->title = $data->farmer_id;
                         <div class="tab-pane fade" id="tab3success">
                             <?php
                             $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);
-                            foreach ($data->plot AS $plot) {
+                            foreach ($data->plot AS $plot1) {
+                                foreach ($plot1 AS $plot) {
                                 $plot = (object) $plot;
                                 ?><div class="panel-group" id="accordion">
                                     <div class="panel panel-default">
@@ -203,7 +199,7 @@ $this->title = $data->farmer_id;
                                                 <div class="col-sm-2"><b>Mulching Date: </b></div>
                                                 <div class="col-sm-4"><b><?php echo $plot->mulching_date; ?></b></div>
                                         </div></div></div></div>
-<?php } ActiveForm::end(); ?>
+                            <?php }} ActiveForm::end(); ?>
                         </div>
                         <div class="tab-pane fade" id="tab4success">Coming Soon..</div>
                         <div class="tab-pane fade" id="tab5success">Coming Soon..</div>

@@ -48,19 +48,6 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 		          <?php echo $form->field($model, 'survey_number')->textInput(['class'=>'form-control','placeholder'=>'Survey Number'])->label(false); ?>
 		        </div>
 		    </div> 
-<?php  ?>
-
-    <?php
-   
-    ?>
-
-    <?php
-   
-    ?>
-
-    <?php
-    
-    ?>
 		    <div class="row">
 		        <div class="col-sm-2">
 		           <b>State: </b>
@@ -68,35 +55,6 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 		        <div class="col-sm-4">
 		        	<?php
 					echo $form->field($model, 'state')->dropDownList($states, ['prompt' => 'Select State', 'id' => 'state-id'])->label(false);
-					
-						/*echo $form->field($model, 'state')->label(FALSE)->widget(Select2::classname(), [
-					    	'data' => $states,
-					        'options' =>[
-					         	'placeholder' => 'Select State',
-					         	'onchange'=>'
-                                    $("#farmerfarmdetails-district").find("option:gt(0)").remove();
-                                    $("#farmerfarmdetails-district").select2("val", "");
-                                    $("#farmerfarmdetails-mandal").find("option:gt(0)").remove();
-                                    $("#farmerfarmdetails-mandal").select2("val", "");
-                                    $("#farmerfarmdetails-village").find("option:gt(0)").remove();
-                                    $("#farmerfarmdetails-village").select2("val", "");
-                                    if($(this).val()!=""){
-                                        $.get( "'.Url::toRoute('district/get-locations').'", { id: $(this).val()} )
-                                        .done(function( data )
-                                        {
-                                            $( "select#farmerfarmdetails-district" ).html( data );
-                                        });
-                                    }
-                                    else{
-                                        $( "select#farmerfarmdetails-district" ).html("");
-                                        $( "select#farmerfarmdetails-mandal" ).html("");
-                                        $( "select#farmerfarmdetails-village" ).html("");
-                                    }'
-					        ],
-					        'pluginOptions' => [
-					           	'allowClear' => true,
-					        ],
-					    ]);*/
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -113,31 +71,6 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
 						    'url' => Url::to(['/site/district'])
 						]
 					    ]);
-						/*echo $form->field($model, 'district')->label(FALSE)->widget(Select2::classname(), [
-					    	'data' => [],
-					        'options' =>[
-					         	'placeholder' => 'Select District',
-					         	'onchange'=>'
-                                    $("#farmerfarmdetails-mandal").find("option:gt(0)").remove();
-                                    $("#farmerfarmdetails-mandal").select2("val", "");
-                                    $("#farmerfarmdetails-village").find("option:gt(0)").remove();
-                                    $("#farmerfarmdetails-village").select2("val", "");
-                                    if($(this).val()!=""){
-                                        $.get( "'.Url::toRoute('mandal/get-mandal').'", { id: $(this).val() } )
-                                        .done(function( data )
-                                        {
-                                            $( "select#farmerfarmdetails-mandal" ).html( data );
-                                        });
-                                    }
-                                    else{
-                                        $( "select#farmerfarmdetails-mandal" ).html("");
-                                        $( "select#farmerfarmdetails-village" ).html("");
-                                    }'
-					        ],
-					        'pluginOptions' => [
-					           	'allowClear' => true,
-					        ],
-					    ]);*/
 					?>
 		        </div>
 		    </div> 
@@ -155,28 +88,6 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
             'url' => Url::to(['/site/mandal'])
         ]
     ]);
-						/*echo $form->field($model, 'mandal')->label(FALSE)->widget(Select2::classname(), [
-					    	'data' => [],
-					        'options' =>[
-					         	'placeholder' => 'Select Taluka',
-					         	'onchange'=>'
-                                    $("#farmerfarmdetails-village").find("option:gt(0)").remove();
-                                    $("#farmerfarmdetails-village").select2("val", "");
-                                    if($(this).val()!=""){
-                                        $.get( "'.Url::toRoute('village/get-village').'", { id: $(this).val() } )
-                                        .done(function( data )
-                                        {
-                                            $( "select#farmerfarmdetails-village" ).html( data );
-                                        });
-                                    }
-                                    else{
-                                        $( "select#farmerfarmdetails-village" ).html("");
-                                    }'
-					        ],
-					        'pluginOptions' => [
-					           	'allowClear' => true,
-					        ],
-					    ]);*/
 					?>
 		        </div>
 		        <div class="col-sm-2">
@@ -192,15 +103,6 @@ $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'nam
             'url' => Url::to(['/site/village'])
         ]
     ]);
-						/*echo $form->field($model, 'village')->label(FALSE)->widget(Select2::classname(), [
-					    	'data' => [],
-					        'options' =>[
-					         	'placeholder' => 'Select Village'
-					        ],
-					        'pluginOptions' => [
-					           	'allowClear' => true
-					        ],
-					    ]);*/
 					?>
 		        </div>
 		    </div> 
