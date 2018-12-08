@@ -1,0 +1,3 @@
+ALTER TABLE `plot` ADD `soil_type` INT NOT NULL AFTER `mulching_date`, ADD `water_capacity` VARCHAR(45) NOT NULL AFTER `soil_type`, ADD `drain_out_period` VARCHAR(45) NOT NULL AFTER `water_capacity`, ADD `irigation_type` INT NOT NULL AFTER `drain_out_period`, ADD `water_source` VARCHAR(100) NOT NULL AFTER `irigation_type`;
+
+ALTER TABLE `crop_details` ADD `dist_two_lines` VARCHAR(45) NOT NULL COMMENT 'distance between 2 lines' AFTER `crop_variety_id`, ADD `dist_two_crop` VARCHAR(45) NOT NULL COMMENT 'distance between 2 plants' AFTER `dist_two_lines`;
