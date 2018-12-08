@@ -9,7 +9,7 @@ use backend\models\State;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
-$this->title = 'Manage Users';
+$this->title = 'Manage Farmers';
 $states = ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'name');
 $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'username');
 //echo "<pre>";
@@ -27,31 +27,31 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
 		</h2>
 	</div>
 	<div class="clearfix"></div>
-<div class="row">
-    <div class="col-sm-2">
-        <b>State: </b>
-    </div>
-    <div class="col-sm-4">
-        <?php
-        echo $form->field($model, 'state')->dropDownList($states, ['prompt' => 'Select State', 'id' => 'state-id'])->label(false);
-        ?>
-    </div>
-    <div class="col-sm-2">
-        <b>District: </b>
-    </div>
-    <div class="col-sm-4">
-        <?php
-        echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
-            'options' => ['id' => 'district-id'],
-            'pluginOptions' => [
-                'depends' => ['state-id'],
-                'placeholder' => 'Select...',
-                'url' => Url::to(['/site/district'])
-            ]
-        ]);
-        ?>
-    </div>
-</div> 
+	<div class="row">
+		<div class="col-sm-2">
+			<b>State: </b>
+		</div>
+		<div class="col-sm-4">
+			<?php
+			echo $form->field($model, 'state')->dropDownList($states, ['prompt' => 'Select State', 'id' => 'state-id'])->label(false);
+			?>
+		</div>
+		<div class="col-sm-2">
+			<b>District: </b>
+		</div>
+		<div class="col-sm-4">
+			<?php
+			echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
+				'options' => ['id' => 'district-id'],
+				'pluginOptions' => [
+					'depends' => ['state-id'],
+					'placeholder' => 'Select...',
+					'url' => Url::to(['/site/district'])
+				]
+			]);
+			?>
+		</div>
+	</div> 
 <div class="row">
     <div class="col-sm-2">
         <b>Tehsil: </b>
