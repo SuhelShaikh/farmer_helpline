@@ -4,15 +4,12 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\User;
-use common\components\Controller;
+use backend\models\UserSearch;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\Url;
-use yii\helpers\Json;
-use yii\bootstrap\ActiveForm;
-use yii\web\Response;
-use common\models\Mailer;
-use yii\filters\AccessControl;
+use yii\web\UploadedFile;
+
 /**
  * UserController implements the CRUD actions for User model.
  */
@@ -30,100 +27,107 @@ class UserController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [  
-                    [
-                    'actions' => ['uploadphoto','profile'],
-                    'allow' => true,
-                    'roles' => ['@'],
-                    ],
-                    [
-                        'actions' => [],
-                        'allow'=>true,
-                        'roles'=>['?'], 
-                    ],
-                ],
-                
-            ],
         ];
     }
-    public function beforeAction($action) 
-    {    
-        $this->enableCsrfValidation = false;
-        return parent::beforeAction($action);
-    }
-   
-    /*
-     * Added By : Sushrut Deshpande.
-     * Added On : 07/09/2017.
-     * Function to store image in folder from profile section.
-     */
-    public function actions()
-    {
-        $id = Yii::$app->user->getId();
-        return [
-            'uploadphoto' => [
-                'class' => 'budyaga\cropper\actions\UploadAction',
-                'url' => Url::toRoute('/backend/web/uploads/user/photo/original_images/'.$id.'/'),
-                'path' => '@backend/web/uploads/user/photo/original_images/'.$id.'/',
-                'width'=>100,
-                'height'=>100,
-                'imageType'=>'profile'
-            ]
-        ];
-    }   
-    
-    
+
     /**
-     * Action will redirect to edit profile page
-     * Author: Pratap Deshpande
+     * Lists all User models.
+     * @return mixed
      */
-    public function actionProfile()
+    public function actionIndex()
     {
-        //$this->layout="mainuser";
-        Yii::$app->view->title = "Profile";
-        $id = Yii::$app->user->getId();
-        $session = Yii::$app->session;
-        //        echo '<pre>';
-        //        print_r($_SESSION);exit;
-        $clientId = $session->get('businessId');
-        $editProfile = 1;
-        if($editProfile != 1) {
-            Yii::$app->response->redirect(Url::to(['/site/invalidrequest']));
-            return false;
+        $searchModel = new UserSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * Displays a single User model.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new User model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
+        $model = new User();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
         }
-        
-        $model = User::findOne($id);
-        $userEmail = $model->email;
-         $encodedEmailUniqueId = substr(base64_encode($model->email),0,8);
-        if(file_exists(Yii::getAlias('@frontend').'/web/uploads/user/photo/original_images/'.$id.'/'.$encodedEmailUniqueId.'.jpg')) {
-            $model->image = Yii::getAlias('@frontImages').'/'.$id.'/'.$encodedEmailUniqueId.'.jpg';
-        }
-        if(!file_exists(Yii::getAlias('@frontend').'/web/uploads/user/')) {
-            mkdir(Yii::getAlias('@frontend').'/web/uploads/user/', 0775, true);
-            if(!file_exists(Yii::getAlias('@frontend').'/web/uploads/user/photo/')) {
-                mkdir(Yii::getAlias('@frontend').'/web/uploads/user/photo/', 0775, true);
-                if(!file_exists(Yii::getAlias('@frontend').'/web/uploads/user/photo/original_images/')) {
-                    mkdir(Yii::getAlias('@frontend').'/web/uploads/user/photo/original_images/', 0775, true);
-                }
-            }
-        }
+    }
+
+    /**
+     * Updates an existing User model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post())) {
-            $model->business_name = $_POST['User']['business_name'];
-            $model->first_name = $_POST['User']['first_name'];
-            $model->last_name = $_POST['User']['last_name'];
-            $model->date_format = $_POST['User']['date_format'];
-            if($userEmail == $_POST['User']['email']) {
-                if($model->save(false)) {
-                    Yii::$app->session->setFlash('success', 'Your Profile has been updated successfully ...');
-                }
-            } else {
-                $model->email = $userEmail;
-                Yii::$app->session->setFlash('error', 'Something went wrong while updating record ...');
-            }
+			$model->imageTemp =  UploadedFile::getInstance($model,'imageTemp');
+			//echo $model->imageTemp;exit;
+			if(!empty($model->imageTemp)) {
+				$photoname = base64_encode($model->email);
+				$model->imageTemp->saveAs(Yii::getAlias('@backend').'/web/uploads/user/photo/'. $photoname . '.' . $model->imageTemp->extension);
+				$model->image = $photoname.'.'.$model->imageTemp->extension;
+			}
+			if($model->save(false)) {
+				return $this->redirect(['view', 'id' => $model->id]);
+			}
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
         }
-        return $this->render('editProfile',['model' => $model]);
+    }
+
+    /**
+     * Deletes an existing User model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Finds the User model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return User the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 }
-
