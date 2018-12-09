@@ -18,7 +18,6 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
 ?>
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'action' => 'index.php?r=farmers/farmdetails']); ?>
 <!-- Main content -->
-
 <div class="manage-farmer-index">
 	<div>
 		<h2 class="mt-0">
@@ -116,6 +115,7 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
 						<th>Mobile Number</th>
 						<th>Birth Date</th>
 						<th>Gender</th>
+                        <th>Tag To</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -127,6 +127,7 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
 							<td><?php echo $data[$i]['mobile_no']; ?></td>
 							<td><?php echo $data[$i]['birth_date']; ?></td>
 							<td><?php echo $data[$i]['gender']; ?></td>
+                            <td><?php echo $data[$i]['tagName']; ?></td>
 							<td class="action-btns">
 								<?php echo Html::a("<i class='fa fa-eye'></i>", ['farmers/profile', 'id' => $data[$i]['farmer_id']]); ?>
 								<?php echo Html::a("<i class='fa fa-edit'></i>", ['farmers/update', 'id' => $data[$i]['farmer_id'], 'tab' => 1]); ?>

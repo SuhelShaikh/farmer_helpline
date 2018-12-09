@@ -41,11 +41,12 @@ $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'us
 			?>
 		</div>
 		<div class="col-sm-3">
-			<label class="font-weight-bold">Tehsil: </label>
+			<label class="font-weight-bold">City / Mandal: </label>
 			<?php
 			echo $form->field($model, 'city')->label(false)->widget(DepDrop::classname(), [
 			'options' => ['id' => 'mandal-id'],
 			'pluginOptions' => [
+
             'depends' => ['district-id'],
             'placeholder' => 'Select...',
             'url' => Url::to(['/site/mandal'])
@@ -156,8 +157,8 @@ $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'us
   </section>
 
   <?php
-    $script="$('#myTable').DataTable();"; 
-    $this->registerJs($script);
+//    $script="$('#myTable').DataTable();"; 
+//    $this->registerJs($script);
 ?>
 <script>
 

@@ -74,7 +74,7 @@ class Farmers extends \yii\db\ActiveRecord {
         ];
     }
 
-    public function getFarmersList() {
+    public function getFarmersList($params) {
         /* $where=" WHERE status=1";
           $type=Yii::$app->user->identity->type;
           $executiveId=Yii::$app->user->identity->id;
@@ -82,7 +82,8 @@ class Farmers extends \yii\db\ActiveRecord {
           $where.=" AND created_by=$executiveId";
           } */
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT farmer_id,CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name,birth_date,mobile_no, (CASE WHEN gender='M' THEN 'Male' ELSE 'Female' END) as gender FROM farmer_profile ORDER BY farmer_id DESC");
+        $command = $connection->createCommand("SELECT farmer_id,CONCAT(fp.first_name, ' ', fp.middle_name, ' ', fp.last_name) AS full_name,fp.birth_date,fp.mobile_no, (CASE WHEN fp.gender='1' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(IFNULL(u.first_name,''), ' ', IFNULL(u.last_name,'')) AS tagName FROM farmer_profile fp LEFT JOIN user u ON u.id=fp.user_id ORDER BY farmer_id DESC");
+                                                
         $data = $command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;
@@ -92,7 +93,7 @@ class Farmers extends \yii\db\ActiveRecord {
 
         $connection = Yii::$app->getDb();
         //$command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,b.user_fullname AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.status=1 ORDER BY a.farmer_id DESC");
-        $command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(b.first_name, ' ', b.middle_name, ' ', b.last_name) AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.user_id=0 ORDER BY a.farmer_id DESC");
+        $command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='1' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(b.first_name, ' ', b.middle_name, ' ', b.last_name) AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.user_id=0 ORDER BY a.farmer_id DESC");
         $data = $command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;
@@ -138,7 +139,7 @@ class Farmers extends \yii\db\ActiveRecord {
 
     public function getFarmerDetails($farmerId) {
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT * FROM farmer_profile fp LEFT JOIN user b ON b.id=fp.user_id WHERE fp.farmer_id=$farmerId ");
+        $command = $connection->createCommand("SELECT fp.*,b.first_name AS tagName FROM farmer_profile fp LEFT JOIN user b ON b.id=fp.user_id WHERE fp.farmer_id=$farmerId ");
         $data = $command->queryAll();
         for ($i = 0; $i < count($data); $i++) {
             $command2 = $connection->createCommand("SELECT fd.farm_id, fd.`farm_name`,fd.`state` as state_id,s.name as state_name,
