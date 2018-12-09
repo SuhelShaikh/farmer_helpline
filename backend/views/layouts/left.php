@@ -2,10 +2,14 @@
 	use backend\models\RoleModules;
 	use backend\models\Modules;
 	use backend\models\UserRole;
+    use yii\helpers\Url;
 	//$modulesDetails = Modules::getModulesList();
 	//echo '<pre>';print_r($modulesDetails);exit;
 	//$userRoleId = UserRole::getUserRole(Yii::$app->user->id);
 	//$roleModulesDetails = RoleModules::getRoleModulesDetails($userRoleId);
+    $url = Url::to(['user/view', 'id' => yii::$app->user->identity->id]);
+    $modulesDetails = Modules::getModulesList();
+    $path = '/farmer_helpline/backend/web/uploads/user/photo/';
 	$createUserLink = '';
 	//foreach()
 ?>
@@ -16,10 +20,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                <img src="<?php echo $path.yii::$app->user->identity->image; ?>" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>User Name</p>
+                <p><?php echo yii::$app->user->identity->first_name.' '.yii::$app->user->identity->last_name; ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -49,7 +53,9 @@ use backend\models\EaQuestions;
                     ['label' => 'Alert', 'icon' => 'bell-o', 'url' => ['alertmaster/index']],
                     ['label' => 'SMS Management', 'icon' => 'envelope-o', 'url' => ['smsmanagement/index']],
                     
-                    $alertClass,
+                    //$alertClass,
+                    ['label' => 'Manage Profile','icon' => 'file-code-o','url' => $url],
+                    ['label' => 'Manage Users','icon' => 'file-code-o','url' => ['user/index']],
 					/*[
                         'label' => 'Farmer',
                         'icon' => 'users',
