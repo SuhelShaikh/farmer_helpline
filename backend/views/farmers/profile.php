@@ -14,16 +14,22 @@ $this->title = 'Farmer Profile';
 $this->title = $data->farmer_id;
 ?>
 <!--<h1><?= Html::encode($this->title) ?></h1>-->
-<section class="content">                	
+<div class="w-100">                	
     <h2 class="mt-0">
         Farmer Profile
     </h2>
     <div class="clearfix">&nbsp;</div>
     <div class="row">
         <div class="user-image col-sm-12 col-md-2 text-center">
-            <div class="user-image-wrap">
-                <img src="images/farmerImages/<?= $data->profile_pic?>" onerror="this.src='images/userImages/defaultProfile.jpg';" class="img-responsive" alt="farmer name" />
-            </div>
+			<div class="small-12 medium-2 large-2 columns">
+				<div class="circle mlr-auto">
+				<!-- User Profile Image -->
+				
+				<img class="profile-pic img-responsive" src="images/farmerImages/<?= $data->profile_pic?>" onerror="this.src='images/userImages/defaultProfile.jpg';" alt="<?php echo $data->first_name; ?>" width="200" height="200" />
+			   <!-- Default Image -->
+			   <!-- <i class="fa fa-user fa-5x"></i> -->
+				</div>
+			</div>
         </div>
         <div class="user-info col-sm-12 col-md-10">
             <div class="basic-info">
@@ -59,85 +65,83 @@ $this->title = $data->farmer_id;
                         <div class="tab-pane fade active in col-md-12" id="tab1success">
                             <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
                             <div class="row">
-                                <div class="col-sm-2"><b>First Name: </b></div>
-                                <div class="col-sm-4"><b><?php echo $data->first_name; ?></b></div>
-                                <div class="col-sm-2"><b>Middle Name: </b></div>
-                                <div class="col-sm-4"><b><?php echo $data->middle_name; ?></b></div>
+                                <div class="col-sm-5 col-md-2"><b>First Name: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo $data->first_name; ?></b></div>
+                                <div class="col-sm-5 col-md-2"><b>Middle Name: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo $data->middle_name; ?></b></div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-2"><b>Last Name: </b></div>
-                                <div class="col-sm-4"><b><?php echo $data->last_name; ?></b></div>
-                                <div class="col-sm-2"><b>Gender: </b></div>
-                                <div class="col-sm-4"><b><?php echo ($data->gender == 1 ? "Male" : "Female" ); ?></b></div>
+                                <div class="col-sm-5 col-md-2"><b>Last Name: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo $data->last_name; ?></b></div>
+                                <div class="col-sm-5 col-md-2"><b>Gender: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo ($data->gender == 1 ? "Male" : "Female" ); ?></b></div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-2"><b>Language: </b></div>
-                                <div class="col-sm-4"><b><?php echo ($data->language == "M" ? "Marathi" : "English" ); ?></b></div>
-                                <div class="col-sm-2"><b>Birth Date: </b></div>
-                                <div class="col-sm-4"><b><?php echo $data->birth_date ?> </b></div>
+                                <div class="col-sm-5 col-md-2"><b>Language: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo ($data->language == "M" ? "Marathi" : "English" ); ?></b></div>
+                                <div class="col-sm-5 col-md-2"><b>Birth Date: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo $data->birth_date ?> </b></div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-2"><b>Age: </b></div>
-                                <div class="col-sm-4"><b><?php echo $data->age ?> </b></div>
-                                <div class="col-sm-2"><b>Is Registered: </b></div>
-                                <div class="col-sm-4"><b><?php echo ($data->is_registered == 1 ? 'Yes' : 'No'); ?> </b></div>
+                                <div class="col-sm-5 col-md-2"><b>Age: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo $data->age ?> </b></div>
+                                <div class="col-sm-5 col-md-2"><b>Is Registered: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo ($data->is_registered == 1 ? 'Yes' : 'No'); ?> </b></div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-2"><b>Mobile No.: </b></div>
-                                <div class="col-sm-4"><b><?php echo $data->mobile_no ?> </b></div>
-                                <div class="col-sm-2"><b>WhatsApp No.: </b></div>
-                                <div class="col-sm-4"><b><?php echo $data->whatsapp_no ?> </b></div>
+                                <div class="col-sm-5 col-md-2"><b>Mobile No.: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo $data->mobile_no ?> </b></div>
+                                <div class="col-sm-5 col-md-2"><b>WhatsApp No.: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo $data->whatsapp_no ?> </b></div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-2"><b>Address: </b></div>
-                                <div class="col-sm-4"><b><?php echo $data->home_address ?></b></div>
+                                <div class="col-sm-5 col-md-2"><b>Address: </b></div>
+                                <div class="col-sm-7 col-md-4"><b><?php echo $data->home_address ?></b></div>
                             </div>
                             <?php ActiveForm::end(); ?>
                         </div>
-                        <div class="tab-pane fade" id="tab2success">
+                        <div class="tab-pane col-xs-12 fade" id="tab2success">
                             <?php
                             $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);
                             foreach ($data->farm AS $farm) {
                                 $farm = (object) $farm;
-                                ?><div class="panel-group" id="accordion">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><?php echo $farm->farm_name; ?></a>
-                                            </h4>
-                                        </div>
-                                        <div class="panel-body">
+                                ?>
+											<div class="row">
+												<div class="col-xs-12">
+													<h4 class="font-weight-bold text-dark"><?php echo $farm->farm_name; ?></h4>
+												</div>
+											</div>
                                             <div class="row">
-                                                <div class="col-sm-2"><b>Farm Name: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->farm_name; ?></b></div>
-                                                <div class="col-sm-2"><b>Location: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->elevation_farm_location; ?></b></div>
+                                                <div class="col-sm-5 col-md-2"><b>Farm Name: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->farm_name; ?></b></div>
+                                                <div class="col-sm-5 col-md-2"><b>Location: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->elevation_farm_location; ?></b></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-2"><b>Servey No.: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->survey_number; ?></b></div>
-                                                <div class="col-sm-2"><b>State: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->state_name; ?></b></div>
+                                                <div class="col-sm-5 col-md-2"><b>Servey No.: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->survey_number; ?></b></div>
+                                                <div class="col-sm-5 col-md-2"><b>State: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->state_name; ?></b></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-2"><b>District: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->district_name; ?></b></div>
-                                                <div class="col-sm-2"><b>Mandal: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->mandal_name; ?></b></div>
+                                                <div class="col-sm-5 col-md-2"><b>District: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->district_name; ?></b></div>
+                                                <div class="col-sm-5 col-md-2"><b>Mandal: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->mandal_name; ?></b></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-2"><b>Village: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->village_name; ?></b></div>
-                                                <div class="col-sm-2"><b>Area Of plot: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->total_area; ?></b></div>
+                                                <div class="col-sm-5 col-md-2"><b>Village: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->village_name; ?></b></div>
+                                                <div class="col-sm-5 col-md-2"><b>Area Of plot: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->total_area; ?></b></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-2"><b>Area Of Unit: </b></div>
-                                                <div class="col-sm-4"><b><?php echo $farm->area_unit; ?></b></div>
-                                            </div></div></div></div>
+                                                <div class="col-sm-5 col-md-2"><b>Area Of Unit: </b></div>
+                                                <div class="col-sm-7 col-md-4"><b><?php echo $farm->area_unit; ?></b></div>
+                                            </div>
                             <?php } ActiveForm::end(); ?>
                         </div>
-                        <div class="tab-pane fade" id="tab3success">
+                        <div class="tab-pane col-xs-12 fade" id="tab3success">
                             <?php
                             $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);
                             if (isset($data->plot) && !empty($data->plot)) {
@@ -154,50 +158,50 @@ $this->title = $data->farmer_id;
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="row">
-                                                            <div class="col-sm-2"><b>Plot Name: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->plot_name; ?></b></div>
-                                                            <div class="col-sm-2"><b>Plot Area: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->plot_area; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Plot Name: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->plot_name; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Plot Area: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->plot_area; ?></b></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-sm-2"><b>Crop Name: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->crop_name; ?></b></div>
-                                                            <div class="col-sm-2"><b>Crop Type: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->crop_type_name; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Crop Name: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->crop_name; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Crop Type: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->crop_type_name; ?></b></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-sm-2"><b>Variety Name: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->crop_variety_name; ?></b></div>
-                                                            <div class="col-sm-2"><b>No Of Valves: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->number_of_valves; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Variety Name: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->crop_variety_name; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>No Of Valves: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->number_of_valves; ?></b></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-sm-2"><b>No. Of Plants: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->number_of_plants; ?></b></div>
-                                                            <div class="col-sm-2"><b>Plot Platnted Date: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->plot_planted_date; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>No. Of Plants: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->number_of_plants; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Plot Platnted Date: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->plot_planted_date; ?></b></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-sm-2"><b>Planting Method: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->planting_method; ?></b></div>
-                                                            <div class="col-sm-2"><b>Expected Yield/Plant: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->expected_yield_per_plant; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Planting Method: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->planting_method; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Expected Yield/Plant: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->expected_yield_per_plant; ?></b></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-sm-2"><b>Total Expected Yield: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->total_expected_yield; ?></b></div>
-                                                            <div class="col-sm-2"><b>Defoilation Date: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->defoliation_date; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Total Expected Yield: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->total_expected_yield; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Defoilation Date: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->defoliation_date; ?></b></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-sm-2"><b>First Water Date: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->first_water_date; ?></b></div>
-                                                            <div class="col-sm-2"><b>Water in Liters: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->water_liters; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>First Water Date: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->first_water_date; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Water in Liters: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->water_liters; ?></b></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-sm-2"><b>Mulching Date: </b></div>
-                                                            <div class="col-sm-4"><b><?php echo $plot->mulching_date; ?></b></div>
+                                                            <div class="col-sm-5 col-md-2"><b>Mulching Date: </b></div>
+                                                            <div class="col-sm-7 col-md-4"><b><?php echo $plot->mulching_date; ?></b></div>
                                                         </div></div></div></div>
                                         <?php
                                         }
@@ -206,9 +210,9 @@ $this->title = $data->farmer_id;
                             } ActiveForm::end();
                             ?>
                         </div>
-                        <div class="tab-pane fade" id="tab4success">Coming Soon..</div>
-                        <div class="tab-pane fade" id="tab5success">Coming Soon..</div>
-                        <div class="tab-pane fade" id="tab6success">Coming Soon..</div>
+                        <div class="tab-pane col-xs-12 fade" id="tab4success">Coming Soon..</div>
+                        <div class="tab-pane col-xs-12 fade" id="tab5success">Coming Soon..</div>
+                        <div class="tab-pane col-xs-12 fade" id="tab6success">Coming Soon..</div>
                     </div>
                 </div>
             </div>
@@ -216,4 +220,4 @@ $this->title = $data->farmer_id;
     </div>
     <!-- user profile tabs added -->
 
-</section>
+</div>
