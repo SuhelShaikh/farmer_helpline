@@ -275,7 +275,7 @@ class FarmersController extends Controller {
         $connection = Yii::$app->getDb();
         for ($i = 0; $i < count($valArr); $i++) {
             $farmerId = $valArr[$i];
-            $command = $connection->createCommand("UPDATE farmer_personal_details SET tagged_to=$executiveId WHERE id=$farmerId");
+            $command = $connection->createCommand("UPDATE farmer_profile SET user_id=$executiveId WHERE farmer_id=$farmerId");
             $command->execute();
         }
         Yii::$app->session->setFlash('insert', "Farmers tagged successfully.");

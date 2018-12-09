@@ -63,7 +63,7 @@ if (isset($_POST["Farmers"])) {
             <label class="font-weight-bold">District: </label>
             <?php
             echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
-                'options' => ['prompt' => 'Select...','id' => 'district-id'],
+                'options' => ['prompt' => 'Select...', 'id' => 'district-id'],
                 'data' => $districtData,
                 'pluginOptions' => [
                     'depends' => ['state-id'],
@@ -77,7 +77,7 @@ if (isset($_POST["Farmers"])) {
             <label class="font-weight-bold">City / Mandal: </label>
             <?php
             echo $form->field($model, 'city')->label(false)->widget(DepDrop::classname(), [
-                'options' => ['prompt' => 'Select...','id' => 'mandal-id'],
+                'options' => ['prompt' => 'Select...', 'id' => 'mandal-id'],
                 'data' => $cityData,
                 'pluginOptions' => [
 
@@ -92,7 +92,7 @@ if (isset($_POST["Farmers"])) {
             <label class="font-weight-bold">Village: </label>
             <?php
             echo $form->field($model, 'village')->label(false)->widget(DepDrop::classname(), [
-                'options' => ['prompt' => 'Select...','id' => 'village-id'],
+                'options' => ['prompt' => 'Select...', 'id' => 'village-id'],
                 'data' => $villageData,
                 'pluginOptions' => [
                     'depends' => ['mandal-id'],
@@ -104,18 +104,6 @@ if (isset($_POST["Farmers"])) {
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
-            <label class="font-weight-bold">Select Executive: </label>
-            <?php
-            echo $form->field($model, 'executive_id')->widget(Select2::classname(), [
-                'data' => $executives,
-                'options' => ['placeholder' => 'Select Executive'],
-                'pluginOptions' => [
-                    'allowClear' => true,
-                ],
-            ])->label(false);
-            ?>
-        </div>
         <div class="col-md-3">
             <label class="w-100">&nbsp;</label>
             <?php echo Html::submitButton("Search", ['class' => 'btn btn-success btn-flat', 'id' => 'btnSubmit']); ?>
@@ -134,12 +122,10 @@ if (isset($_POST["Farmers"])) {
         </div>
         <div class="clearfix">&nbsp;</div>
     <?php endif; ?>
-    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+    <?php $form = ActiveForm::begin(); ?>
     <div class="row">
-        <div class="col-md-2">
-            <label>Select Executive: </label>
-        </div>
         <div class="col-md-4">
+            <label class="font-weight-bold">Executive: </label>
             <?php
             echo $form->field($model, 'executive_id')->widget(Select2::classname(), [
                 'data' => $executives,
@@ -148,35 +134,36 @@ if (isset($_POST["Farmers"])) {
                     'allowClear' => true,
                 ],
             ])->label(false);
-            ?>		  
-            <div class="clearfix">&nbsp;</div>
+            ?>
+            <div id="executive_id_div" class="help-block" style="display: none">Executive cannot be blank.</div>
         </div>
+
     </div>
     <div class="row">
         <div class="col-sm-12">
             <div class="table-responsive">
                 <table id="myTable" class="table table-bordered">
                     <thead>
-                        <tr>
+                        <tr><th></th>
                             <th>Sr. No.</th>
                             <th>Farmer Name</th>
                             <th>Mobile Number</th>
                             <th>Birth Date</th>
                             <th>Gender</th>
                             <th>Tagged To</th>
-                            <th>Action</th>
+                            <!--<th>Action</th>-->
                         </tr>
                     </thead>
                     <tbody>             
                         <?php for ($i = 0; $i < count($data); $i++): ?>
                             <tr>
+                                <td><input type="checkbox" class="farmerId" name="farmerId[]" value="<?php echo $data[$i]['farmer_id']; ?>"></td>
                                 <td><?php echo $i + 1; ?></td>
                                 <td><?php echo $data[$i]['full_name']; ?></td>
                                 <td><?php echo $data[$i]['mobile_no']; ?></td>
                                 <td><?php echo $data[$i]['birth_date']; ?></td>
                                 <td><?php echo $data[$i]['gender']; ?></td>
                                 <td><?php echo $data[$i]['tagged_name']; ?></td>
-                                <td><input type="checkbox" value="<?php echo $data[$i]['farmer_id']; ?>"></td>
                             </tr>
                         <?php endfor; ?>
                     </tbody>
@@ -186,7 +173,10 @@ if (isset($_POST["Farmers"])) {
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <?php echo Html::Button("Submit", ['class' => 'btn btn-success btn-flat', 'id' => 'btnSubmit', 'onclick' => 'getempcode();']); ?>
+            <div id="farmer_div" class="help-block" style="display: none">Please select at least one farmer.</div>
+            <div class="col-md-2">
+                <?php echo Html::Button("Submit", ['class' => 'btn btn-success btn-flat', 'id' => 'btnSubmit', 'onclick' => 'getempcode();']); ?>
+            </div>
         </div>
     </div>
     <?php ActiveForm::end(); ?>
@@ -200,21 +190,24 @@ if (isset($_POST["Farmers"])) {
 
     function getempcode() {
         var executiveId = $("#farmers-executive_id").val();
+        $("#executive_id_div").hide();
+        $("#executive_id_div").parent().removeClass("has-error");
         if (executiveId == "") {
-            alert("Please select executive");
+            $("#executive_id_div").parent().addClass("has-error");
+            $("#executive_id_div").show();
             return false;
         }
         var vals = "";
-        var oTable = $("#myTable").dataTable();
-        $("input:checkbox", oTable.fnGetNodes()).each(function () {
+        $(".farmerId").each(function () {
             var tuisre = $(this).is(":checked");
             if (tuisre) {
                 vals += "," + $(this).val();
             }
         });
         vals = vals.substring(1);
+        $("#farmer_div").hide();
+        $("#farmer_div").parent().removeClass("has-error");
         if (vals) {
-
             var url = "<?php echo Yii::$app->urlManager->createAbsoluteUrl('farmers/tag-farmers-to-exe'); ?>";
             $.ajax({
                 url: url,
@@ -225,7 +218,8 @@ if (isset($_POST["Farmers"])) {
                 }
             });
         } else {
-            alert("Please select at least one farmer");
+            $("#farmer_div").parent().addClass("has-error");
+            $("#farmer_div").show();
             return false;
 
         }
