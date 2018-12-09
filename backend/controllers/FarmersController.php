@@ -149,31 +149,26 @@ class FarmersController extends Controller {
         $model = new FarmDetails();
         if ($model->load(Yii::$app->request->post())) {
             $id = $model->farmer_id;
-            //echo '<pre>';print_r($model);exit;
-            //echo "<pre>";print_r($_FILES);die;
+//            echo '<pre>';print_r($model);
+//            echo "<pre>";print_r($_FILES);die;
             //if ($model->validate()) {
 
-//            if ($_FILES['FarmDetails']['name']['farm_image'] != "") {
-//                $model->farm_image = UploadedFile::getInstances($model, 'farm_image');
-//                $fullFileName = "";
-//                //die();
-//                if ($model->farm_image && $model->validate()) {
-//                    $cnt = 1;
-//
-//                    foreach ($model->farm_image as $file) {
-//
-//                        $fileName = $cnt . "_" . $model->farmer_id . "_" . date("Y-m-d") . "_" . rand(100, 500000) . ".jpg";
-//                        $file->saveAs('images/farmImages/' . $fileName);
-//                        $fullFileName.=$fileName . ",";
-//
-//                        $cnt++;
-//                    }
-//                    $fullFileName = rtrim($fullFileName, ",");
-//                    $model->farm_image = $fullFileName;
-//                }
-//            }else{
-//                $model->farm_image = null;
-//            }
+            if (!empty($_FILES['FarmDetails']['name']['farm_image'])) {
+                $model->farm_image = UploadedFile::getInstances($model, 'farm_image');
+                $fullFileName = "";
+                $cnt = 1;
+
+                foreach ($model->farm_image as $file) {
+                    $fileName = $cnt . "_" . $model->farmer_id . "_" . date("Y-m-d") . "_" . rand(100, 500000) . ".jpg";
+                    $file->saveAs('images/farmImages/' . $fileName);
+                    $fullFileName.=$fileName . ",";
+                    $cnt++;
+                }
+                $fullFileName = rtrim($fullFileName, ",");
+                $model->farm_image = $fullFileName;
+            } else {
+                $model->farm_image = null;
+            }
             if ($model->save(false)) {
                 Yii::$app->session->setFlash('insert', "Farm added successfully.");
                 $externel_url = Yii::$app->urlManager->createAbsoluteUrl(['farmers/update', 'id' => $model->farmer_id, 'tab' => 2]);
@@ -193,7 +188,7 @@ class FarmersController extends Controller {
         }
         return $this->render('farm_details', [
                     'model' => $model,
-                    'id' => $id,
+                    'id' => $_REQUEST['id']
         ]);
     }
 

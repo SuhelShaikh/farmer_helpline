@@ -37,6 +37,7 @@ class FarmDetails extends \yii\db\ActiveRecord
     {
         return [
             [['farm_name', 'elevation_farm_location', 'village', 'mandal', 'district', 'state', 'survey_number', 'total_area', 'area_unit', 'area_of_plot', 'farmer_id'], 'required'],
+            [['farm_image'],'safe'],
             [['total_area', 'area_of_plot', 'farmer_id'], 'integer'],
             [['farm_name', 'village', 'district', 'state'], 'string', 'max' => 100],
             [['elevation_farm_location', 'mandal'], 'string', 'max' => 50],

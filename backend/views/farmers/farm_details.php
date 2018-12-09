@@ -13,26 +13,21 @@ use yii\helpers\Url;
 $states = ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'name');
 ?>
 
-<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'action' => 'index.php?r=farmers/farmdetails']); ?>
-<!--<div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal" onclick="closePopup();">&times;</button>
-<!--<h4 class="modal-title">Add Farm</h4>
-</div>-->
-<?php //echo $form->field($model, 'farmer_id')->hiddenInput(['value'=>$_REQUEST['id']])->label(false);  ?>
 <div class="modal-body">
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'action' => 'index.php?r=farmers/farmdetails']); ?>
     <div class="row">
         <div class="col-sm-2">
             <b>Farm Name: </b>
         </div>
         <div class="col-sm-4">
             <?php echo $form->field($model, 'farm_name')->textInput(['class' => 'form-control', 'placeholder' => 'Farm Name'])->label(false); ?>
-<?php echo $form->field($model, 'farmer_id')->hiddenInput(['value' => $id])->label(false); ?>
+            <?php echo $form->field($model, 'farmer_id')->hiddenInput(['value' => $id])->label(false); ?>
         </div>
         <div class="col-sm-2">
             <b>Farm Photo: </b>
         </div>
         <div class="col-sm-4">
-<?= $form->field($model, 'farm_image[]')->fileInput(['multiple' => true])->label(false); ?>
+            <?= $form->field($model, 'farm_image[]')->fileInput(['multiple' => true])->label(false); ?>
         </div>
     </div>
     <div class="row">
@@ -40,13 +35,13 @@ $states = ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'n
             <b>Location: </b>
         </div>
         <div class="col-sm-4">
-<?php echo $form->field($model, 'elevation_farm_location')->textInput(['class' => 'form-control', 'placeholder' => 'Location'])->label(false); ?>
+            <?php echo $form->field($model, 'elevation_farm_location')->textInput(['class' => 'form-control', 'placeholder' => 'Location'])->label(false); ?>
         </div>
         <div class="col-sm-2">
             <b>Survey No.: </b>
         </div>
         <div class="col-sm-4">
-<?php echo $form->field($model, 'survey_number')->textInput(['class' => 'form-control', 'placeholder' => 'Survey Number'])->label(false); ?>
+            <?php echo $form->field($model, 'survey_number')->textInput(['class' => 'form-control', 'placeholder' => 'Survey Number'])->label(false); ?>
         </div>
     </div> 
     <div class="row">
@@ -130,16 +125,14 @@ $states = ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'n
             ?>
         </div>
     </div> 
-</div>
-<div class="modal-footer">
     <div class="row">
         <div class="col-sm-12">
             <?php echo Html::submitButton("Submit", ['class' => 'btn btn-primary btn-flat', 'id' => 'btnSubmit']); ?>
             <?php echo Html::Button("Close", ['class' => 'btn btn-default btn-flat', 'data-dismiss' => 'modal', 'onclick' => 'closePopup();']); ?>
         </div>
     </div>
+    <?php ActiveForm::end(); ?>
 </div>
-<?php ActiveForm::end(); ?>
 
 <script type="text/javascript">
     function closePopup() {

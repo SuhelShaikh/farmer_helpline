@@ -266,7 +266,7 @@ $tagTo = ArrayHelper::map(User::find()->where(['status' => 10])->orderBy('userna
                                                         <td>
                                                             <?php for ($x = 0; $x < count($picArr); $x++): ?>
                                                                 <?php $url = "images/farmImages/" . $picArr[$x]; ?>
-                                                                <a href="<?php echo $url; ?>" target="_blank">Pic <?php echo $x + 1; ?> |</a>
+                                                            <a class='img-image' href="javascript::void(0)" data-id="<?php echo $url; ?>">Pic <?php echo $x + 1; ?> |</a>
                                                         <?php endfor; ?>
                                                         </td>
 
@@ -348,6 +348,10 @@ yii\bootstrap\Modal::end();
 yii\bootstrap\Modal::begin(['header' => '<h2 class="heading-text">Add Plot</h2>', 'id' => 'plot-form', 'size' => 'modal-lg']);
 echo $this->render('plot_details', ['model' => new \backend\models\Plot(),'cropModel' => new \backend\models\CropDetails(), 'id' => $_REQUEST['id']]);
 yii\bootstrap\Modal::end();
+
+yii\bootstrap\Modal::begin(['header' => '<h2 class="heading-text">Image</h2>', 'id' => 'farm-image', 'size' => 'modal-lg']);
+echo "<img src='' id='popup-image' width='870' height='500'></img>";
+yii\bootstrap\Modal::end();
 ?>
 <style type="text/css">
     a.disabled {
@@ -373,6 +377,11 @@ $script = "$('#farmers-birth_date').on('change', function () {
         $('.btn-plot').click(function(){
             $('#plot-form').modal('show');
 	});
+        $('.img-image').click(function(){
+            $('#farm-image').modal('show')
+                .find('#popup-image')
+                .attr('src',$(this).attr('data-id'))
+        });
     $('#collapse" . $tab . "').collapse('toggle');";
 $this->registerJs($script);
 ?>

@@ -19,14 +19,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'crop_desc') ?>
 
-    <?= //$form->field($model, 'image') ?>
-
-    <?= //$form->field($model, 'status') ?>
-
-    <?php // echo $form->field($model, 'created_on') ?>
-
-    <?php // echo $form->field($model, 'updated_on') ?>
-
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
