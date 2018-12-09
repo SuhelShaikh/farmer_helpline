@@ -354,7 +354,7 @@ yii\bootstrap\Modal::end();
         pointer-events: none;
         color: cadetblue;
     }
-    /*#farm-form .modal-dialog {width: 820px;}*/
+    #farm-form .modal-dialog {width: 820px;}
     #plot-form .modal-dialog {width: 820px; }
 </style>
 
