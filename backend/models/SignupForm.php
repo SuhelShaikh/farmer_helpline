@@ -22,6 +22,7 @@ class SignupForm extends Model
 	public $gender;
 	public $home_address;
 	public $assign_users;
+	public $image;
     /**
      * @inheritdoc
      */
@@ -45,7 +46,8 @@ class SignupForm extends Model
 			['mobile_number','required'],
 			['mobile_number','string','max'=>10],
 			
-			[['user_role','first_name','last_name','age','gender'],'required'],
+			[['user_role','first_name','last_name','age','gender','image'],'required'],
+			
             /*[['age','birth_date','gender','home_address','assign_users'],'required', 'when' => function($model) {
                 return $model->user_role == 6;
                 //return $model->user_role == 6;
@@ -58,7 +60,7 @@ class SignupForm extends Model
      *
      * @return User|null the saved model or null if saving fails
      */
-    public function signup()
+    public function signup($extention)
     {
         if (!$this->validate()) {
             return null;
@@ -76,6 +78,7 @@ class SignupForm extends Model
         $user->birth_date = $this->birth_date;
         $user->gender = $this->gender;
         $user->mobile_number = $this->mobile_number;
+		$user->image = base64_encode($this->email).'.'.$extention;
         return $user->save() ? $user : null;
     }
 }
