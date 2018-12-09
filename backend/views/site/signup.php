@@ -24,7 +24,7 @@ $this->title = 'User Details';
 				<div class="col-md-12">
 					<div class="small-12 medium-2 large-2 columns">
 						<div class="upload-img-wrap mlr-auto">
-							<div class="circle img-pos-upload">
+							<div class="circle img-pos-upload bg-white">
 							<!-- User Profile Image -->
 							
 							<img class="profile-pic" src="">
