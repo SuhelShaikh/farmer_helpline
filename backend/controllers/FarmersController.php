@@ -260,7 +260,7 @@ class FarmersController extends Controller {
     public function actionTagFarmers() {
         //$this->layout='dashboard';
         $model = new Farmers();
-        $data = $model->getFarmersListForTag();
+        $data = $model->getFarmersListForTag(Yii::$app->request->post());
         return $this->render('tagFarmers', [
                     'model' => $model,
                     'data' => $data,
