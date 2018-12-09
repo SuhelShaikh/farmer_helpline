@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 .heading-text, h1.mt-0, h2.mt-0, .btn{font-family: 'Fredoka One', cursive;}
 .btn, h1.mt-0 .btn, h2.mt-0 .btn{font-weight:normal; font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;}
-body {background: url(images/bg-img.png) !important;background-repeat: repeat;}
+body {background: url(../images/bg-img.png) !important;background-repeat: repeat;}
 h1, h2{font-size:24px;}
 .pointer{cursor:pointer;}
 .text-left{text-align:left;}
