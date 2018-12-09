@@ -237,7 +237,7 @@ $tagTo = ArrayHelper::map(User::find()->where(['status' => 10])->orderBy('userna
                             <div class="row">
                                 <div class="col-sm-12">
 									<div class="table-responsive">
-                                    <table id="myTable" class="table table-bordered">
+                                    <table id="myTable" class="table table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sr. No.</th>
@@ -300,7 +300,7 @@ $tagTo = ArrayHelper::map(User::find()->where(['status' => 10])->orderBy('userna
                             <div class="row">
                                 <div class="col-sm-12">
 									<div class="table-responsive">
-                                    <table id="myTable" class="table table-bordered">
+                                    <table id="myTable" class="table table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sr. No.</th>
@@ -349,15 +349,6 @@ yii\bootstrap\Modal::begin(['header' => '<h2 class="heading-text">Add Plot</h2>'
 echo $this->render('plot_details', ['model' => new \backend\models\Plot(),'cropModel' => new \backend\models\CropDetails(), 'id' => $_REQUEST['id']]);
 yii\bootstrap\Modal::end();
 ?>
-<style type="text/css">
-    a.disabled {
-        pointer-events: none;
-        color: cadetblue;
-    }
-    #farm-form .modal-dialog {width: 820px;}
-    #plot-form .modal-dialog {width: 820px; }
-</style>
-
 <?php
 $tab = $_REQUEST['tab'];
 $script = "$('#farmers-birth_date').on('change', function () {
@@ -373,6 +364,6 @@ $script = "$('#farmers-birth_date').on('change', function () {
         $('.btn-plot').click(function(){
 		$('#plot-form').modal('show');
 	});
-    $('#collapse" . $tab . "').collapse('toggle');";
+    $('#collapse" . $tab . "').collapse('toggle');";	
 $this->registerJs($script);
 ?>

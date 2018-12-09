@@ -107,7 +107,7 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="table-responsive">
-			<table id="myTable" class="table table-bordered">
+			<table id="myTable" class="table table-striped">
 				<thead>
 					<tr>
 						<th>Sr. No.</th>
