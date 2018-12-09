@@ -28,6 +28,7 @@ class Farmers extends \yii\db\ActiveRecord {
      * @inheritdoc
      */
     public $executive_id;
+    public $filter;
 
     public static function tableName() {
         return 'farmer_profile';
@@ -75,15 +76,22 @@ class Farmers extends \yii\db\ActiveRecord {
     }
 
     public function getFarmersList($params) {
-        /* $where=" WHERE status=1";
-          $type=Yii::$app->user->identity->type;
-          $executiveId=Yii::$app->user->identity->id;
-          if($type!=1){
-          $where.=" AND created_by=$executiveId";
-          } */
+        
+        if (isset($params) && !empty($params)) {
+            foreach ($params["Farmers"] AS $key => $param){
+                if($param != ""){
+                if($key == 'city')
+                    $this->filter = " AND fd.mandal = '$param'";
+                if($key == 'executive_id')
+                    $this->filter = " AND fp.user_id = '$param'";
+                else
+                    $this->filter = " AND fd.$key = '$param'";
+                }
+            }
+        }
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT farmer_id,CONCAT(fp.first_name, ' ', fp.middle_name, ' ', fp.last_name) AS full_name,fp.birth_date,fp.mobile_no, (CASE WHEN fp.gender='1' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(IFNULL(u.first_name,''), ' ', IFNULL(u.last_name,'')) AS tagName FROM farmer_profile fp LEFT JOIN user u ON u.id=fp.user_id ORDER BY farmer_id DESC");
-                                                
+        $command = $connection->createCommand("SELECT DISTINCT fd.farmer_id,CONCAT(fp.first_name, ' ', fp.middle_name, ' ', fp.last_name) AS full_name,fp.birth_date,fp.mobile_no, (CASE WHEN fp.gender='1' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(IFNULL(u.first_name,''), ' ', IFNULL(u.last_name,'')) AS tagName FROM farmer_profile fp JOIN farm_details fd ON fd.farmer_id=fp.farmer_id LEFT JOIN user u ON u.id=fp.user_id WHERE fp.user_id !='0' {$this->filter} ORDER BY farmer_id DESC");
+
         $data = $command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;
