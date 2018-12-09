@@ -508,3 +508,28 @@ img.profile-pic.img-responsive {
 .panel-heading.bg-orange h4.panel-title a {
     color: #fff;
 }
+
+.col-xs-12.profile-tabs {overflow: auto;}
+	.col-xs-12.profile-tabs .panel.with-nav-tabs{min-width:900px;}
+	.user-image-wrap img { width: 75px; margin: 0px auto;border-radius: 50%;}
+	td.action-btns a {font-size: 24px;display: inline-block;margin: 0 5px;}
+	td.action-btns a .fa.fa-trash {color:red;}
+	.c-pointer{cursor:pointer;}
+	
+	.panel-heading.bg-orange a{color:#fff;}
+	.panel-heading.bg-orange a.disabled{color:#fff;}
+	.control-sidebar.control-sidebar-dark{display:none !important;}
+	.modal .modal-dialog.modal-lg .modal-content{border-radius:5px;}
+	.modal .modal-dialog.modal-lg .modal-content .modal-header {
+	  padding: 9px 15px;
+	  border-bottom: 1px solid #eee;
+	  background-color: #0480be;
+	  -webkit-border-top-left-radius: 3px;
+	  -webkit-border-top-right-radius: 3px;
+	  -moz-border-radius-topleft: 3px;
+	  -moz-border-radius-topright: 3px;
+	  border-top-left-radius: 3px;
+	  border-top-right-radius: 3px;
+	}
+	.modal .modal-dialog.modal-lg .modal-content .modal-header .heading-text{margin-top:10px;color:#fff;}
+	.modal .modal-dialog.modal-lg .modal-content .modal-header button{opacity:1; color:#fff; margin-top:10px;}
