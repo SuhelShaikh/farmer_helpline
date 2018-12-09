@@ -9,16 +9,17 @@ use backend\models\Role;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Users';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create User', ['site/signup'], ['class' => 'btn btn-success']) ?>
-    </p>
+	<div>
+		<h2 class="mt-0">
+			<?= Html::encode($this->title) ?>
+			<p class="pull-right"> <?= Html::a('Create User', ['site/signup'], ['class' => 'btn btn-success']) ?> </p>
+		</h2>
+	</div>
+	<div class="clearfix">&nbsp;</div>
+	<div class="table-responsive w-100">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -71,4 +72,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+	</div>
 </div>
