@@ -492,3 +492,19 @@ img {
     width: 200px;
     margin-top: -29px;
 }
+img.profile-pic.img-responsive {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+.col-xs-12.profile-tabs .col-sm-5.col-md-2, .col-xs-12.profile-tabs .col-sm-7.col-md-4{padding-top:5px; padding-bottom:5px;}
+.col-xs-12.profile-tabs .col-sm-7.col-md-4 b{font-weight:normal;}
+.user-info .basic-info label.font-weight-bold {
+    font-size: 22px;
+    text-transform: capitalize;
+}
+.user-info .basic-info, .user-info .user-address{font-size:16px;}
+.user-info .basic-info label .fa.font-weight-bold, .user-info .user-address .fa.font-weight-bold{font-size:18px;color:green;}
+.panel-heading.bg-orange h4.panel-title a {
+    color: #fff;
+}
