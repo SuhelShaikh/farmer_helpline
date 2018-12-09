@@ -42,7 +42,7 @@ class FarmersController extends Controller {
     public function actionIndex() {
         //$this->layout='dashboard';
         $model = new Farmers();
-        $data = $model->getFarmersList(Yii::$app->request->queryParams);
+        $data = $model->getFarmersList(Yii::$app->request->post());
         return $this->render('index', [
                     'model' => $model,
                     'data' => $data,
