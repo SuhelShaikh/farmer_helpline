@@ -341,13 +341,11 @@ $tagTo = ArrayHelper::map(User::find()->where(['status' => 10])->orderBy('userna
 </section>
 </div>
 <?php
-yii\bootstrap\Modal::begin(['header' => '<h2 class="heading-text">Add Farm</h2>','id' => 'farm-form',    
-    'size' => 'modal-lg']);
+yii\bootstrap\Modal::begin(['header' => '<h2 class="heading-text">Add Farm</h2>', 'id' => 'farm-form', 'size' => 'modal-lg']);
 echo $this->render('farm_details', ['model' => new \backend\models\FarmDetails(), 'id' => $_REQUEST['id']]);
 yii\bootstrap\Modal::end();
 
-yii\bootstrap\Modal::begin(['header' => '<h2 class="heading-text">Add Plot</h2>', 'id' => 'plot-form',    
-    'size' => 'modal-lg']);
+yii\bootstrap\Modal::begin(['header' => '<h2 class="heading-text">Add Plot</h2>', 'id' => 'plot-form', 'size' => 'modal-lg']);
 echo $this->render('plot_details', ['model' => new \backend\models\Plot(),'cropModel' => new \backend\models\CropDetails(), 'id' => $_REQUEST['id']]);
 yii\bootstrap\Modal::end();
 ?>
@@ -363,17 +361,17 @@ yii\bootstrap\Modal::end();
 <?php
 $tab = $_REQUEST['tab'];
 $script = "$('#farmers-birth_date').on('change', function () {
-		var dob=$('#farmers-birth_date').val();
-        dob = new Date(dob);
-		var today = new Date();
-		var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-		$('#farmers-age').val(age);
-    });
+            var dob=$('#farmers-birth_date').val();
+            dob = new Date(dob);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            $('#farmers-age').val(age);
+        });
 	$('.btn-flats').click(function(){
-		$('#farm-form').modal('show');
+            $('#farm-form').modal('show');
 	});
         $('.btn-plot').click(function(){
-		$('#plot-form').modal('show');
+            $('#plot-form').modal('show');
 	});
     $('#collapse" . $tab . "').collapse('toggle');";
 $this->registerJs($script);

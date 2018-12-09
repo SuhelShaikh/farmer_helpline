@@ -6,18 +6,39 @@ use backend\models\User;
 use kartik\depdrop\DepDrop;
 use kartik\select2\Select2;
 use backend\models\State;
+use backend\models\District;
+use backend\models\Mandal;
+use backend\models\Village;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
 $this->title = 'Manage Farmers';
 $states = ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'name');
 $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'username');
+
+$districtData = array();
+$cityData = array();
+$villageData = array();
 if (isset($_POST["Farmers"])) {
-    print_r($_POST["Farmers"]);
     $model->state = $_POST["Farmers"]["state"];
-    $model->district = $_POST["Farmers"]["district"];
-    $model->city = $_POST["Farmers"]["city"];
-    $model->village = $_POST["Farmers"]["village"];
+    if ($model->state != "") {
+        $districtData = ArrayHelper::map(District::find()->where(["state_id" => $model->state])->orderBy('name')->all(), 'dis_id', 'name');
+    }
+    if (isset($_POST["Farmers"]["district"])) {
+        $model->district = $_POST["Farmers"]["district"];
+        if ($model->district != "") {
+            $cityData = ArrayHelper::map(Mandal::find()->where(["district_id" => $model->district])->orderBy('name')->all(), 'mandal_id', 'name');
+        }
+    }
+    if (isset($_POST["Farmers"]["city"])) {
+        $model->city = $_POST["Farmers"]["city"];
+        if ($model->city != "") {
+            $villageData = ArrayHelper::map(Village::find()->where(["mandal_id" => $model->city])->orderBy('name')->all(), 'village_id', 'name');
+        }
+    }
+    if (isset($_POST["Farmers"]["village"])) {
+        $model->village = $_POST["Farmers"]["village"];
+    }
     $model->executive_id = $_POST["Farmers"]["executive_id"];
 }
 ?>
@@ -43,10 +64,10 @@ if (isset($_POST["Farmers"])) {
             <label class="font-weight-bold">District: </label>
             <?php
             echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
-                'options' => ['id' => 'district-id'],
+                'options' => ['prompt' => 'Select...', 'id' => 'district-id'],
+                'data' => $districtData,
                 'pluginOptions' => [
                     'depends' => ['state-id'],
-                    'initialize'=>true,
                     'placeholder' => 'Select...',
                     'url' => Url::to(['/site/district'])
                 ]
@@ -57,10 +78,10 @@ if (isset($_POST["Farmers"])) {
             <label class="font-weight-bold">City / Mandal: </label>
             <?php
             echo $form->field($model, 'city')->label(false)->widget(DepDrop::classname(), [
-                'options' => ['id' => 'mandal-id'],
+                'options' => ['prompt' => 'Select...', 'id' => 'mandal-id'],
+                'data' => $cityData,
                 'pluginOptions' => [
                     'depends' => ['district-id'],
-                    'initialize'=>true,
                     'placeholder' => 'Select...',
                     'url' => Url::to(['/site/mandal'])
                 ]
@@ -71,10 +92,10 @@ if (isset($_POST["Farmers"])) {
             <label class="font-weight-bold">Village: </label>
             <?php
             echo $form->field($model, 'village')->label(false)->widget(DepDrop::classname(), [
-                'options' => ['id' => 'village-id'],
+                'options' => ['prompt' => 'Select...', 'id' => 'village-id'],
+                'data' => $villageData,
                 'pluginOptions' => [
                     'depends' => ['mandal-id'],
-                    'initialize'=>true,
                     'placeholder' => 'Select...',
                     'url' => Url::to(['/site/village'])
                 ]
