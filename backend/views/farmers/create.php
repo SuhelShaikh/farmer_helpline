@@ -16,64 +16,58 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 //$type=Yii::$app->user->identity->type;
 ?>
 <!-- Main content -->
-  <section class="content-header">
-      <h1>
-        Add New Farmer
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><?php echo Html::a("<i class='fa fa-dashboard'></i> Home", ['main/admin-dashboard']); ?></li>
-        <li><?php echo Html::a("Manage Farmers", ['farmers/index']); ?></li>
-        <li class="active">Add New Farmer</li>
-      </ol>
-  </section>
-  <hr />
-  <section class="content">
+<div class="manage-farmer-index">
+	<div>
+		<h2 class="mt-0">
+			<?= Html::encode($this->title) ?>
+		</h2>
+	</div>
+	<div class="clearfix">&nbsp;</div>
     <div class="row">
     	<div class="col-md-12">
     		<div class="panel-group" id="accordion">
 			    <div class="panel panel-default">
-			      <div class="panel-heading">
+			      <div class="panel-heading bg-orange">
 			        <h4 class="panel-title">
-			          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Personal Details</a>
+			          <a class="font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Personal Details</a>
 			        </h4>
 			      </div>
 			      <div id="collapse1" class="panel-collapse collapse in">
 			        <div class="panel-body">
 			        	<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 					      <div class="row">
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>First Name: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php echo $form->field($model, 'first_name')->textInput(['class'=>'form-control','placeholder'=>'First Name'])->label(false); ?>
 					        </div>
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Middle Name: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php echo $form->field($model, 'middle_name')->textInput(['class'=>'form-control','placeholder'=>'Middle Name'])->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Last Name: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php echo $form->field($model, 'last_name')->textInput(['class'=>'form-control','placeholder'=>'Last Name'])->label(false); ?>
 					        </div>
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Photo: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?= $form->field($model, 'profile_pic')->fileInput()->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Gender: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php
 					              echo $form->field($model, 'gender')->label(FALSE)->widget(Select2::classname(), [
 					                  'data' => ['1'=>'Male','0'=>'Female'],
@@ -86,10 +80,10 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 					                ]);
 					          ?>
 					        </div>
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Language: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php
 					              echo $form->field($model, 'language')->label(FALSE)->widget(Select2::classname(), [
 					                  'data' => ['M'=>'Marathi','E'=>'English'],
@@ -104,10 +98,10 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 					        </div>
 					      </div>
 					      <div class="row">
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Birth Date: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php
 					          	echo $form->field($model, 'birth_date')->widget(DatePicker::classname(), [
 								    'options' => ['placeholder' => 'Enter birth date'],
@@ -119,18 +113,18 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 								])->label(false);
 					          ?>
 					        </div>
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Age: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php echo $form->field($model, 'age')->textInput(['class'=>'form-control','placeholder'=>'Age', 'disabled'=>true])->label(false); ?>
 					        </div>
 					      </div>
 					    <div class="row">
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Is Registered: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php
 					              echo $form->field($model, 'is_registered')->label(FALSE)->widget(Select2::classname(), [
 					                  'data' => ['0'=>'No','1'=>'Yes'],
@@ -144,10 +138,10 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 					          ?>
 					        </div>
         					<?php //if($type==1): ?>
-						        <div class="col-sm-2">
+						        <div class="col-sm-4 col-md-2">
 						           <b>Tagged To: </b>
 						        </div>
-						        <div class="col-sm-4">
+						        <div class="col-sm-8 col-md-4">
 						          <?php
 						              echo $form->field($model, 'user_id')->label(FALSE)->widget(Select2::classname(), [
 						                  'data' => $tagTo,
@@ -165,30 +159,30 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 					    	<?php //endif; ?>
 					      </div>
 					      <div class="row">
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Mobile No.: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php echo $form->field($model, 'mobile_no')->textInput(['class'=>'form-control','placeholder'=>'Mobile Number'])->label(false); ?>
 					        </div>
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>WhatsApp No.: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php echo $form->field($model, 'whatsapp_no')->textInput(['class'=>'form-control','placeholder'=>'WhatsApp Number'])->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
-					        <div class="col-sm-2">
+					        <div class="col-sm-4 col-md-2">
 					           <b>Address: </b>
 					        </div>
-					        <div class="col-sm-4">
+					        <div class="col-sm-8 col-md-4">
 					          <?php echo $form->field($model, 'home_address')->textArea(['class'=>'form-control','placeholder'=>'Address'])->label(false); ?>
 					        </div>
 					      </div>
 					      <div class="row">
 					        <div class="col-sm-12">
-					            <?php echo Html::submitButton("Submit",['class'=>'btn btn-primary btn-flat','id'=>'btnSubmit']); ?>
+					            <?php echo Html::submitButton("Submit",['class'=>'btn btn-success btn-flat','id'=>'btnSubmit']); ?>
 					            <?php echo Html::resetButton("Reset",['class'=>'btn btn-default btn-flat']); ?>
 					        </div>
 					      </div>
@@ -197,22 +191,21 @@ $tagTo=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'usernam
 			      </div>
 			    </div>
 			    <div class="panel panel-default">
-			      <div class="panel-heading">
+			      <div class="panel-heading bg-orange">
 			        <h4 class="panel-title" style="cursor: not-allowed;">
-			          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="disabled">Farm Details</a>
+			          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="disabled font-weight-bold">Farm Details</a>
 			        </h4>
 			      </div>
 			      <div id="collapse2" class="panel-collapse collapse">
-			        <div class="panel-body">
-			        	
+			        <div class="panel-body">		        	
 			        	
 			        </div>
 			      </div>
 			    </div>
 			    <div class="panel panel-default">
-			      <div class="panel-heading">
+			      <div class="panel-heading bg-orange">
 			        <h4 class="panel-title" style="cursor: not-allowed;">
-			          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="disabled">Plot Details</a>
+			          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="disabled font-weight-bold">Plot Details</a>
 			        </h4>
 			      </div>
 			      <div id="collapse3" class="panel-collapse collapse">
