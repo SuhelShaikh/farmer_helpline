@@ -105,7 +105,6 @@ if (isset($_POST["Farmers"])) {
     </div>
     <div class="row">
         <div class="col-md-3">
-            <label class="w-100">&nbsp;</label>
             <?php echo Html::submitButton("Search", ['class' => 'btn btn-success btn-flat', 'id' => 'btnSubmit']); ?>
         </div>
     </div>
