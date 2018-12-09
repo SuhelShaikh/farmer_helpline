@@ -49,8 +49,8 @@ $this->title = $data->farmer_id;
     <!-- user profile tabs added -->
     <div class="row">
         <div class="col-xs-12 profile-tabs">
-            <div class="panel with-nav-tabs panel-success">
-                <div class="panel-heading">
+            <div class="panel with-nav-tabs bg-white">
+                <div class="panel-heading bg-orange">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1success" data-toggle="tab"><strong>Farmer Profile</strong></a></li>
                         <li><a href="#tab2success" data-toggle="tab"><strong>Farm <?php echo (isset($data->farm) && !empty($data->farm))?" (".count($data->farm).")": " (0)"; ?></strong></a></li>
