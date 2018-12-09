@@ -8,88 +8,70 @@ use kartik\select2\Select2;
 use kartik\depdrop\DepDrop;
 use backend\models\State;
 use yii\helpers\Url;
-$this->title = 'Tag Users';
+$this->title = 'Tag Farmers';
 $states=ArrayHelper::map(State::find()->orderBy('name')->all(), 'state_id', 'name');
 
 $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'username');
 ?>
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'],'action'=>'index.php?r=farmers/farmdetails']); ?>
 <!-- Main content -->
-  <section class="content-header">
-      <h1>
-        Tag Farmers
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><?php echo Html::a("<i class='fa fa-dashboard'></i> Home", ['main/admin-dashboard']); ?></li>
-        <li class="active">Tag Farmers</li>
-      </ol>
-  </section>
-  <hr />
-  <div class="row">
-            <div class="col-sm-2">
-               <b>State: </b>
-            </div>
-            <div class="col-sm-4">
-              <?php
-          echo $form->field($model, 'state')->dropDownList($states, ['prompt' => 'Select State', 'id' => 'state-id'])->label(false);
-          ?>
-            </div>
-            <div class="col-sm-2">
-               <b>District: </b>
-            </div>
-            <div class="col-sm-4">
-              <?php
-         
-         echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
+<div class="manage-farmer-index">
+	<div>
+		<h2 class="mt-0">
+			<?= Html::encode($this->title) ?>
+		</h2>
+	</div>
+	<div class="clearfix">&nbsp;</div>  
+	<div class="row">
+		<div class="col-sm-3">
+			<label class="font-weight-bold">State: </label>
+			<?php echo $form->field($model, 'state')->dropDownList($states, ['prompt' => 'Select State', 'id' => 'state-id'])->label(false); ?>
+		</div>
+		<div class="col-sm-3">
+			<label class="font-weight-bold">District: </label>
+			<?php
+			echo $form->field($model, 'district')->label(false)->widget(DepDrop::classname(), [
             'options' => ['id' => 'district-id'],
             'pluginOptions' => [
                 'depends' => ['state-id'],
                 'placeholder' => 'Select...',
                 'url' => Url::to(['/site/district'])
             ]
-              ]);
-          ?>
-            </div>
-        </div> 
-        <div class="row">
-            <div class="col-sm-2">
-               <b>City / Mandal: </b>
-            </div>
-            <div class="col-sm-4">
-              <?php
-           echo $form->field($model, 'city')->label(false)->widget(DepDrop::classname(), [
-        'options' => ['id' => 'mandal-id'],
-        'pluginOptions' => [
+            ]);
+			?>
+		</div>
+		<div class="col-sm-3">
+			<label class="font-weight-bold">City / Mandal: </label>
+			<?php
+			echo $form->field($model, 'city')->label(false)->widget(DepDrop::classname(), [
+			'options' => ['id' => 'mandal-id'],
+			'pluginOptions' => [
+
             'depends' => ['district-id'],
             'placeholder' => 'Select...',
             'url' => Url::to(['/site/mandal'])
-        ]
-    ]);
-          ?>
-            </div>
-            <div class="col-sm-2">
-               <b>Village: </b>
-            </div>
-            <div class="col-sm-4">
-              <?php
-        echo $form->field($model, 'village')->label(false)->widget(DepDrop::classname(), [
-        'options' => ['id' => 'village-id'],
-        'pluginOptions' => [
-            'depends' => ['mandal-id'],
-            'placeholder' => 'Select...',
-            'url' => Url::to(['/site/village'])
-        ]
-    ]);
-          ?>
-            </div>
-        </div> 
-      <div class="row">
-        <div class="col-md-2">
-          <label>Select Executive: </label>
+			]
+			]);
+			?>
         </div>
-        <div class="col-md-4">
-          <?php
+		<div class="col-sm-3">
+			<label class="font-weight-bold">Village: </label>
+			<?php
+			echo $form->field($model, 'village')->label(false)->widget(DepDrop::classname(), [
+			'options' => ['id' => 'village-id'],
+			'pluginOptions' => [
+				'depends' => ['mandal-id'],
+				'placeholder' => 'Select...',
+				'url' => Url::to(['/site/village'])
+			]
+			]);
+			?>
+        </div>
+    </div>
+	<div class="row">
+        <div class="col-md-3">
+			<label class="font-weight-bold">Select Executive: </label>
+			<?php
             echo $form->field($model, 'executive_id')->widget(Select2::classname(), [
                  'data' => $executives,
                   'options' =>['placeholder' => 'Select Executive'],
@@ -97,13 +79,14 @@ $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'us
                       'allowClear' => true,
                   ],
             ])->label(false);
-          ?>
+			?>
         </div>
-        <div class="col-md-6">
-          <?php echo Html::submitButton("Search",['class'=>'btn btn-primary btn-flat','id'=>'btnSubmit']); ?>
+        <div class="col-md-3">
+			<label class="w-100">&nbsp;</label>
+			<?php echo Html::submitButton("Search",['class'=>'btn btn-success btn-flat','id'=>'btnSubmit']); ?>
         </div>
-      </div>
-  <section class="content">
+    </div>
+	<div class="clearfix">&nbsp;</div>
       <?php if (Yii::$app->session->hasFlash('insert')): ?>
         <div class="row">
             <div class="col-sm-12">
@@ -113,15 +96,15 @@ $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'us
                 </div>
             </div>
         </div>
+		<div class="clearfix">&nbsp;</div>
       <?php endif; ?>
-        <br />
       <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
       <div class="row">
         <div class="col-md-2">
           <label>Select Executive: </label>
         </div>
         <div class="col-md-4">
-          <?php
+		  <?php
             echo $form->field($model, 'executive_id')->widget(Select2::classname(), [
                  'data' => $executives,
                   'options' =>['placeholder' => 'Select Executive'],
@@ -129,12 +112,13 @@ $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'us
                       'allowClear' => true,
                   ],
             ])->label(false);
-          ?>
+          ?>		  
+          <div class="clearfix">&nbsp;</div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12">
-            
+          <div class="table-responsive">
             <table id="myTable" class="table table-bordered">
                 <thead>
                     <tr>
@@ -161,11 +145,12 @@ $executives=ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', 'us
                     <?php endfor; ?>
                 </tbody>
             </table>
+		  </div>	
         </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <?php echo Html::Button("Submit",['class'=>'btn btn-primary btn-flat','id'=>'btnSubmit','onclick'=>'getempcode();']); ?>
+        <?php echo Html::Button("Submit",['class'=>'btn btn-success btn-flat','id'=>'btnSubmit','onclick'=>'getempcode();']); ?>
       </div>
     </div>
     <?php ActiveForm::end(); ?>
