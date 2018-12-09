@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
-
+use yii\helpers\Url;
+$path = '/farmer_helpline/backend/web/uploads/user/photo/';
+$url = Url::toRoute(['user/view', 'id' =>yii::$app->user->identity->id ]);
 /* @var $this \yii\web\View */
 /* @var $content string */
 ?>
@@ -223,24 +225,24 @@ use yii\helpers\Html;
 
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs">User Name</span>
+                        <img src="<?php echo $path.yii::$app->user->identity->image; ?>" class="user-image" alt="User Image"/>
+                        <span class="hidden-xs"><?php echo yii::$app->user->identity->first_name.' '.yii::$app->user->identity->last_name; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
+                            <img src="<?php echo $path.yii::$app->user->identity->image; ?>" class="img-circle"
                                  alt="User Image"/>
 
                             <p>
-                                User Name - Farmer
+                                <?php echo yii::$app->user->identity->first_name.' '.yii::$app->user->identity->last_name; ?> - Farmer
                                 <small>Member since Nov. 2018</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-primary btn-flat">Profile</a>
+                                <a href="<?php echo $url;?>" class="btn btn-primary btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
                                 <?= Html::a(

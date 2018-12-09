@@ -4,7 +4,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\ckeditor\CKEditor;
 use backend\models\User;
-
+$path = '/farmer_helpline/backend/web/uploads/user/photo/';
+$path1 = '/farmer_helpline/backend/web/images/';
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\EaQuestionsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -24,7 +25,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
     foreach($data AS $models){
     ?>
 	<div class="question">
-		    <img src="images/default.png" alt="images/default.png" class="profile-img">&nbsp;
+		    <img src="<?php echo $path1; ?>/default.png" alt="images/default.png" class="profile-img">&nbsp;
         <span style="font-weight:bold;color:#05059c;"><?= $models->user->username ?> </span>
 		    <span><?php echo $models->question; ?></span>
         <?php if(isset($models->audio_video_path) && $models->audio_video_path != NULL && $models->audio_video_path!= ''){?>
@@ -34,7 +35,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
 		</div>
          <?php if(isset($models->answer) && $models->answer != NULL){ ?>
 			     <div class="response">
-            <img src="images/default.png" alt="images/default.png" class="profile-img">&nbsp;
+            <img src="<?php echo $path1; ?>/default.png" alt="images/default.png" class="profile-img">&nbsp;
 			       <span style="font-weight:bold;color:grey;"><?= $models->userEa->username ?></span>
 		        	<span><?php echo $models->answer->response; ?></span>
               <span style="float:right;">Replied On - <?php  echo $models->created_on; ?></span>  

@@ -25,6 +25,7 @@ use backend\models\District;
 use yii\helpers\Json;
 use backend\models\Mandal;
 use backend\models\Village;
+use yii\web\UploadedFile;
 
 /**
  * Site controller
@@ -147,41 +148,66 @@ class SiteController extends Controller {
      *
      * @return mixed
      */
-    public function actionSignup() {
+    public function actionSignup()
+    {
         $userId = Yii::$app->user->id;
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             $post = Yii::$app->request->post('SignupForm');
+			$model->birth_date = $post['birth_date'];
+            $model->middle_name = $post['middle_name'];
+			//$model->image = $post['image'];
+			//echo '<pre>';print_r($post);exit;
+			$model->image =  UploadedFile::getInstance($model,'image');
+			//echo $model->image;exit;
+			if(!empty($model->image)){
+                if(!file_exists(Yii::getAlias('@backend').'/web/uploads/user/')) {
+                mkdir(Yii::getAlias('@backend').'/web/uploads/user/', 0775, true);
+                if(!file_exists(Yii::getAlias('@backend').'/web/uploads/user/photo/')) {
+                    mkdir(Yii::getAlias('@backend').'/web/uploads/user/photo/', 0775, true);
+                }
+            }
+			
+        }
+			//move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
             $model->user_role = $post['user_role'];
-            if ($user = $model->signup()) {
+            if ($user = $model->signup($model->image->extension)) {
+				$photoname = base64_encode($user->email);
+				/*if(!file_exists(Yii::getAlias('@backend').'/web/uploads/user/photo/'.$user->id.'/')) {
+                    mkdir(Yii::getAlias('@backend').'/web/uploads/user/photo/'.$user->id.'/', 0775, true);
+                }*/
+                if(!empty($model->image)){
+    				$model->image->saveAs(Yii::getAlias('@backend').'/web/uploads/user/photo/'. $photoname . '.' . $model->image->extension);
+                }
+				//move_uploaded_file($path,$targetPath) ; // Moving Uploaded file
                 $userRole = new UserRole();
                 $userRole->user_id = $user->id;
                 $userRole->role_id = $model->user_role;
-                if ($userRole->save()) {
-                    return $this->goHome();
+                if($userRole->save()) {
+                    return $this->redirect(['user/index']);
                 } else {
-                    echo '<pre>';
-                    print_r($userRole->errors);
-                }
+					echo '<pre>';print_r($userRole->errors);
+				}
             } else {
-                echo '<pre>';
-                print_r($model->errors);
-            }
+				echo '<pre>';print_r($model->errors);
+			}
         }
-        $userRoleList = Role::getUserRoleList();
-        $roles = Role::getRoleIds();
-        $userIds = UserRole::getUserIds($roles);
-        $users = ArrayHelper::map(
-                        User::find()->asArray()->where(['IN', 'id', $userIds])->all(), 'id', function($model) {
-                    return $model['first_name'] . ' ' . $model['last_name'];
-                }
-        );
-        $userRole = userRole::getUserRole($userId);
+		$userRoleList = Role::getUserRoleList();
+		$roles = Role::getRoleIds();
+		$userIds = UserRole::getUserIds($roles);
+		$users = ArrayHelper::map(
+		    User::find()->asArray()->where(['IN','id',$userIds])->all(),
+		    'id',
+		    function($model) {
+		        return $model['first_name'].' '.$model['last_name'];
+		    }
+		    );
+		$userRole = userRole::getUserRole($userId);
         return $this->render('signup', [
-                    'model' => $model,
-                    'userRoleList' => $userRoleList,
-                    'users' => $users,
-                    'userRole' => $userRole,
+            'model' => $model,
+			'userRoleList'=>$userRoleList,
+            'users'=>$users,
+            'userRole'=>$userRole,
         ]);
     }
 

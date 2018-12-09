@@ -45,12 +45,20 @@ class Farmers extends \yii\db\ActiveRecord {
             [['mobile_no', 'whatsapp_no'], 'number'],
             [['mobile_no', 'whatsapp_no'], 'string', 'max' => 10, 'min' => 10],
             [['mobile_no'], 'unique'],
+            [['executive_id'], 'check_executive'],
             [['age', 'home_address', 'user_id', 'executive_id'], 'safe']
                 /* [['cretaed_by', 'status'], 'integer'],
                   [['cretaed_at'], 'safe'],
                   [['farmer_fname', 'farmer_mname', 'farmer_lname', 'village', 'taluka', 'district', 'state'], 'string', 'max' => 255],
                   [['mobile_no', 'alt_mobile_no', 'whatsapp_no'], 'string', 'max' => 15], */
         ];
+    }
+
+    public function check_executive($attribute, $params){
+        if($attribute == ''){
+          $this->addError($attribute,'Please Select Executive..');
+        }
+
     }
 
     /**
@@ -76,32 +84,41 @@ class Farmers extends \yii\db\ActiveRecord {
     }
 
     public function getFarmersList($params) {
-        
         if (isset($params) && !empty($params)) {
-            foreach ($params["Farmers"] AS $key => $param){
-                if($param != ""){
-                if($key == 'city')
-                    $this->filter = " AND fd.mandal = '$param'";
-                if($key == 'executive_id')
-                    $this->filter = " AND fp.user_id = '$param'";
-                else
-                    $this->filter = " AND fd.$key = '$param'";
+            foreach ($params["Farmers"] AS $key => $param) {
+                if ($param != "") {
+                    if ($key == 'city'){
+                        $this->filter .= " AND fd.mandal = '$param'";
+                    } else if ($key == 'executive_id'){
+                        $this->filter .= " AND fp.user_id = '$param'";
+                    } else {
+                        $this->filter .= " AND fd.$key = '$param'";
+                    }
                 }
             }
         }
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT DISTINCT fd.farmer_id,CONCAT(fp.first_name, ' ', fp.middle_name, ' ', fp.last_name) AS full_name,fp.birth_date,fp.mobile_no, (CASE WHEN fp.gender='1' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(IFNULL(u.first_name,''), ' ', IFNULL(u.last_name,'')) AS tagName FROM farmer_profile fp JOIN farm_details fd ON fd.farmer_id=fp.farmer_id LEFT JOIN user u ON u.id=fp.user_id WHERE fp.user_id !='0' {$this->filter} ORDER BY farmer_id DESC");
+        $command = $connection->createCommand("SELECT DISTINCT fd.farmer_id,CONCAT(fp.first_name, ' ', fp.middle_name, ' ', fp.last_name) AS full_name,fp.birth_date,fp.mobile_no, (CASE WHEN fp.gender='1' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(IFNULL(u.first_name,''), ' ', IFNULL(u.last_name,'')) AS tagName FROM farmer_profile fp LEFT JOIN farm_details fd ON fd.farmer_id=fp.farmer_id LEFT JOIN user u ON u.id=fp.user_id WHERE fp.user_id !='0' {$this->filter} ORDER BY farmer_id DESC");
 
         $data = $command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;
     }
 
-    public function getFarmersListForTag() {
-
+    public function getFarmersListForTag($params) {
+        if (isset($params) && !empty($params)) {
+            foreach ($params["Farmers"] AS $key => $param) {
+                if ($param != "") {
+                    if ($key == 'city')
+                        $this->filter .= " AND fd.mandal = '$param'";
+                    else
+                        $this->filter .= " AND fd.$key = '$param'";
+                }
+            }
+        }
         $connection = Yii::$app->getDb();
         //$command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='M' THEN 'Male' ELSE 'Female' END) as gender,b.user_fullname AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.status=1 ORDER BY a.farmer_id DESC");
-        $command = $connection->createCommand("SELECT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='1' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(b.first_name, ' ', b.middle_name, ' ', b.last_name) AS tagged_name FROM farmer_profile a LEFT JOIN user b ON a.user_id=b.id WHERE a.user_id=0 ORDER BY a.farmer_id DESC");
+        $command = $connection->createCommand("SELECT DISTINCT a.farmer_id,CONCAT(a.first_name, ' ', a.middle_name, ' ', a.last_name) AS full_name,a.birth_date,a.mobile_no, (CASE WHEN a.gender='1' THEN 'Male' ELSE 'Female' END) as gender,CONCAT(b.first_name, ' ', b.middle_name, ' ', b.last_name) AS tagged_name FROM farmer_profile a LEFT JOIN farm_details fd ON fd.farmer_id=a.farmer_id LEFT JOIN user b ON a.user_id=b.id WHERE a.user_id=0 {$this->filter} ORDER BY a.farmer_id DESC");
         $data = $command->queryAll();
         //echo "<pre>";print_r($data);die;
         return $data;

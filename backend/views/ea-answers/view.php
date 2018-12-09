@@ -5,6 +5,9 @@ use yii\widgets\ActiveForm;
 use dosamigos\ckeditor\CKEditor;
 use backend\models\User;
 use yii\filters\AccessControl;
+
+$path = '/farmer_helpline/backend/web/uploads/user/photo/';
+$path1 = '/farmer_helpline/backend/web/images/';
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\EaQuestionsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -31,7 +34,7 @@ $this->title = 'Answers';
 			<div class="question">
 				<table style="width:100%" border="0">
 					<tr>
-						<td style="width:50px;"> <img src="images/default.png" alt="images/default.png" class="profile-img" /> </td>
+						<td style="width:50px;"> <img src="<?php echo $path1; ?>/default.png" alt="images/default.png" class="profile-img" /> </td>
 						<td> 
 							<p style="font-weight:bold;color:#05059c;margin-bottom:0px;"><?= $models->user->username ?> </p>
 							<span><?php echo $models->question; ?></span>
@@ -51,7 +54,7 @@ $this->title = 'Answers';
 			<div class="response">
 				<table style="width:100%" border="0">
 					<tr>
-						<td style="width:50px;"> <img src="images/default.png" alt="images/default.png" class="profile-img" /> </td>
+						<td style="width:50px;"> <img src="<?php echo $path1; ?>/default.png" alt="images/default.png" class="profile-img" /> </td>
 						<td>
 							<p style="font-weight:bold;color:grey;margin-bottom:0px;"><?= $models->userEa->username ?></p>
 							<span><?php  echo $models->answer->response; ?></span>
