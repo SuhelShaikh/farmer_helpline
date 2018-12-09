@@ -426,3 +426,9 @@ input[type="checkbox"]:disabled + .label-text:before{
 	.col-xs-12.profile-tabs {overflow: auto;}
 	.col-xs-12.profile-tabs .panel.with-nav-tabs{min-width:900px;}
 	.user-image-wrap img { width: 75px; margin: 0px auto;border-radius: 50%;}
+	td.action-btns a {font-size: 24px;display: inline-block;margin: 0 5px;}
+	td.action-btns a .fa.fa-trash {color:red;}
+	.c-pointer{cursor:pointer;}
+	
+	.panel-heading.bg-orange a{color:#fff;}
+	.panel-heading.bg-orange a.disabled{color:#fff;}
