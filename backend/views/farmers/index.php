@@ -56,7 +56,7 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
 </div> 
 <div class="row">
     <div class="col-sm-2">
-        <b>Tehsil: </b>
+        <b>City / Mandal: </b>
     </div>
     <div class="col-sm-4">
         <?php
@@ -133,6 +133,7 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
                         <th>Mobile Number</th>
                         <th>Birth Date</th>
                         <th>Gender</th>
+                        <th>Tag To</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -144,6 +145,7 @@ $executives = ArrayHelper::map(User::find()->orderBy('username')->all(), 'id', '
                             <td><?php echo $data[$i]['mobile_no']; ?></td>
                             <td><?php echo $data[$i]['birth_date']; ?></td>
                             <td><?php echo $data[$i]['gender']; ?></td>
+                            <td><?php echo $data[$i]['tagName']; ?></td>
                             <td>
                                 <?php echo Html::a("<i class='fa fa-eye'></i>", ['farmers/profile', 'id' => $data[$i]['farmer_id']]); ?>
                                 <?php echo Html::a("<i class='fa fa-edit'></i>", ['farmers/update', 'id' => $data[$i]['farmer_id'], 'tab' => 1]); ?>
