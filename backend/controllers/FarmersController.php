@@ -42,7 +42,7 @@ class FarmersController extends Controller {
     public function actionIndex() {
         //$this->layout='dashboard';
         $model = new Farmers();
-        $data = $model->getFarmersList();
+        $data = $model->getFarmersList(Yii::$app->request->queryParams);
         return $this->render('index', [
                     'model' => $model,
                     'data' => $data,
@@ -90,7 +90,7 @@ class FarmersController extends Controller {
 
                 if ($model->save()) {
                     Yii::$app->session->setFlash('insert', "Farmer added successfully. Please add farm details.");
-                    return $this->redirect(['update', 'farmer_id' => $model->farmer_id, 'tab' => 2]);
+                    return $this->redirect(['update', 'id' => $model->farmer_id, 'tab' => 2]);
                 }
             } else {
 
@@ -153,26 +153,27 @@ class FarmersController extends Controller {
             //echo "<pre>";print_r($_FILES);die;
             //if ($model->validate()) {
 
-            /* if($_FILES['FarmerFarmDetails']['name']['farm_image']!=""){
-              $model->farm_image = UploadedFile::getInstances($model, 'farm_image');
-              $fullFileName="";
-              //die();
-              if ($model->farm_image && $model->validate()) {
-              $cnt=1;
-
-              foreach ($model->farm_image as $file) {
-
-              $fileName=$cnt."_".$model->farmer_id."_".date("Y-m-d")."_".rand(100,500000).".jpg";
-              $file->saveAs('images/farmImages/' . $fileName);
-              $fullFileName.=$fileName.",";
-
-              $cnt++;
-              }
-              $fullFileName=rtrim($fullFileName,",");
-              $model->farm_image=$fullFileName;
-              }
-              } */
-            $model->farm_image = null;
+//            if ($_FILES['FarmDetails']['name']['farm_image'] != "") {
+//                $model->farm_image = UploadedFile::getInstances($model, 'farm_image');
+//                $fullFileName = "";
+//                //die();
+//                if ($model->farm_image && $model->validate()) {
+//                    $cnt = 1;
+//
+//                    foreach ($model->farm_image as $file) {
+//
+//                        $fileName = $cnt . "_" . $model->farmer_id . "_" . date("Y-m-d") . "_" . rand(100, 500000) . ".jpg";
+//                        $file->saveAs('images/farmImages/' . $fileName);
+//                        $fullFileName.=$fileName . ",";
+//
+//                        $cnt++;
+//                    }
+//                    $fullFileName = rtrim($fullFileName, ",");
+//                    $model->farm_image = $fullFileName;
+//                }
+//            }else{
+//                $model->farm_image = null;
+//            }
             if ($model->save(false)) {
                 Yii::$app->session->setFlash('insert', "Farm added successfully.");
                 $externel_url = Yii::$app->urlManager->createAbsoluteUrl(['farmers/update', 'id' => $model->farmer_id, 'tab' => 2]);
@@ -242,13 +243,13 @@ class FarmersController extends Controller {
         $connection = Yii::$app->getDb();
         $command2 = $connection->createCommand("DELETE FROM farm_details WHERE farm_id=$id");
         $command2->execute();
-        
+
         $plotModel = Plot::find(['farm_id' => $id])->all();
         foreach ($plotModel AS $plot) {
             $command1 = $connection->createCommand("DELETE FROM crop_details WHERE plot_id=$plot->plot_id");
             $command1->execute();
         }
-               
+
         $command = $connection->createCommand("DELETE FROM plot WHERE farm_id=$id");
         $command->execute();
 

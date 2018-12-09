@@ -12,8 +12,6 @@ use yii\helpers\Url;
 
 $this->title = 'Farmer Profile';
 $this->title = $data->farmer_id;
-//echo "<pre>";
-//print_r($data);exit;
 ?>
 <!--<h1><?= Html::encode($this->title) ?></h1>-->
 <section class="content">                	
@@ -24,7 +22,7 @@ $this->title = $data->farmer_id;
     <div class="row">
         <div class="user-image col-sm-12 col-md-2 text-center">
             <div class="user-image-wrap">
-                <img src="http://aadityaled.com/img/profile.jpg" class="img-responsive" alt="farmer name" />
+                <img src="images/farmerImages/<?= $data->profile_pic?>" onerror="this.src='images/userImages/defaultProfile.jpg';" class="img-responsive" alt="farmer name" />
             </div>
         </div>
         <div class="user-info col-sm-12 col-md-10">
